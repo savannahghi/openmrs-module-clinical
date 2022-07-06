@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module configVersion="1.2">
+
+	<!-- Module Properties -->
+	<id>${project.parent.artifactId}</id>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
+	<package>${project.parent.groupId}.${project.parent.artifactId}</package>
+	<author>HealthIT</author>
+	<description>
+		Patient dash board UI for the EHR work
+	</description>
+	<!--updateURL>https://modules.openmrs.org/modules/download/${project.parent.artifactId}/update.rdf</updateURL-->
+	<require_version>${openMRSVersion}</require_version>
+	<!-- / Module Properties -->
+
+	
+	<!-- Required Modules -->
+	<require_modules>
+		<require_module version="${hospitalcoreVersion}">org.openmrs.module.hospitalcore</require_module>
+		<require_module version="${uiframeworkVersion}">org.openmrs.module.uiframework</require_module>
+		<require_module version="${uilibraryVersion}">org.openmrs.module.uilibrary</require_module>
+		<require_module version="${appuiVersion}">org.openmrs.module.appui</require_module>
+		<require_module version="${inventoryVersion}"> org.openmrs.module.ehrinventory</require_module>
+		<require_module version="${appframeworkVersion}">org.openmrs.module.appframework</require_module>
+		<require_module version="${kenyaemrVersion}">org.openmrs.module.kenyaemr</require_module>
+		<require_module version="${ehrconfigisVersion}">org.openmrs.module.ehrconfigs</require_module>
+		<require_module>org.openmrs.module.metadatadeploy</require_module>
+		<require_module>org.openmrs.module.ehrlaboratory</require_module>
+	</require_modules>
+	<!-- / Required Modules -->
+	
+	<!-- Module Activator -->
+	<activator>org.openmrs.module.patientdashboardapp.PatientDashboardAppActivator</activator>
+
+	<aware_of_modules>
+		<aware_of_module>org.openmrs.module.legacyui</aware_of_module>
+	</aware_of_modules>
+	<!-- Maps hibernate file's, if present -->
+	<mappingFiles>
+				
+	</mappingFiles>
+
+	<!-- Internationalization -->
+	<!-- All message codes should start with ${project.parent.artifactId}. -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+	<!-- /Internationalization -->
+
+	<!-- Required Global Properties -->
+	<globalProperty>
+		<property>patientdashboard.referralReasonsConcept</property>
+		<defaultValue>Reasons for Referral</defaultValue>
+		<description>
+		A set of reasons that could trigger a referral for a patient
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>patientdashboard.facilityConcept</property>
+		<defaultValue>Name of where patient was referred to</defaultValue>
+		<description>
+		</description>
+	</globalProperty>
+
+	<globalProperty>
+		<property>patientdashboard.dosingUnitConceptId</property>
+		<defaultValue>162384</defaultValue>
+		<description>
+			Dosing Unit Concept Id
+		</description>
+	</globalProperty>
+
+    <globalProperty>
+        <property>patientdashboard.historyOfPresentIllness</property>
+        <defaultValue>HISTORY OF PRESENT ILLNESS</defaultValue>
+        <description>
+            patients history of present illness
+        </description>
+    </globalProperty>
+
+    <globalProperty>
+        <property>patientdashboard.physicalexaminationConcept</property>
+        <defaultValue>PHYSICAL EXAM</defaultValue>
+        <description>
+            physical examination
+        </description>
+    </globalProperty>
+	<globalProperty>
+		<property>patientdashboard.symptomConcept</property>
+		<defaultValue>symptom</defaultValue>
+		<description>
+			symptom concept name
+		</description>
+	</globalProperty>
+	<!-- /Required Global Properties -->
+</module>
+
