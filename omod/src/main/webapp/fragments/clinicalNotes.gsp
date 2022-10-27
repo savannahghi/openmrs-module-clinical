@@ -80,146 +80,206 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 		<section>
 			<span class="title">Clinical Notes</span>
 			<fieldset class="no-confirmation">
-				<legend>Symptoms</legend>
-				<div style="padding: 0 4px">
-					<label for="symptom" class="label">Symptoms <span class="important">*</span></label>
-					<input type="text" id="symptom" name="symptom" placeholder="Add Symptoms" />
-					<field>
-						<input type="hidden" id="symptoms-set" class="required"/>
-						<span id="symptoms-lbl" class="field-error" style="display: none"></span>
-					</field>
-				</div>
-
-				<div class="tasks" id="task-symptom" style="display:none;">
-					<header class="tasks-header">
-						<span id="title-symptom" class="tasks-title">PATIENT'S SYMPTOMS</span>
-						<a class="tasks-lists"></a>
-					</header>
-
-					<div class="symptoms-qualifiers" data-bind="foreach: signs" >
-						<div class="symptom-container">
-							<div class="symptom-label">
-								<span class="right pointer show-qualifiers"><i class="icon-caret-down small" title="more"></i></span>
-								<span class="right pointer" data-bind="click: \$root.removeSign"><i class="icon-remove small"></i></span>
-								<span data-bind="text: label"></span>
-							</div>
-
-							<div class="qualifier-container" style="display: none;">
-								<ul class="qualifier" data-bind="foreach: qualifiers">
-									<li>
-										<span data-bind="text: label"></span>
-										<div data-bind="if: options().length >= 1">
-											<div data-bind="foreach: options" class="qualifier-option">
-												<p class="qualifier-field">
-													<input type="radio" data-bind="checkedValue: \$data, checked: \$parent.answer" >
-													<label data-bind="text: label"></label>
-												</p>
-											</div>
-										</div>
-										<div data-bind="if: options().length === 0" >
-											<p>
-												<input type="text" data-bind="value: freeText" >
-											</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
+				<legend>Family History</legend>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="family-members-with-cancer">Any family members with cancer?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="family-members-with-cancer" name="family-members-with-cancer" />
 					</div>
 				</div>
-			</fieldset>
-
-			<fieldset class="no-confirmation">
-				<legend>History</legend>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Degree of relation (List all)<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Age at Diagnosis<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col11">
+						<label for="cancer-type">Cancer Type<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="cancer-type" name="cancer-type" placeholder="Cancer Type" />
+					</div>
+				</div>
 				<p>
-					<label class="label" for="history">History of present illness</label>
-					<span>
-						Date of Onset<input data-bind="value: \$root.onSetDate" type="date" id="onSetDate" name="onSetDate" />
-					</span>
-
-					<textarea data-bind="value: \$root.illnessHistory" id="history" name="history" rows="10" cols="74"></textarea>
+					<input type="hidden" id="family-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
+				<legend>Female History</legend>
+				<div style="padding: 0 4px; margin-bottom:60px">
+					<div class="col6">
+						<label for="last-lmp">Last LMP<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="last-lmp" name="last-lmp" placeholder="Last LMP" />
+					</div>
+					<div class="col5">
+						<label for="parity">Parity<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="parity" name="parity" placeholder="Parity" />
+					</div>
+				</div>
+				<div>&nbsp;</div> 
+				<div style="padding: 0 4px; margin-bottom:40px">
+					<div class="col6">
+						<label for="currently-breastfeeding">Are you currently breastfeeding?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+					</div>
+					<div class="col5">
+						<input type="text" id="currently-breastfeeding" name="currently-breastfeeding" />
+					</div>
+				</div>
+				<div>&nbsp;</div> 
+				<div style="padding: 100 4px;margin-bottom:40px">
+					<div class="col6">
+						<label for="currently-on-contraceptives">Are you currently using contraceptives/hormonal replacement therapy?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+					</div>
+					<div class="col5">
+						<input type="text" id="currently-on-contraceptives" name="currently-on-contraceptives" />
+					</div>
+				</div>
+				<div>&nbsp;</div> 
+				<div class="col11" style="padding: 100 4px; padding-bottom:20px;">
+					<label for="using-contraceptive-answer">If yes, specify type:<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+					<input type="text" id="using-contraceptive-answer" name="using-contraceptive-answer" />
+				</div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<label for="screened-before-answer-div" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
+					<div class="col6">
+						<label for="screened-before-answer">Cervical Cancer:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-before-answer" name="screened-before-answer" />
+					</div>
+					<div class="col5">
+						<label for="screened-date">Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-date" name="screened-date" placeholder="Date of Test" />
+					</div>
+					<div class="col11">
+						<label for="types-of-screening">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-of-screening" name="types-of-screening" />
+					</div>
+				</div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="female-screened-for-breastcancer-answer">Breast Cancer:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="female-screened-for-breast-cancer-answer" name="female-screened-for-breast-cancer-answer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-for-breastcancer">Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-for-breastcancer" name="date-screened-for-breastcancer" placeholder="Date of Test" />
+					</div>
+					<div class="col11">
+						<label for="types-screened-for-breastcancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-screened-for-breastcancer" name="types-screened-for-breastcancer" />
+					</div>
+				</div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="female-screened-colorectal-answer">Colorectal Cancer:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="female-screened-colorectal-answer" name="female-screened-colorectal-answer" />
+					</div>
+					<div class="col5">
+						<label for="date-female-screened-colorectalcancer">Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-female-screened-colorectalcancer" name="date-female-screened-colorectalcancer" placeholder="Date of Test" />
+					</div>
+					<div class="col11">
+						<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" />
+					</div>
+				</div>
+				<p>
+					<input type="hidden" id="female-history-set" />
 				</p>
 			</fieldset>
 
 			<fieldset class="no-confirmation">
-				<legend>Physical Examination</legend>
-				<p class="input-position-class">
-					<label class="label">Physical Examination <span class="important">*</span></label>
-					<field>
-						<textarea data-bind="value: \$root.physicalExamination" id="examination" name="examination" rows="10" cols="74" class="required"></textarea>
-						<span id="examination-lbl" class="field-error" style="display: none"></span>
-					</field>
+				<legend>Male History</legend>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<label for="place-of-residence" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Prostrate Cancer:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col11">
+						<label for="types-screened-prostratecancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-screened-prostratecancer" name="types-screened-prostratecancer" />
+					</div>
+				</div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="male-screened-colorectal">Colorectal Cancer:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="male-screened-colorectal" name="male-screened-colorectal" />
+					</div>
+					<div class="col5">
+						<label for="date-male-screened-colorectalcancer">Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-male-screened-colorectalcancer" name="date-male-screened-colorectalcancer" placeholder="Date of Test" />
+					</div>
+					<div class="col11">
+						<label for="types-male-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-male-screened-colorectalcancer" name="types-male-screened-colorectalcancer" />
+					</div>
+				</div>
+				<div style="padding: 100 4px;margin-bottom:40px">
+					<div class="col6">
+						<label for="currently-on-hormanal-therapy">Are you currently on hormonal therapy?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+					</div>
+					<div class="col5">
+						<input type="text" id="currently-on-hormanal-therapy" name="currently-on-hormanal-therapy" />
+					</div>
+				</div>
+				<div>&nbsp;</div> 
+				<div class="col11" style="padding: 100 4px; padding-bottom:20px;">
+					<label for="male-hormonal-therapy-type">If yes, specify type:<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+					<input type="text" id="male-hormonal-therapy-type" name="male-hormonal-therapy-type" />
+				</div>
+				<p>
+					<input type="hidden" id="male-history-set" />
 				</p>
 			</fieldset>
 
 			<fieldset class="no-confirmation">
-				<legend>Diagnosis</legend>
-				<div>
-					<h2>Patient's Diagnosis <span class="important">*</span></h2>
-
-					<div>
-						<p class="input-position-class">
-							<input type="text" id="diagnosis" name="diagnosis" placeholder="Select Diagnosis" />
-						</p>
-
-						<div id="task-diagnosis" class="tasks" style="display:none;">
-							<header class="tasks-header">
-								<span id="title-diagnosis" class="tasks-title">DIAGNOSIS</span>
-								<a class="tasks-lists"></a>
-							</header>
-
-							<div id="diagnosis-carrier" data-bind="foreach: diagnoses" style="margin-top: -2px">
-								<div class="diagnosis-container" style="border-top: medium none !important;">
-									<span class="right pointer" data-bind="click: \$root.removeDiagnosis"><i class="icon-remove small"></i></span>
-									<div class="diagnosis-carrier-div" style="border-width: 1px 1px 1px 10px; border-style: solid; border-color: -moz-use-text-color; padding: 0px 10px 3px;">
-										<span data-bind="text: label" style="display: block; font-weight: bold;"></span>
-
-										<label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-											<input value="true"  data-bind="checked: provisional" class="chk-provisional" type="radio" style="margin-top: 3px"/>Provisional
-										</label>
-
-										<label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0">
-											<input value="false" data-bind="checked: provisional" class="chk-final" type="radio" style="margin-top: 3px"/>Final
-										</label>
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-						<p class="input-position-class">
-							<field>
-								<input type="hidden" id="diagnosis-set" class="required" />
-								<span id="diagnosis-lbl" class="field-error" style="display: none"></span>
-							</field>
-						</p>
+				<legend>Child History</legend>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="signs-of-retinoblasoma">Any signs of Retinoblastoma?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
 					</div>
 				</div>
-			</fieldset>
-
-			<fieldset class="no-confirmation">
-				<legend>Procedures</legend>
-				<div class="input-position-class">
-					<label class="label" for="procedure">Patient Procedures</label>
-					<input type="text" id="procedure" name="procedure" placeholder="Specify a Procedure" />
-				</div>
-
-				<div id="task-procedure" class="tasks" style="display:none;">
-					<header class="tasks-header">
-						<span id="title-procedure" class="tasks-title">PROCEDURES</span>
-						<a class="tasks-lists"></a>
-					</header>
-
-					<div data-bind="foreach: procedures">
-						<div class="procedure-container">
-							<span class="right pointer" data-bind="click: \$root.removeProcedure"><i class="icon-remove small"></i></span>
-							<p data-bind="text: label"></p>
-							<span data-bind="if: schedulable">Schedule:<input type="date"></span>
-						</div>
-					</div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">						
+						<input type="text" id="signs-of-retinoblasoma" name="signs-of-retinoblasoma" />
+					</div>				
 				</div>
 				<p>
-					<input type="hidden" id="procedure-set" />
+					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
 
