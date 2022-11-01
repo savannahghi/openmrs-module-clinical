@@ -284,6 +284,55 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 
 			<fieldset class="no-confirmation">
+				<legend>Risk Factor</legend>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Do you some cigarettes?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">If yes, how many cigarrets per day?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">For how many many years?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">Do you use other forms of tobacco?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Do you take alcohol?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">What is the frequency?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Are you physically active?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col11">
+						<label for="types-of-screening">Previous exposure to radiation (radiotherapy?)<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-of-screening" name="types-of-screening" />
+					</div>
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
 				<legend>Investigations</legend>
 				<div>
 					<div class="input-position-class">
