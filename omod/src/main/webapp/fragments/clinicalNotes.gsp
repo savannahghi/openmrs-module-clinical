@@ -383,6 +383,48 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 
 			<fieldset class="no-confirmation">
+				<legend>Performance Status</legend>
+				<div class="col11">
+					<label for="types-of-screening">General Examination:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Jaundice:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Anaemia:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Cyanosis:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Clubbing:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Oedema:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Dehydration:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
 				<legend>Investigations</legend>
 				<div>
 					<div class="input-position-class">
