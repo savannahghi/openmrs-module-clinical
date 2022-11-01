@@ -423,6 +423,105 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
+			
+			<fieldset class="no-confirmation">
+				<legend>Lymph Node Exam</legend>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col10">
+						<label for="family-members-with-cancer">Palpable or Non-palpable?<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="family-members-with-cancer" name="family-members-with-cancer" />
+					</div>
+				</div>
+				<label for="screened-before-answer-div">If yes, Indicate location and characteristics below:</label>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Submandibular<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Supraciavicular<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Cervical<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Axillary<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Inguinal<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Generalized Lymadenopathy<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col6">
+						<label for="degree-of-relation">Other<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
 
 			<fieldset class="no-confirmation">
 				<legend>Investigations</legend>
