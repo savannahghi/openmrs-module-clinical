@@ -333,6 +333,56 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 
 			<fieldset class="no-confirmation">
+				<legend>Clinicals</legend>
+				<p class="input-position-class">
+					<label>Presenting Complains</label>
+					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+				</p>
+				<p class="input-position-class">
+					<label>History of Present Illness</label>
+					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+				</p>
+				<p class="input-position-class">
+					<label>Past Medical and Surgical History</label>
+					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+				</p>
+				<label for="screened-before-answer-div" class="label">Review of Systems</label>
+				<div class="col11">
+					<label for="types-of-screening">CNS:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">CNS:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">CVS:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">RS:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">GUS:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">MSS:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
 				<legend>Investigations</legend>
 				<div>
 					<div class="input-position-class">
