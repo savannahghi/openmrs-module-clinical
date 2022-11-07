@@ -665,6 +665,53 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</p>
 			</fieldset>
 			<fieldset class="no-confirmation">
+				<legend>Skin Exam Findings</legend>
+				<div class="col11">
+					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
+				<legend>Neurologic</legend>
+				<div class="col11">
+					<label for="types-of-screening">Higher Functions:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Cranial Nerves:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Head(Inspect, Palpate):<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Neck:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Sensory Level:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Musculoskeletal:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
 				<legend>Symptoms</legend>
 				<div style="padding: 0 4px">
 					<label for="symptom" class="label">Symptoms <span class="important">*</span></label>
