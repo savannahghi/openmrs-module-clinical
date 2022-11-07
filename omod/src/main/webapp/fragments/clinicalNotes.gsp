@@ -911,6 +911,114 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</p>
 			</fieldset>
 			<fieldset class="no-confirmation">
+				<legend>Renal Function Tests</legend>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Sodium:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Potassium:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Chloride:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Urea:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Creatinin:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Bicarbonate:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
 				<legend>Symptoms</legend>
 				<div style="padding: 0 4px">
 					<label for="symptom" class="label">Symptoms <span class="important">*</span></label>
