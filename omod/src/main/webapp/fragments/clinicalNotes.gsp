@@ -1283,9 +1283,62 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div class="col11" style="padding: 0 4px; padding-bottom:20px;">
-					<label for="place-of-residence" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
+					<label for="place-of-residence" class="label">If Chemotherapy</label>
 					<div class="col6">
-						<label for="screened-prostrate-cancer">Prostrate Cancer:<span style="color: #f00 !important;
+						<label for="screened-prostrate-cancer">Neoadjuvant:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">Adjuvant<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Maintenance:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">Concurrent:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Palliative:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">BSA:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Regimen:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">Cycles<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Start Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+					</div>
+					<div class="col5">
+						<label for="date-screened-prostratecancer">Next Scheduled Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
+					<div class="col11">
+						<label for="" class="label">If Surgery</label>
+					</div>
+					<div class="col6">
+						<label for="screened-prostrate-cancer">Procedure:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
 					</div>
@@ -1294,12 +1347,17 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						padding-left: 5px;"></span></label>
 						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
 					</div>
+					<div class="col6">
+						<label for="date-screened-prostratecancer">Next Scheduled Date<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+					</div>
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-			${ ui.includeFragment("patientdashboardapp", "patientDashboard"]) }
+			${ ui.includeFragment("patientdashboardapp", "patientDashboard") }
 		</section>
 
 		<div id="confirmation" style="width:74.6%; min-height: 400px;">
