@@ -559,7 +559,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Respiratory System</legend>
 				<div class="col11">
@@ -586,7 +585,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Breast Examination</legend>
 				<p class="input-position-class">
@@ -598,7 +596,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Cardiovascular System</legend>
 				<div class="col11">
@@ -620,11 +617,53 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
 					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
+			<fieldset class="no-confirmation">
+				<legend>Abdominal System</legend>
+				<div class="col11">
+					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Percussion:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
+				<legend>Genitourinary</legend>
+				<div class="col11">
+					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
 			<fieldset class="no-confirmation">
 				<legend>Symptoms</legend>
 				<div style="padding: 0 4px">
@@ -674,7 +713,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>History</legend>
 				<p>
@@ -686,7 +724,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<textarea data-bind="value: \$root.illnessHistory" id="history" name="history" rows="10" cols="74"></textarea>
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Physical Examination</legend>
 				<p class="input-position-class">
@@ -697,7 +734,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</field>
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Diagnosis</legend>
 				<div>
@@ -821,7 +857,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<textarea data-bind="value: \$root.otherInstructions" id="instructions" name="instructions" rows="10" cols="74"></textarea>
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Outcome</legend>
 				<div>
