@@ -1357,6 +1357,21 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
+			<fieldset class="no-confirmation">
+				<legend>Continuation Notes</legend>
+				<div class="col11">
+						<label for="date-screened-prostratecancer">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+				</div>
+				<div class="col11">
+					<p class="input-position-class">
+						<label>Notes: </label>
+						<textarea id="examination" name="examination" rows="10" cols="74" class="required"></textarea>
+						<span id="examination-lbl" class="field-error" style="display: none"></span>
+					</p>
+				</div>
+			</fieldset>
 			${ ui.includeFragment("patientdashboardapp", "patientDashboard") }
 		</section>
 
