@@ -1019,6 +1019,242 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</p>
 			</fieldset>
 			<fieldset class="no-confirmation">
+				<legend>Specialized Tests</legend>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">BMA:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Urinalysis:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">PBF:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Tumor Markers:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Immunohostpchemistry:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<p class="input-position-class">
+					<label>Conclusion</label>
+					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+				</p>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
+				<legend>Imaging</legend>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Mammogram:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">MRI:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">CT Scan:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Ultrasound:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Echocardiography:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">Radopgraphy (Others):<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col3">
+						<label for="degree-of-relation">PET Scan:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col4">
+						<label for="age-of-diagnosis">Result:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<<div class="col11" style="padding: 0 4px; padding-bottom:20px;">
+					<label for="degree-of-relation">Staging:<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+					<div class="col2">
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col2">
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col2">
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+					<div class="col2">
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+			<fieldset class="no-confirmation">
 				<legend>Symptoms</legend>
 				<div style="padding: 0 4px">
 					<label for="symptom" class="label">Symptoms <span class="important">*</span></label>
