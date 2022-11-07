@@ -588,6 +588,123 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 
 			<fieldset class="no-confirmation">
+				<legend>Symptoms</legend>
+				<div style="padding: 0 4px">
+					<label for="symptom" class="label">Symptoms <span class="important">*</span></label>
+					<input type="text" id="symptom" name="symptom" placeholder="Add Symptoms" />
+					<field>
+						<input type="hidden" id="symptoms-set" class="required"/>
+						<span id="symptoms-lbl" class="field-error" style="display: none"></span>
+					</field>
+				</div>
+
+				<div class="tasks" id="task-symptom" style="display:none;">
+					<header class="tasks-header">
+						<span id="title-symptom" class="tasks-title">PATIENT'S SYMPTOMS</span>
+						<a class="tasks-lists"></a>
+					</header>
+
+					<div class="symptoms-qualifiers" data-bind="foreach: signs" >
+						<div class="symptom-container">
+							<div class="symptom-label">
+								<span class="right pointer show-qualifiers"><i class="icon-caret-down small" title="more"></i></span>
+								<span class="right pointer" data-bind="click: \$root.removeSign"><i class="icon-remove small"></i></span>
+								<span data-bind="text: label"></span>
+							</div>
+
+							<div class="qualifier-container" style="display: none;">
+								<ul class="qualifier" data-bind="foreach: qualifiers">
+									<li>
+										<span data-bind="text: label"></span>
+										<div data-bind="if: options().length >= 1">
+											<div data-bind="foreach: options" class="qualifier-option">
+												<p class="qualifier-field">
+													<input type="radio" data-bind="checkedValue: \$data, checked: \$parent.answer" >
+													<label data-bind="text: label"></label>
+												</p>
+											</div>
+										</div>
+										<div data-bind="if: options().length === 0" >
+											<p>
+												<input type="text" data-bind="value: freeText" >
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
+				<legend>History</legend>
+				<p>
+					<label class="label" for="history">History of present illness</label>
+					<span>
+						Date of Onset<input data-bind="value: \$root.onSetDate" type="date" id="onSetDate" name="onSetDate" />
+					</span>
+
+					<textarea data-bind="value: \$root.illnessHistory" id="history" name="history" rows="10" cols="74"></textarea>
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
+				<legend>Physical Examination</legend>
+				<p class="input-position-class">
+					<label class="label">Physical Examination <span class="important">*</span></label>
+					<field>
+						<textarea data-bind="value: \$root.physicalExamination" id="examination" name="examination" rows="10" cols="74" class="required"></textarea>
+						<span id="examination-lbl" class="field-error" style="display: none"></span>
+					</field>
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
+				<legend>Diagnosis</legend>
+				<div>
+					<h2>Patient's Diagnosis <span class="important">*</span></h2>
+
+					<div>
+						<p class="input-position-class">
+							<input type="text" id="diagnosis" name="diagnosis" placeholder="Select Diagnosis" />
+						</p>
+
+						<div id="task-diagnosis" class="tasks" style="display:none;">
+							<header class="tasks-header">
+								<span id="title-diagnosis" class="tasks-title">DIAGNOSIS</span>
+								<a class="tasks-lists"></a>
+							</header>
+
+							<div id="diagnosis-carrier" data-bind="foreach: diagnoses" style="margin-top: -2px">
+								<div class="diagnosis-container" style="border-top: medium none !important;">
+									<span class="right pointer" data-bind="click: \$root.removeDiagnosis"><i class="icon-remove small"></i></span>
+									<div class="diagnosis-carrier-div" style="border-width: 1px 1px 1px 10px; border-style: solid; border-color: -moz-use-text-color; padding: 0px 10px 3px;">
+										<span data-bind="text: label" style="display: block; font-weight: bold;"></span>
+
+										<label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
+											<input value="true"  data-bind="checked: provisional" class="chk-provisional" type="radio" style="margin-top: 3px"/>Provisional
+										</label>
+
+										<label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0">
+											<input value="false" data-bind="checked: provisional" class="chk-final" type="radio" style="margin-top: 3px"/>Final
+										</label>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<p class="input-position-class">
+							<field>
+								<input type="hidden" id="diagnosis-set" class="required" />
+								<span id="diagnosis-lbl" class="field-error" style="display: none"></span>
+							</field>
+						</p>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="no-confirmation">
 				<legend>Investigations</legend>
 				<div>
 					<div class="input-position-class">
