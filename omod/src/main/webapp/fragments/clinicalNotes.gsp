@@ -588,6 +588,44 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 
 			<fieldset class="no-confirmation">
+				<legend>Breast Examination</legend>
+				<p class="input-position-class">
+					<label>Comments</label>
+					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+				</p>
+				
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
+				<legend>Cardiovascular System</legend>
+				<div class="col11">
+					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Percussion:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				</div>
+				<div class="col11">
+					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
+					padding-left: 5px;"></span></label>
+					<input type="text" id="types-of-screening" name="types-of-screening" />
+				<p>
+					<input type="hidden" id="child-history-set" />
+				</p>
+			</fieldset>
+
+			<fieldset class="no-confirmation">
 				<legend>Symptoms</legend>
 				<div style="padding: 0 4px">
 					<label for="symptom" class="label">Symptoms <span class="important">*</span></label>
