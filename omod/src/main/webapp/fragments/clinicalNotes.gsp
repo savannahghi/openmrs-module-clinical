@@ -78,7 +78,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 <div id="content">
 	<form method="post" id="notes-form" class="simple-form-ui">
 		<section>
-			<span class="title">Clinical Notes</span>
+			<span class="title">Patient History</span>
 			<fieldset class="no-confirmation">
 				<legend>Family History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
@@ -207,7 +207,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="female-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Male History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
@@ -264,7 +263,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="male-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Child History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
@@ -282,7 +280,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Risk Factor</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
@@ -331,7 +328,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>Clinicals</legend>
 				<p class="input-position-class">
@@ -381,7 +377,9 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
+		</section>
+		<section>
+			<span class="title">Physical Examination</span>
 			<fieldset class="no-confirmation">
 				<legend>Performance Status</legend>
 				<div class="col11">
@@ -423,7 +421,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-			
 			<fieldset class="no-confirmation">
 				<legend>Lymph Node Exam</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
@@ -522,7 +519,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-
 			<fieldset class="no-confirmation">
 				<legend>HEENT</legend>
 				<div class="col11">
@@ -711,6 +707,9 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
+		</section>
+		<section>
+			<span class="title">Pain Assessment</span>
 			<fieldset class="no-confirmation">
 				<legend>Full Blood Count</legend>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -1367,11 +1366,14 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<div class="col11">
 					<p class="input-position-class">
 						<label>Notes: </label>
-						<textarea id="examination" name="examination" rows="10" cols="74" class="required"></textarea>
+						<textarea id="continueation-notes" name="continuation-notes" rows="10" cols="74" class=""></textarea>
 						<span id="examination-lbl" class="field-error" style="display: none"></span>
 					</p>
 				</div>
 			</fieldset>
+		</section>
+		<section>
+			<span class="title">Clinical Notes</span>
 			${ ui.includeFragment("patientdashboardapp", "patientDashboard") }
 		</section>
 
