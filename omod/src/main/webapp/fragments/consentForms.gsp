@@ -705,3 +705,80 @@
                 </button>
             </fieldset>
 </section>
+<section>
+	<span class="title">Nursing Care</span>
+	<fieldset class="no-confirmation">
+		<legend>Nursing Care Index</legend>
+		<div class="col10"><center><strong>Nursing Care Index</strong></center></div>
+		<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+			<div class="col5">
+				<label for="degree-of-relation">Patient Name:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="degree-of-relation" name="degree-of-relation" />
+			</div>
+			<div class="col5">
+				<label for="degree-of-relation">Unit Number:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+			</div>
+		</div>
+		<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+			<div class="col2">
+				<label for="degree-of-relation">Age:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="degree-of-relation" name="degree-of-relation" />
+			</div>
+			<div class="col3">
+				<label for="degree-of-relation">Sex:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="degree-of-relation" name="degree-of-relation" />
+			</div>
+			<div class="col5">
+				<label for="degree-of-relation">DOA:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+			</div>
+		</div>
+		<div class="col10" style="padding: 0 4px; padding-bottom:20px;">
+			<p class="input-position-class">
+				<label>Diagnosis:</label>
+				<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="65"></textarea>
+			</p>
+			<p class="input-position-class">
+				<label>Operation:</label>
+				<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+			</p>
+		</div>
+		<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+			<div class="col5">
+				<label for="degree-of-relation">Doctors Name:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="degree-of-relation" name="degree-of-relation" />
+			</div>
+			<div class="col5">
+				<label for="degree-of-relation">Primary Nurse:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+			</div>
+		</div>
+		<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+			<div style="display: inline-block; border-bottom: 1px solid black;" class="col10"></span>
+			</div>
+		</div>
+		<div class="col10"><strong>Patient Notes:</strong></div>
+		<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+			<div class="col5">
+				<label for="degree-of-relation">Date:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="degree-of-relation" name="degree-of-relation" />
+			</div>
+			<div class="col5">
+				<label for="degree-of-relation">Time:<span style="color: #f00 !important;"></span></label>
+				<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+			</div>
+		</div>
+		<div class="col10" style="padding: 0 4px; padding-bottom:20px;">
+			<p class="input-position-class">
+				<label>Notes:</label>
+				<textarea data-bind="" id="instructions" name="instructions" rows="3" cols="74"></textarea>
+			</p>
+		</div>
+		<div class="col10" style="padding: 0 4px; padding-bottom:20px;">
+			<button id="opdRecordsPrintButton1" class="confirm" style="float: right; margin: 10px;">
+				Save
+			</button>
+		</div>
+	</fieldset>
+</section>
