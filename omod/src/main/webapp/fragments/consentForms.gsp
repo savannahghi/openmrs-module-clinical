@@ -562,7 +562,7 @@
             </fieldset>
             <fieldset class="no-confirmation">
 				<legend>Consent to Radiotherapy 1</legend>
-                <div class="col10"><center><strong>Patient Consent to Chemotherapy</strong></center></div>
+                <div class="col10"><center><strong>Patient Consent to Radiotherapy</strong></center></div>
                 <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col5">
 						<label for="degree-of-relation">Print Name:<span style="color: #f00 !important;"></span></label>
@@ -628,5 +628,80 @@
 					<div style="display: inline-block; border-bottom: 1px solid black;" class="col10"></span>
 					</div>
 				</div>
+            </fieldset>
+            <fieldset class="no-confirmation">
+				<legend>Consent to Radiotherapy 2</legend>
+                <div class="col10"><center><strong>Patient Consent to Radiotherapy</strong></center></div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+                    <p><strong>PROCEDURE: </strong></p>
+                    The nature and purpose of the treatment/procedure/investigation, the appropriate available options have been explained to me, and I have been informed of and understand the risks benefits and possible complications of my treatment/procedures
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+                </div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+                    <p>I CONSENT to the performance of the above named treatment/procedure/investigation and of such addition neccessary if to my best interest/
+                    in the best interest of the patient or desirable in the judgement of the doctor. </p>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+                </div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+                    <p><strong>ANAESTHESIA SEDATION: </strong></p>
+                    <p>I CONSENT to the performance of the above-named treatment/procedure/investigation and of such additional neccessary 
+                    if to my best interest/ in the best interest of the patient or desirable in the judgment of the doctor.</p>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col2 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+                </div>
+                <button id="opdRecordsPrintButton4" class="task" style="float: right; margin: 10px;">
+                    <i class="icon-print small"></i>
+                    Print
+                </button>
             </fieldset>
 </section>
