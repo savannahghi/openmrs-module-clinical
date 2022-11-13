@@ -2,7 +2,7 @@
 			<span class="title">Consent Forms</span>
 			<fieldset class="no-confirmation">
 				<legend>Consent to Chemotherapy</legend>
-				<div class="col10"><center><strong>Patient Consent to Chemotherapy</strong></center></div>
+				<div class="col10"><center><strong>Patient Consent to Chemotherapy 1</strong></center></div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col5">
 						<label for="degree-of-relation">Patient Name:<span style="color: #f00 !important;"></span></label>
@@ -559,5 +559,74 @@
                         Print
                     </button>
                 </div>
+            </fieldset>
+            <fieldset class="no-confirmation">
+				<legend>Consent to Radiotherapy 1</legend>
+                <div class="col10"><center><strong>Patient Consent to Chemotherapy</strong></center></div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col5">
+						<label for="degree-of-relation">Print Name:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="degree-of-relation">Hospital Number:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col2">
+						<label for="degree-of-relation">Age:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+                    <div class="col3">
+						<label for="degree-of-relation">Sex:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="degree-of-relation">Ward/Dept/Clinic:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col5">
+						<label for="degree-of-relation">Name of Surgeon/Medical Practitioner:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="degree-of-relation">Name of Anaesthetist:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col5">
+						<label for="degree-of-relation">Next of Kin:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="degree-of-relation">Relationship:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<strong>This section is to be completed by the MEDICAL PRACTITIONER responsible for care </strong>
+					<p>(TYPE OF INVESTIGATION/PROCEDURE OR TREATMENT)</p>
+                    <div style="display: inline-block; border-bottom: 1px solid black; margin-bottom:30px; margin-top:20px;" class="col10"></span>
+					</div>
+					<div style="display: inline-block; border-bottom: 1px solid black;" class="col10"></span>
+					</div>
+				</div>
+                 <div class="col10" style="padding: 0 4px; padding-bottom:20px;">
+                    <p><strong>PATIENT </strong></p>
+					<p>This section is to be completed by the patient or if the patient is below age of consent or unfit to give own consent to be completed by next of kin or guardian </p>
+                    <p><strong>Please read the form carefully and confirm that all the information is correct and that you understand it. If you want more information, your doctor will provide. </strong></p>
+                </div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<strong>Declaration: </strong>
+					<p>The doctor has explained/I understand that I have the following conditions/diagnosis</p>
+                    <div style="display: inline-block; border-bottom: 1px solid black; margin-bottom:30px; margin-top:20px;" class="col10"></span>
+					</div>
+					<div style="display: inline-block; border-bottom: 1px solid black;" class="col10"></span>
+					</div>
+				</div>
             </fieldset>
 </section>
