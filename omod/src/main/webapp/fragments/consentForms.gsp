@@ -781,4 +781,59 @@
 			</button>
 		</div>
 	</fieldset>
+	<fieldset class="no-confirmation">
+		<legend>02/02/2022</legend>
+		<div class="col8" style="padding: 0 4px; padding-bottom:20px;">
+			<button id="opdRecordsPrintButton1" class="task" style="float: right; margin: 10px;">
+				New Notes
+			</button>
+		</div>
+		<div class="col8"><center><strong>Nursing Care Notes</strong></center></div>
+		<div class="col5">
+			<span><strong>Patient Name: </strong>John Doe</span>
+		</div>
+		<div class="col5">
+			<span><strong>DOA: </strong>20/01/2022</span>
+		</div>
+		<div class="col5">
+			<span><strong>Unit Name: </strong>Chemotherapy</span>
+		</div>
+		<div class="col5">
+			<span><strong>Diagnosis: </strong>Prostrate Cancer</span>
+		</div>
+		<div class="col5">
+			<span><strong>Age: </strong>35</span>
+		</div>
+		<div class="col5">
+			<span><strong>Operation: </strong>Biopsy</span>
+		</div>
+		<div class="col5">
+			<span><strong>Sex: </strong>Male</span>
+		</div>
+		<div class="col10" style="margin-top:20px;">
+			<span><strong>Doctor's Name: </strong>Dr Jane Doe</span>
+		</div>
+		<div class="col10" style="padding-bottom:20px;margin-bottom:20px;">
+			<span><strong>Nurse's Name: </strong>Janet Dooe</span>
+		</div>
+		<div class="col5">
+			<span><strong>Date: </strong>02/01/2022</span>
+		</div>
+		<div class="col5">
+			<span><strong>Time: </strong>14:00</span>
+		</div>
+		<div class="col8" style="padding-bottom:20px;">
+			<p class="input-position-class">
+				<label>Notes:</label>
+				<textarea data-bind="" id="instructions" name="instructions" rows="4" cols="74">
+				 Lorem Ipsum Ipsum Lorem Ipsum Lorem Ipsum Ipsum Lorem Ipsum Lorem Ipsum Ipsum Lorem Ipsum 
+				</textarea>
+			</p>
+		</div>
+		<div class="col8" style="padding: 0 4px; padding-bottom:20px;">
+			<button id="opdRecordsPrintButton1" class="confirm" style="float: right; margin: 10px;">
+				Edit
+			</button>
+		</div>
+	</fieldset>
 </section>
