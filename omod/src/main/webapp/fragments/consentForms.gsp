@@ -131,13 +131,13 @@
 					<strong>I understand there are shortterm and longterm SIDE EFFECTS from chemotherapy. The Doctor has talked to me about the following that one might expect:</strong>
 				</div>
 				<div class="col12">
-					<div class="col3 radios">
+					<div class="col4 radios">
 						<p>
 							<input name="radiogroup1" type="radio">
 							<label>Nausea</label>
 						</p>
 					</div>
-					<div class="col3 radios">
+					<div class="col4 radios">
 						<p>
 							<input name="radiogroup1" type="radio">
 							<label>Outpatient</label>
@@ -263,7 +263,7 @@
 					</div>
 				</div>
                 <div>
-                <button id="opdRecordsPrintButton" class="task" style="float: right; margin: 10px;">
+                <button id="opdRecordsPrintButton1" class="task" style="float: right; margin: 10px;">
                     <i class="icon-print small"></i>
                     Print
                 </button>
@@ -272,4 +272,292 @@
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
-		</section>
+            <fieldset class="no-confirmation">
+				<legend>Consent to Chemotherapy 2</legend>
+				<div class="col10"><center><strong>Patient Consent to Chemotherapy</strong></center></div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col7">
+						<label for="degree-of-relation">I understand that there may be other unlisted side effects:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col7">
+						<label for="degree-of-relation">I understand that I may stop treatment at any time:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col7">
+						<label for="degree-of-relation">I have been advised not to fall pregnant while on chemotherapy and for a specified period afterwards<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col7">
+						<label for="degree-of-relation">The costs of treatment have been explained to me<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col7">
+						<label for="degree-of-relation">I have had an opportunity to ask questions<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col7">
+						<label for="degree-of-relation">I have been given contact details incase of emergency<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>No</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>Yes</label>
+						</p>
+					</div>
+                    <div class="col1 radios">
+						<p>
+							<input name="radiogroup1" type="radio">
+							<label>N/A</label>
+						</p>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div style="display: inline-block; border-bottom: 1px solid black;" class="col10"></span>
+					</div>
+				</div>
+                <div class="col10"><strong>By signing this document I agree to receive chemotherapy as suggested.</strong></div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col5">
+						<label for="degree-of-relation">Patient Signature:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="degree-of-relation">Date:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col5">
+						<label for="degree-of-relation">Doctors Signature:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+					</div>
+					<div class="col5">
+						<label for="degree-of-relation">Date:<span style="color: #f00 !important;"></span></label>
+						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+					</div>
+				</div>
+                <div class="col10"><strong>COMPLETE THIS SECTION IF CONSENT IS GIVEN BY A PERSON ON BEHALF OF THE PATIENT.</strong></div>
+                <div class="col12" style="padding: 0 4px;">
+					<div class="col1">
+						<label for="degree-of-relation">Print Name:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col10">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col2">
+						<label for="degree-of-relation">Signature:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col3">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+                    <div class="col1">
+						<label for="degree-of-relation">Date:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col4">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col2">
+						<label for="degree-of-relation">Relationship to Patient:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col3">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+				</div>
+                 <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+                    <div class="col3">
+						<label for="degree-of-relation">Means by which consent was given:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col2">
+						<div class="col1 radios">
+                            <p>
+                                <input name="radiogroup1" type="radio">
+                                <label>Personally</label>
+                            </p>
+                        </div>
+                        
+					</div>
+                    <div class="col2">
+						<div class="col1 radios">
+                            <p>
+                                <input name="radiogroup1" type="radio">
+                                <label>Telephonically</label>
+                            </p>
+                        </div>
+                        
+					</div>
+				</div>
+                <div class="col10"><strong>NAMES AND SIGNATURES OF WITNESS OR GUARDIANS TO THE PATIENT WITH SIGNATURE ON THIS DOCUMENT</strong></div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col5">
+						<label for="degree-of-relation"><strong>WITNESS 1:</strong><span style="color: #f00 !important;"></span></label>
+					</div>
+                    <div class="col5">
+						<label for="degree-of-relation"><strong>WITNESS 2:</strong><span style="color: #f00 !important;"></span></label>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col2">
+						<label for="degree-of-relation">Name:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col3">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+                    <div class="col1">
+						<label for="degree-of-relation">Name:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col4">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col2">
+						<label for="degree-of-relation">Signature:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col3">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+                    <div class="col1">
+						<label for="degree-of-relation">Signature:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col4">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+				</div>
+                <div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+					<div class="col2">
+						<label for="degree-of-relation">Date:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col3">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+                    <div class="col1">
+						<label for="degree-of-relation">Date:<span style="color: #f00 !important;"></span></label>
+					</div>
+					<div class="col4">
+						<div style="display: inline-block; border-bottom: 1px solid black; margin-top:20px;" class="col10"></span>
+					    </div>
+					</div>
+				</div>
+                <div>
+                    <button id="opdRecordsPrintButton2" class="task" style="float: right; margin: 10px;">
+                        <i class="icon-print small"></i>
+                        Print
+                    </button>
+                </div>
+            </fieldset>
+</section>
