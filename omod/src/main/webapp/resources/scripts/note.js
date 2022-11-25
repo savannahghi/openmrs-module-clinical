@@ -21,6 +21,7 @@ function Note(noteObj) {
 	self.illnessHistory = noteObj.illnessHistory;
 	self.physicalExamination = noteObj.physicalExamination;
 	self.otherInstructions = noteObj.otherInstructions;
+	self.familyHistoryAnswer = noteObj.familyHistoryAnswer;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
@@ -227,6 +228,7 @@ function Outcome(outcomeObj) {
 		return true;
 	}
 }
+
 
 function Referral(referralObj) {
 	this.id = referralObj.id;

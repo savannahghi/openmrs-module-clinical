@@ -89,10 +89,17 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Family History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col12">
 						<label for="family-members-with-cancer">Any family members with cancer?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="family-members-with-cancer" name="family-members-with-cancer" />
+						<% familyHistoryAnswers.each { answer -> %>
+							<div class="radios col3">
+								<p>
+									<input data-bind="checked: familyHistoryAnswer" value="${answer.answerConcept.id}" name="familyHistoryAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</p>
+							</div>
+						 <% } %>
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">

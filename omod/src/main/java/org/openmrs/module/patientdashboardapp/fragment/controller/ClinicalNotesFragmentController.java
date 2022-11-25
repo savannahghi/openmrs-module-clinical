@@ -50,6 +50,11 @@ public class ClinicalNotesFragmentController {
 		if (config.containsKey("opdLogId") && config.get("opdLogId") != null) {
 			opdLogId = Integer.parseInt(config.get("opdLogId").toString());
 		}
+
+        Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
+        Collection<ConceptAnswer> familyHistoryAnswers = conceptFamilyHistory.getAnswers();
+
+        model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));
 		model.addAttribute("internalReferralSources", SimpleObject.fromCollection(Referral.getInternalReferralOptions(), ui, "label", "id"));

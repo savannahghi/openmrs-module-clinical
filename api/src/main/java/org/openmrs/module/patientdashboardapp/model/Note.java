@@ -116,6 +116,7 @@ public class Note {
 	private String referralComments;
     private String specify;
 	private String otherInstructions;
+	private String familyHistoryAnswer;
 	private String physicalExamination;
 
 	public String getOnSetDate() {
@@ -274,6 +275,15 @@ public class Note {
 		this.otherInstructions = otherInstructions;
 	}
 
+	public String getFamilyHistoryAnswer() {
+		return familyHistoryAnswer;
+	}
+
+	public void setFamilyHistoryAnswer(String familyHistoryAnswer) {
+		this.familyHistoryAnswer = familyHistoryAnswer;
+	}
+
+
 	public String getPhysicalExamination() {
 		return physicalExamination;
 	}
@@ -334,6 +344,10 @@ public class Note {
 		
 		if (StringUtils.isNotBlank(this.otherInstructions)) {
 			addOtherInstructions(encounter, obsGroup);
+		}
+
+		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {
+			addFamilyHistory(encounter, obsGroup);
 		}
 
 		if (StringUtils.isNotBlank(this.facility)) {
@@ -440,6 +454,25 @@ public class Note {
 		obsOtherInstructions.setDateCreated(encounter.getDateCreated());
 		obsOtherInstructions.setEncounter(encounter);
 		encounter.addObs(obsOtherInstructions);
+	}
+
+	private void addFamilyHistory(Encounter encounter, Obs obsGroup) {
+		Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
+		if (conceptFamilyHistory == null) {
+			throw new NullPointerException("Any family members with cancer concept is not defined");
+		}
+		Obs obsFamilyHistory = new Obs();
+		obsFamilyHistory.setObsGroup(obsGroup);
+		obsFamilyHistory.setConcept(conceptFamilyHistory);
+		Concept answerConcept = Context.getConceptService().getConcept(this.familyHistoryAnswer);
+		if (answerConcept == null) {
+			throw new NullPointerException("Error family history concept for  "+this.familyHistoryAnswer+" was not found");
+		}
+		obsFamilyHistory.setValueCoded(answerConcept);
+		obsFamilyHistory.setCreator(encounter.getCreator());
+		obsFamilyHistory.setDateCreated(encounter.getDateCreated());
+		obsFamilyHistory.setEncounter(encounter);
+		encounter.addObs(obsFamilyHistory);
 	}
 
 

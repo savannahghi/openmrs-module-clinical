@@ -513,7 +513,7 @@
 						note: ko.toJSON(note, ["label", "id", "admitted","provisional","onSetDate",
 							"diagnoses", "illnessHistory", "referralReasons", "externalReferralComments", "physicalExamination",
 							"inpatientWarads", "investigations", "opdId",
-							"opdLogId", "otherInstructions", "patientId",
+							"opdLogId", "otherInstructions", "familyHistoryAnswer", "patientId",
 							"procedures", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option",
 							"drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
