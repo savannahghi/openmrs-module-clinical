@@ -22,6 +22,7 @@ function Note(noteObj) {
 	self.physicalExamination = noteObj.physicalExamination;
 	self.otherInstructions = noteObj.otherInstructions;
 	self.familyHistoryAnswer = noteObj.familyHistoryAnswer;
+	self.lastLmp = noteObj.lastLmp;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

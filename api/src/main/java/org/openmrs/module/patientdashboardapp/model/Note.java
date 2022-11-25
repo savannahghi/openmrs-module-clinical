@@ -117,6 +117,7 @@ public class Note {
     private String specify;
 	private String otherInstructions;
 	private String familyHistoryAnswer;
+	private String lastLmp;
 	private String physicalExamination;
 
 	public String getOnSetDate() {
@@ -283,6 +284,13 @@ public class Note {
 		this.familyHistoryAnswer = familyHistoryAnswer;
 	}
 
+	public String getLastLmp() {
+		return lastLmp;
+	}
+
+	public void setLastLmp(String lastLmp) {
+		this.lastLmp = lastLmp;
+	}
 
 	public String getPhysicalExamination() {
 		return physicalExamination;
@@ -348,6 +356,10 @@ public class Note {
 
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {
 			addFamilyHistory(encounter, obsGroup);
+		}
+
+		if (StringUtils.isNotBlank(this.lastLmp)) {
+			addFemaleHistory(encounter, obsGroup);
 		}
 
 		if (StringUtils.isNotBlank(this.facility)) {
@@ -475,7 +487,24 @@ public class Note {
 		encounter.addObs(obsFamilyHistory);
 	}
 
-
+	private void addFemaleHistory(Encounter encounter, Obs obsGroup) {
+		Concept conceptLastMenstrualPeriod= Context.getConceptService().getConceptByUuid("1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptLastMenstrualPeriod == null) {
+			throw new NullPointerException("Any Last Menstrual Period is not defined");
+		}
+		Obs obsLmp = new Obs();
+		obsLmp.setObsGroup(obsGroup);
+		obsLmp.setConcept(conceptLastMenstrualPeriod);
+		try {
+			obsLmp.setValueDate(Utils.getDateInddyyyymmddFromStringObject(this.lastLmp));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		obsLmp.setCreator(encounter.getCreator());
+		obsLmp.setDateCreated(encounter.getDateCreated());
+		obsLmp.setEncounter(encounter);
+		encounter.addObs(obsLmp);
+	}
 
 	public void addPhysicalExamination(Encounter encounter, Obs obsGroup)
 	{

@@ -94,10 +94,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						padding-left: 5px;"></span></label>
 						<% familyHistoryAnswers.each { answer -> %>
 							<div class="radios col3">
-								<p>
+								<label>
 									<input data-bind="checked: familyHistoryAnswer" value="${answer.answerConcept.id}" name="familyHistoryAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
-								</p>
+								</label>
 							</div>
 						 <% } %>
 					</div>
@@ -128,10 +128,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Female History</legend>
 				<div style="padding: 0 4px; margin-bottom:60px">
-					<div class="col6">
+					<div class="col6 inner-date">
 						<label for="last-lmp">Last LMP<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="last-lmp" name="last-lmp" placeholder="Last LMP" />
+						<input type="date" data-bind="value: \$root.lastLmp" id="last-lmp" name="last-lmp" />
 					</div>
 					<div class="col5">
 						<label for="parity">Parity<span style="color: #f00 !important;
