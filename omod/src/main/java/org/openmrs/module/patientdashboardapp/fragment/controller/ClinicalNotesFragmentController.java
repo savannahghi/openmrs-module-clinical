@@ -58,6 +58,7 @@ public class ClinicalNotesFragmentController {
 
         model.addAttribute("familyMemberAnswers", familyMemberAnswers);
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
+        model.addAttribute("cancerTypes", this.getDiagnosis("cancer", ui));
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));
 		model.addAttribute("internalReferralSources", SimpleObject.fromCollection(Referral.getInternalReferralOptions(), ui, "label", "id"));

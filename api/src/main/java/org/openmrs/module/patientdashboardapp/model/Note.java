@@ -60,6 +60,8 @@ public class Note {
 	private static Set<Integer> collectionOfLabConceptIds = new HashSet<Integer>();
 	private static Set<Integer> collectionOfRadiologyConceptIds = new HashSet<Integer>();
 
+	private static final String YES = "1065";
+
 	static {
 		List<Lab> labs = Context.getService(LabService.class).getAllLab();
 		for (Lab lab : labs) {
@@ -119,6 +121,9 @@ public class Note {
 	private String familyHistoryAnswer;
 	private String lastLmp;
 	private String parity;
+	private String relationshipToPatient;
+	private String ageAtDiagnosis;
+	private String cancerType;
 	private String physicalExamination;
 
 	public String getOnSetDate() {
@@ -283,6 +288,27 @@ public class Note {
 
 	public void setFamilyHistoryAnswer(String familyHistoryAnswer) {
 		this.familyHistoryAnswer = familyHistoryAnswer;
+	}
+	public String getRelationshipToPatient() {
+		return relationshipToPatient;
+	}
+
+	public void setRelationshipToPatient(String relationshipToPatient) {
+		this.relationshipToPatient = relationshipToPatient;
+	}
+	public String getAgeAtDiagnosis() {
+		return ageAtDiagnosis;
+	}
+
+	public void setAgeAtDiagnosis(String ageAtDiagnosis) {
+		this.ageAtDiagnosis = ageAtDiagnosis;
+	}
+	public String getCancerType() {
+		return cancerType;
+	}
+
+	public void setcCancerType(String cancerType) {
+		this.cancerType = cancerType;
 	}
 
 	public String getLastLmp() {
@@ -481,6 +507,16 @@ public class Note {
 			throw new NullPointerException("Any family members with cancer concept is not defined");
 		}
 		addValueCoded(encounter, obsGroup, conceptFamilyHistory, this.familyHistoryAnswer);
+		if(this.familyHistoryAnswer.equals(YES)){
+			Concept conceptDetailsFamilyCancer = Context.getConceptService().getConceptByUuid("d20fe393-88ca-4a71-b530-e495cba41fa0");
+			if (conceptDetailsFamilyCancer == null) {
+				throw new NullPointerException("Details of Family Members With Cancer concept is not defined");
+			}
+			//very confuscious
+			/*addValueCoded(encounter, obsGroup, conceptDetailsFamilyCancer, this.relationshipToPatient);
+			addValueNumeric(encounter, obsGroup, conceptDetailsFamilyCancer, this.ageAtDiagnosis);
+			addValueCoded(encounter, obsGroup, conceptDetailsFamilyCancer, this.cancerType);*/
+		}
 	}
 
 	private void addFemaleHistory(Encounter encounter, Obs obsGroup) {

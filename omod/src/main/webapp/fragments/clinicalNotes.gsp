@@ -107,7 +107,8 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<label for="degree-of-relation">Degree of relation (List all)<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<div class="input-position-class">
-                            <select id="degree-of-relation" name="degree-of-relation">
+                            <select id="degree-of-relation" name="degree-of-relation" autocomplete="on" data-bind="value: \$root.relationshipToPatient">
+								<option value="">-- Select Relation --</option> 
 								<% familyMemberAnswers.each { answer -> %>
 									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
 								<% } %>
@@ -117,14 +118,21 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col5">
 						<label for="age-of-diagnosis">Age at Diagnosis<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.ageAtDiagnosis" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col11">
 						<label for="cancer-type">Cancer Type<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="cancer-type" name="cancer-type" placeholder="Cancer Type" />
+						<div class="input-position-class">
+                            <select id="cancer-type" name="cancer-type" autocomplete="on" data-bind="value: \$root.cancerType">
+								<option value="">-- Select Cancer Type --</option> 
+								<% cancerTypes.each { answer -> %>
+									<option value="${answer.id}">${answer.name}</option>
+								<% } %>
+                            </select>
+                        </div>
 					</div>
 				</div>
 				<p>
