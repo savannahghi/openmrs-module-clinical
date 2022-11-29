@@ -118,6 +118,7 @@ public class Note {
 	private String otherInstructions;
 	private String familyHistoryAnswer;
 	private String lastLmp;
+	private String parity;
 	private String physicalExamination;
 
 	public String getOnSetDate() {
@@ -292,6 +293,14 @@ public class Note {
 		this.lastLmp = lastLmp;
 	}
 
+	public String getParity() {
+		return parity;
+	}
+
+	public void setParity(String parity) {
+		this.parity = parity;
+	}
+
 	public String getPhysicalExamination() {
 		return physicalExamination;
 	}
@@ -357,10 +366,8 @@ public class Note {
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {
 			addFamilyHistory(encounter, obsGroup);
 		}
-
-		if (StringUtils.isNotBlank(this.lastLmp)) {
-			addFemaleHistory(encounter, obsGroup);
-		}
+		
+		addFemaleHistory(encounter, obsGroup);
 
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
@@ -490,20 +497,58 @@ public class Note {
 	private void addFemaleHistory(Encounter encounter, Obs obsGroup) {
 		Concept conceptLastMenstrualPeriod= Context.getConceptService().getConceptByUuid("1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptLastMenstrualPeriod == null) {
-			throw new NullPointerException("Any Last Menstrual Period is not defined");
+			throw new NullPointerException("Any Last Menstrual Period concept is not defined");
 		}
-		Obs obsLmp = new Obs();
-		obsLmp.setObsGroup(obsGroup);
-		obsLmp.setConcept(conceptLastMenstrualPeriod);
+		if (StringUtils.isNotBlank(this.lastLmp)) {
+			this.addValueDate(encounter, obsGroup, conceptLastMenstrualPeriod, this.lastLmp);
+		}
+
+		Concept conceptParity= Context.getConceptService().getConceptByUuid("1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptParity == null) {
+			throw new NullPointerException("Parity concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.parity)) {
+			this.addValueNumeric(encounter, obsGroup, conceptParity, this.parity);
+		}
+	}
+
+	private void addValueText(Encounter encounter, Obs obsGroup, Concept concept, String value)
+	{
+		Obs obs = new Obs();
+		obs.setObsGroup(obsGroup);
+		obs.setConcept(concept);
+		obs.setValueText(value);
+		obs.setCreator(encounter.getCreator());
+		obs.setDateCreated(encounter.getDateCreated());
+		obs.setEncounter(encounter);
+		encounter.addObs(obs);
+	}
+
+	private void addValueNumeric(Encounter encounter, Obs obsGroup, Concept concept, String value)
+	{
+		Obs obs = new Obs();
+		obs.setObsGroup(obsGroup);
+		obs.setConcept(concept);
+		obs.setValueNumeric(Double.parseDouble(value));
+		obs.setCreator(encounter.getCreator());
+		obs.setDateCreated(encounter.getDateCreated());
+		obs.setEncounter(encounter);
+		encounter.addObs(obs);
+	}
+
+	private void addValueDate(Encounter encounter, Obs obsGroup, Concept concept, String date){
+		Obs obs = new Obs();
+		obs.setObsGroup(obsGroup);
+		obs.setConcept(concept);
 		try {
-			obsLmp.setValueDate(Utils.getDateInddyyyymmddFromStringObject(this.lastLmp));
+			obs.setValueDate(Utils.getDateInddyyyymmddFromStringObject(date));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		obsLmp.setCreator(encounter.getCreator());
-		obsLmp.setDateCreated(encounter.getDateCreated());
-		obsLmp.setEncounter(encounter);
-		encounter.addObs(obsLmp);
+		obs.setCreator(encounter.getCreator());
+		obs.setDateCreated(encounter.getDateCreated());
+		obs.setEncounter(encounter);
+		encounter.addObs(obs);
 	}
 
 	public void addPhysicalExamination(Encounter encounter, Obs obsGroup)

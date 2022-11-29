@@ -136,7 +136,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col5">
 						<label for="parity">Parity<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="parity" name="parity" placeholder="Parity" />
+						<input type="text" data-bind="value: \$root.parity" id="parity" name="parity" />
 					</div>
 				</div>
 				<div>&nbsp;</div> 

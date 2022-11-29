@@ -23,6 +23,7 @@ function Note(noteObj) {
 	self.otherInstructions = noteObj.otherInstructions;
 	self.familyHistoryAnswer = noteObj.familyHistoryAnswer;
 	self.lastLmp = noteObj.lastLmp;
+	self.parity = noteObj.parity;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
