@@ -106,7 +106,13 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col6">
 						<label for="degree-of-relation">Degree of relation (List all)<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<div class="input-position-class">
+                            <select id="degree-of-relation" name="degree-of-relation">
+								<% familyMemberAnswers.each { answer -> %>
+									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+								<% } %>
+                            </select>
+                        </div>
 					</div>
 					<div class="col5">
 						<label for="age-of-diagnosis">Age at Diagnosis<span style="color: #f00 !important;

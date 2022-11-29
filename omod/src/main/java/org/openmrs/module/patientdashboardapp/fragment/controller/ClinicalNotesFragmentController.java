@@ -53,7 +53,10 @@ public class ClinicalNotesFragmentController {
 
         Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
         Collection<ConceptAnswer> familyHistoryAnswers = conceptFamilyHistory.getAnswers();
+        Concept conceptFamilyMember = Context.getConceptService().getConceptByUuid("1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> familyMemberAnswers = conceptFamilyMember.getAnswers();
 
+        model.addAttribute("familyMemberAnswers", familyMemberAnswers);
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));
