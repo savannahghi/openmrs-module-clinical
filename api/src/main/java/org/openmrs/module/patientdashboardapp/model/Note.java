@@ -480,18 +480,7 @@ public class Note {
 		if (conceptFamilyHistory == null) {
 			throw new NullPointerException("Any family members with cancer concept is not defined");
 		}
-		Obs obsFamilyHistory = new Obs();
-		obsFamilyHistory.setObsGroup(obsGroup);
-		obsFamilyHistory.setConcept(conceptFamilyHistory);
-		Concept answerConcept = Context.getConceptService().getConcept(this.familyHistoryAnswer);
-		if (answerConcept == null) {
-			throw new NullPointerException("Error family history concept for  "+this.familyHistoryAnswer+" was not found");
-		}
-		obsFamilyHistory.setValueCoded(answerConcept);
-		obsFamilyHistory.setCreator(encounter.getCreator());
-		obsFamilyHistory.setDateCreated(encounter.getDateCreated());
-		obsFamilyHistory.setEncounter(encounter);
-		encounter.addObs(obsFamilyHistory);
+		addValueCoded(encounter, obsGroup, conceptFamilyHistory, this.familyHistoryAnswer);
 	}
 
 	private void addFemaleHistory(Encounter encounter, Obs obsGroup) {
@@ -510,6 +499,22 @@ public class Note {
 		if (StringUtils.isNotBlank(this.parity)) {
 			this.addValueNumeric(encounter, obsGroup, conceptParity, this.parity);
 		}
+	}
+
+	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
+	{
+		Obs obs = new Obs();
+		obs.setObsGroup(obsGroup);
+		obs.setConcept(concept);
+		Concept answerConcept = Context.getConceptService().getConcept(value);
+		if (answerConcept == null) {
+			throw new NullPointerException("Error concept for  id: "+value+" was not found");
+		}
+		obs.setValueCoded(answerConcept);
+		obs.setCreator(encounter.getCreator());
+		obs.setDateCreated(encounter.getDateCreated());
+		obs.setEncounter(encounter);
+		encounter.addObs(obs);
 	}
 
 	private void addValueText(Encounter encounter, Obs obsGroup, Concept concept, String value)
