@@ -29,6 +29,7 @@ function Note(noteObj) {
 	self.parity = noteObj.parity;
 	self.currentlyBreastFeedingAnswer = noteObj.currentlyBreastFeedingAnswer;
 	self.currentContraceptiveUseAnswer = noteObj.currentContraceptiveUseAnswer;
+	self.cervicalCancerScreeningAnswer = noteObj.cervicalCancerScreeningAnswer;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

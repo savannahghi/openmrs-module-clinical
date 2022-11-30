@@ -180,7 +180,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% currentContraceptiveUseAnswers.each { answer -> %>
 							<div class="radios col3">
 								<label>
-									<input data-bind="checked: currentContraceptiveUseAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
+									<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
@@ -189,20 +189,27 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<label for="screened-before-answer-div" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
-					<div class="col6">
+					<div class="col12">
 						<label for="screened-before-answer">Cervical Cancer:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-before-answer" name="screened-before-answer" />
+						<% cervicalCancerScreeningAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="cervicalCancerScreeningAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
+					</div>
+					<div class="col6">
+						<label for="types-of-screening">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-of-screening" name="types-of-screening" />
 					</div>
 					<div class="col5 inner-date">
 						<label for="screened-date">Date<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<input type="date" id="screened-date" name="screened-date"/>
-					</div>
-					<div class="col11">
-						<label for="types-of-screening">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="types-of-screening" name="types-of-screening" />
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">

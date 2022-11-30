@@ -121,6 +121,7 @@ public class Note {
 	private String familyHistoryAnswer;
 	private String currentlyBreastFeedingAnswer;
 	private String currentContraceptiveUseAnswer;
+	private String cervicalCancerScreeningAnswer;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -305,6 +306,14 @@ public class Note {
 
 	public void setcurrentContraceptiveUseAnswer(String currentContraceptiveUseAnswer) {
 		this.currentContraceptiveUseAnswer= currentContraceptiveUseAnswer;
+	}
+
+	public String getCervicalCancerScreeningAnswer() {
+		return cervicalCancerScreeningAnswer;
+	}
+
+	public void setCervicalCancerScreeningAnswer(String cervicalCancerScreeningAnswer) {
+		this.cervicalCancerScreeningAnswer= cervicalCancerScreeningAnswer;
 	}
 
 	public String getRelationshipToPatient() {
@@ -570,6 +579,15 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.currentContraceptiveUseAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptCurrentlyContraceptiveUse, this.currentContraceptiveUseAnswer);
+		}
+
+		//cervical cancer screening status
+		Concept conceptCervicalCancerScreening= Context.getConceptService().getConceptByUuid("06398e78-0d3e-43d5-8017-f2fc3865e2e0");
+		if (conceptCervicalCancerScreening == null) {
+			throw new NullPointerException("Currently contraceptive use concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cervicalCancerScreeningAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptCervicalCancerScreening, this.cervicalCancerScreeningAnswer);
 		}
 	}
 
