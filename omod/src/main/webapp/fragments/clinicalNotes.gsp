@@ -218,20 +218,27 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col12">
 						<label for="female-screened-for-breastcancer-answer">Breast Cancer:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="female-screened-for-breast-cancer-answer" name="female-screened-for-breast-cancer-answer" />
+						<% breastCancerScreeningAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: breastCancerScreeningAnswer" value="${answer.answerConcept.id}" name="breastCancerScreeningAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
+					</div>
+					<div class="col6">
+						<label for="types-screened-for-breastcancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<input type="text" id="types-screened-for-breastcancer" name="types-screened-for-breastcancer" />
 					</div>
 					<div class="col5 inner-date">
 						<label for="date-screened-for-breastcancer">Date<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<input type="date" id="date-screened-for-breastcancer" name="date-screened-for-breastcancer"/>
-					</div>
-					<div class="col11">
-						<label for="types-screened-for-breastcancer">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="types-screened-for-breastcancer" name="types-screened-for-breastcancer" />
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">

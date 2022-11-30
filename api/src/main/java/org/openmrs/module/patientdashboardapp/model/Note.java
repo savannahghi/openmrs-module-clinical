@@ -124,6 +124,7 @@ public class Note {
 	private String cervicalCancerScreeningAnswer;
 	private String cervicalCancerScreeningType;
 	private String cervicalCancerScreeningDate;
+	private String breastCancerScreeningAnswer;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -317,6 +318,14 @@ public class Note {
 	public void setCervicalCancerScreeningAnswer(String cervicalCancerScreeningAnswer) {
 		this.cervicalCancerScreeningAnswer= cervicalCancerScreeningAnswer;
 	}
+	public String getBreastCancerScreeningAnswer() {
+		return breastCancerScreeningAnswer;
+	}
+
+	public void setBreastCancerScreeningAnswer(String breastCancerScreeningAnswer) {
+		this.breastCancerScreeningAnswer= breastCancerScreeningAnswer;
+	}
+	
 	public String getCervicalCancerScreeningType() {
 		return cervicalCancerScreeningType;
 	}
@@ -623,6 +632,15 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.cervicalCancerScreeningDate)) {
 			this.addValueDate(encounter, obsGroup, conceptCervicalCancerScreeningDate, this.cervicalCancerScreeningDate);
+		}
+
+		//breast cancer screening status
+		Concept conceptBreastCancerScreening= Context.getConceptService().getConceptByUuid("e277ff6a-c014-4ce2-8c64-16aa0af3376f");
+		if (conceptBreastCancerScreening == null) {
+			throw new NullPointerException("Breast cancer screening status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.breastCancerScreeningAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptBreastCancerScreening, this.breastCancerScreeningAnswer);
 		}
 	}
 
