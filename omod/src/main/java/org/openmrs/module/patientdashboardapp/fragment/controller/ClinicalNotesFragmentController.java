@@ -55,9 +55,12 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> familyHistoryAnswers = conceptFamilyHistory.getAnswers();
         Concept conceptFamilyMember = Context.getConceptService().getConceptByUuid("1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> familyMemberAnswers = conceptFamilyMember.getAnswers();
+        Concept conceptCurrentlyBreastFeeding = Context.getConceptService().getConceptByUuid("5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> currentlyBreastFeedingAnswers = conceptCurrentlyBreastFeeding.getAnswers();
 
-        model.addAttribute("familyMemberAnswers", familyMemberAnswers);
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
+        model.addAttribute("familyMemberAnswers", familyMemberAnswers);
+        model.addAttribute("currentlyBreastFeedingAnswers", currentlyBreastFeedingAnswers);
         model.addAttribute("cancerTypes", this.getDiagnosis("cancer", ui));
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));

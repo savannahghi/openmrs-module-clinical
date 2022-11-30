@@ -154,13 +154,20 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div>&nbsp;</div> 
-				<div style="padding: 0 4px; margin-bottom:40px">
-					<div class="col6">
+				<div class="col12" style="padding: 0 4px; margin-bottom:40px">
+					<div class="co12">
 						<label for="currently-breastfeeding">Are you currently breastfeeding?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 					</div>
-					<div class="col5">
-						<input type="text" id="currently-breastfeeding" name="currently-breastfeeding" />
+					<div class="col12">
+						<% currentlyBreastFeedingAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: currentlyBreastFeedingAnswer" value="${answer.answerConcept.id}" name="currentlyBreastFeedingAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
 					</div>
 				</div>
 				<div>&nbsp;</div> 

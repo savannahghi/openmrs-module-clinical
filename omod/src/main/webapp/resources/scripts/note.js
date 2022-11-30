@@ -27,6 +27,7 @@ function Note(noteObj) {
 	self.relationshipToPatient = noteObj.relationshipToPatient;
 	self.ageAtDiagnosis = noteObj.ageAtDiagnosis;
 	self.parity = noteObj.parity;
+	self.currentlyBreastFeedingAnswer = noteObj.currentlyBreastFeedingAnswer;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

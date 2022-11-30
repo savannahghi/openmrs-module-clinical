@@ -119,6 +119,7 @@ public class Note {
     private String specify;
 	private String otherInstructions;
 	private String familyHistoryAnswer;
+	private String currentlyBreastFeedingAnswer;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -288,6 +289,13 @@ public class Note {
 
 	public void setFamilyHistoryAnswer(String familyHistoryAnswer) {
 		this.familyHistoryAnswer = familyHistoryAnswer;
+	}
+	public String getCurrentlyBreastFeedingAnswer() {
+		return currentlyBreastFeedingAnswer;
+	}
+
+	public void setCurrentlyBreastFeedingAnswer(String currentlyBreastFeedingAnswer) {
+		this.currentlyBreastFeedingAnswer = currentlyBreastFeedingAnswer;
 	}
 	public String getRelationshipToPatient() {
 		return relationshipToPatient;
@@ -522,7 +530,7 @@ public class Note {
 	private void addFemaleHistory(Encounter encounter, Obs obsGroup) {
 		Concept conceptLastMenstrualPeriod= Context.getConceptService().getConceptByUuid("1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptLastMenstrualPeriod == null) {
-			throw new NullPointerException("Any Last Menstrual Period concept is not defined");
+			throw new NullPointerException("Last Menstrual Period concept is not defined");
 		}
 		if (StringUtils.isNotBlank(this.lastLmp)) {
 			this.addValueDate(encounter, obsGroup, conceptLastMenstrualPeriod, this.lastLmp);
@@ -534,6 +542,15 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.parity)) {
 			this.addValueNumeric(encounter, obsGroup, conceptParity, this.parity);
+		}
+
+		//currently breast feeding
+		Concept conceptCurrentlyBreastFeeding = Context.getConceptService().getConceptByUuid("5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptCurrentlyBreastFeeding == null) {
+			throw new NullPointerException("Currently breast feeding concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.currentlyBreastFeedingAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptCurrentlyBreastFeeding, this.currentlyBreastFeedingAnswer);
 		}
 	}
 
