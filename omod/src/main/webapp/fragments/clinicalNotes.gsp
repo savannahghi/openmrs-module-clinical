@@ -172,19 +172,20 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</div>
 				<div>&nbsp;</div> 
 				<div style="padding: 100 4px;margin-bottom:40px">
-					<div class="col6">
+					<div class="col12">
 						<label for="currently-on-contraceptives">Are you currently using contraceptives/hormonal replacement therapy?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 					</div>
-					<div class="col5">
-						<input type="text" id="currently-on-contraceptives" name="currently-on-contraceptives" />
+					<div class="col12">
+						<% currentContraceptiveUseAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: currentContraceptiveUseAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
 					</div>
-				</div>
-				<div>&nbsp;</div> 
-				<div class="col11" style="padding: 100 4px; padding-bottom:20px;">
-					<label for="using-contraceptive-answer">If yes, specify type:<span style="color: #f00 !important;
-							padding-left: 5px;"></span></label>
-					<input type="text" id="using-contraceptive-answer" name="using-contraceptive-answer" />
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<label for="screened-before-answer-div" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>

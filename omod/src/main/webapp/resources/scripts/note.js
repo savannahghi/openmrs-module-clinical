@@ -28,6 +28,7 @@ function Note(noteObj) {
 	self.ageAtDiagnosis = noteObj.ageAtDiagnosis;
 	self.parity = noteObj.parity;
 	self.currentlyBreastFeedingAnswer = noteObj.currentlyBreastFeedingAnswer;
+	self.currentContraceptiveUseAnswer = noteObj.currentContraceptiveUseAnswer;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

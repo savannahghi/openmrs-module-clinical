@@ -120,6 +120,7 @@ public class Note {
 	private String otherInstructions;
 	private String familyHistoryAnswer;
 	private String currentlyBreastFeedingAnswer;
+	private String currentContraceptiveUseAnswer;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -297,6 +298,15 @@ public class Note {
 	public void setCurrentlyBreastFeedingAnswer(String currentlyBreastFeedingAnswer) {
 		this.currentlyBreastFeedingAnswer = currentlyBreastFeedingAnswer;
 	}
+
+	public String getcurrentContraceptiveUseAnswer() {
+		return currentContraceptiveUseAnswer;
+	}
+
+	public void setcurrentContraceptiveUseAnswer(String currentContraceptiveUseAnswer) {
+		this.currentContraceptiveUseAnswer= currentContraceptiveUseAnswer;
+	}
+
 	public String getRelationshipToPatient() {
 		return relationshipToPatient;
 	}
@@ -551,6 +561,15 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.currentlyBreastFeedingAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptCurrentlyBreastFeeding, this.currentlyBreastFeedingAnswer);
+		}
+
+		//currently on contraceptives
+		Concept conceptCurrentlyContraceptiveUse = Context.getConceptService().getConceptByUuid("1386AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptCurrentlyContraceptiveUse == null) {
+			throw new NullPointerException("Currently contraceptive use concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.currentContraceptiveUseAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptCurrentlyContraceptiveUse, this.currentContraceptiveUseAnswer);
 		}
 	}
 
