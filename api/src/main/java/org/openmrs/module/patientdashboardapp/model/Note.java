@@ -123,6 +123,7 @@ public class Note {
 	private String currentContraceptiveUseAnswer;
 	private String cervicalCancerScreeningAnswer;
 	private String cervicalCancerScreeningType;
+	private String cervicalCancerScreeningDate;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -322,6 +323,14 @@ public class Note {
 
 	public void setCervicalCancerScreeningType(String cervicalCancerScreeningType) {
 		this.cervicalCancerScreeningType= cervicalCancerScreeningType;
+	}
+
+	public String getCervicalCancerScreeningDate() {
+		return cervicalCancerScreeningDate;
+	}
+
+	public void setCervicalCancerScreeningDate(String cervicalCancerScreeningDate) {
+		this.cervicalCancerScreeningDate= cervicalCancerScreeningDate;
 	}
 
 	public String getRelationshipToPatient() {
@@ -599,12 +608,21 @@ public class Note {
 		}
 
 		//cervical cancer screening type
-		Concept conceptCervicalCancerScreeningType= Context.getConceptService().getConceptByUuid("06398e78-0d3e-43d5-8017-f2fc3865e2e0");
+		Concept conceptCervicalCancerScreeningType= Context.getConceptService().getConceptByUuid("163589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptCervicalCancerScreeningType == null) {
 			throw new NullPointerException("Cervical cancer screening type concept is not defined");
 		}
 		if (StringUtils.isNotBlank(this.cervicalCancerScreeningType)) {
 			this.addValueCoded(encounter, obsGroup, conceptCervicalCancerScreeningType, this.cervicalCancerScreeningType);
+		}
+
+		//cervical cancer screening date
+		Concept conceptCervicalCancerScreeningDate= Context.getConceptService().getConceptByUuid("165429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptCervicalCancerScreeningDate == null) {
+			throw new NullPointerException("Cervical cancer screening date concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cervicalCancerScreeningDate)) {
+			this.addValueDate(encounter, obsGroup, conceptCervicalCancerScreeningDate, this.cervicalCancerScreeningDate);
 		}
 	}
 

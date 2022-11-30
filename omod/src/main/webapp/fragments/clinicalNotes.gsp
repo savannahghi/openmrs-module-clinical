@@ -204,7 +204,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col6">
 						<label for="types-of-screening">Types of Screening<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<select id="cancer-type" name="cancer-type" autocomplete="on" data-bind="value: \$root.cancerType">
+						<select id="type-of-cervical-cancer-screening" name="type-of-cervical-cancer-screening" autocomplete="on" data-bind="value: \$root.cervicalCancerScreeningType">
 							<option value="">-- Select Relation --</option> 
 							<% cervicalCancerScreeningTypesAnswers.each { answer -> %>
 								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
@@ -214,7 +214,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col5 inner-date">
 						<label for="screened-date">Date<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="date" id="screened-date" name="screened-date"/>
+						<input type="date" id="cervicalCancerScreeningDate" name="cervicalCancerScreeningDate" data-bind="value: \$root.cervicalCancerScreeningDate"/>
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
