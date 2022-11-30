@@ -122,6 +122,7 @@ public class Note {
 	private String currentlyBreastFeedingAnswer;
 	private String currentContraceptiveUseAnswer;
 	private String cervicalCancerScreeningAnswer;
+	private String cervicalCancerScreeningType;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -314,6 +315,13 @@ public class Note {
 
 	public void setCervicalCancerScreeningAnswer(String cervicalCancerScreeningAnswer) {
 		this.cervicalCancerScreeningAnswer= cervicalCancerScreeningAnswer;
+	}
+	public String getCervicalCancerScreeningType() {
+		return cervicalCancerScreeningType;
+	}
+
+	public void setCervicalCancerScreeningType(String cervicalCancerScreeningType) {
+		this.cervicalCancerScreeningType= cervicalCancerScreeningType;
 	}
 
 	public String getRelationshipToPatient() {
@@ -566,7 +574,7 @@ public class Note {
 		//currently breast feeding
 		Concept conceptCurrentlyBreastFeeding = Context.getConceptService().getConceptByUuid("5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptCurrentlyBreastFeeding == null) {
-			throw new NullPointerException("Currently breast feeding concept is not defined");
+			throw new NullPointerException("Current breast feeding concept is not defined");
 		}
 		if (StringUtils.isNotBlank(this.currentlyBreastFeedingAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptCurrentlyBreastFeeding, this.currentlyBreastFeedingAnswer);
@@ -575,7 +583,7 @@ public class Note {
 		//currently on contraceptives
 		Concept conceptCurrentlyContraceptiveUse = Context.getConceptService().getConceptByUuid("1386AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptCurrentlyContraceptiveUse == null) {
-			throw new NullPointerException("Currently contraceptive use concept is not defined");
+			throw new NullPointerException("Current contraceptive use status concept is not defined");
 		}
 		if (StringUtils.isNotBlank(this.currentContraceptiveUseAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptCurrentlyContraceptiveUse, this.currentContraceptiveUseAnswer);
@@ -584,10 +592,19 @@ public class Note {
 		//cervical cancer screening status
 		Concept conceptCervicalCancerScreening= Context.getConceptService().getConceptByUuid("06398e78-0d3e-43d5-8017-f2fc3865e2e0");
 		if (conceptCervicalCancerScreening == null) {
-			throw new NullPointerException("Currently contraceptive use concept is not defined");
+			throw new NullPointerException("Cervical cancer screening status concept is not defined");
 		}
 		if (StringUtils.isNotBlank(this.cervicalCancerScreeningAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptCervicalCancerScreening, this.cervicalCancerScreeningAnswer);
+		}
+
+		//cervical cancer screening type
+		Concept conceptCervicalCancerScreeningType= Context.getConceptService().getConceptByUuid("06398e78-0d3e-43d5-8017-f2fc3865e2e0");
+		if (conceptCervicalCancerScreeningType == null) {
+			throw new NullPointerException("Cervical cancer screening type concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cervicalCancerScreeningType)) {
+			this.addValueCoded(encounter, obsGroup, conceptCervicalCancerScreeningType, this.cervicalCancerScreeningType);
 		}
 	}
 

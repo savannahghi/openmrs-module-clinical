@@ -61,12 +61,15 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> currentContraceptiveUseAnswers = conceptCurrentlyContraceptiveUse.getAnswers();
         Concept conceptCervicalCancerScreening = Context.getConceptService().getConceptByUuid("06398e78-0d3e-43d5-8017-f2fc3865e2e0");
         Collection<ConceptAnswer> cervicalCancerScreeningAnswers = conceptCervicalCancerScreening.getAnswers();
+        Concept conceptCervicalCancerScreeningTypes = Context.getConceptService().getConceptByUuid("163589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> cervicalCancerScreeningTypesAnswers = conceptCervicalCancerScreeningTypes.getAnswers();
 
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
         model.addAttribute("familyMemberAnswers", familyMemberAnswers);
         model.addAttribute("currentlyBreastFeedingAnswers", currentlyBreastFeedingAnswers);
         model.addAttribute("currentContraceptiveUseAnswers", currentContraceptiveUseAnswers);
         model.addAttribute("cervicalCancerScreeningAnswers", cervicalCancerScreeningAnswers);
+        model.addAttribute("cervicalCancerScreeningTypesAnswers", cervicalCancerScreeningTypesAnswers);
         model.addAttribute("cancerTypes", this.getDiagnosis("cancer", ui));
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));
