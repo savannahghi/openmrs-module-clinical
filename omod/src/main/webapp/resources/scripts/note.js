@@ -33,6 +33,8 @@ function Note(noteObj) {
 	self.cervicalCancerScreeningType = noteObj.cervicalCancerScreeningType;
 	self.cervicalCancerScreeningDate = noteObj.cervicalCancerScreeningDate;
 	self.breastCancerScreeningAnswer = noteObj.breastCancerScreeningAnswer;
+	self.breastCancerScreeningType = noteObj.breastCancerScreeningType;
+	self.breastCancerScreeningDate = noteObj.breastCancerScreeningDate;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

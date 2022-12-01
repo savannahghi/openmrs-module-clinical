@@ -125,6 +125,8 @@ public class Note {
 	private String cervicalCancerScreeningType;
 	private String cervicalCancerScreeningDate;
 	private String breastCancerScreeningAnswer;
+	private String breastCancerScreeningType;
+	private String breastCancerScreeningDate;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -334,12 +336,28 @@ public class Note {
 		this.cervicalCancerScreeningType= cervicalCancerScreeningType;
 	}
 
+	public String getBreastCancerScreeningType() {
+		return breastCancerScreeningType;
+	}
+
+	public void setBreastCancerScreeningType(String breastCancerScreeningType) {
+		this.breastCancerScreeningType= breastCancerScreeningType;
+	}
+
 	public String getCervicalCancerScreeningDate() {
 		return cervicalCancerScreeningDate;
 	}
 
 	public void setCervicalCancerScreeningDate(String cervicalCancerScreeningDate) {
 		this.cervicalCancerScreeningDate= cervicalCancerScreeningDate;
+	}
+
+	public String getBreastCancerScreeningDate() {
+		return breastCancerScreeningDate;
+	}
+
+	public void setBreastCancerScreeningDate(String breastCancerScreeningDate) {
+		this.breastCancerScreeningDate= breastCancerScreeningDate;
 	}
 
 	public String getRelationshipToPatient() {
@@ -641,6 +659,24 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.breastCancerScreeningAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptBreastCancerScreening, this.breastCancerScreeningAnswer);
+		}
+
+		//breast cancer screening type
+		Concept conceptBreastCancerScreeningType= Context.getConceptService().getConceptByUuid("5b2c1d27-59df-4361-a16c-ed60e4a2125c");
+		if (conceptBreastCancerScreeningType == null) {
+			throw new NullPointerException("Breast cancer screening type concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.breastCancerScreeningType)) {
+			this.addValueCoded(encounter, obsGroup, conceptBreastCancerScreeningType, this.breastCancerScreeningType);
+		}
+
+		//breast cancer screening date
+		Concept conceptBreastCancerScreeningDate= Context.getConceptService().getConceptByUuid("bedd5dbb-ebd8-4fab-a901-4c2c57f43422");
+		if (conceptBreastCancerScreeningDate == null) {
+			throw new NullPointerException("Breast cancer screening date concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.breastCancerScreeningDate)) {
+			this.addValueDate(encounter, obsGroup, conceptBreastCancerScreeningDate, this.breastCancerScreeningDate);
 		}
 	}
 
