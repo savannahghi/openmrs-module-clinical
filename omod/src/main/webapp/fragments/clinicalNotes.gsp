@@ -283,37 +283,61 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<legend>Male History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<label for="place-of-residence" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
-					<div class="col6">
+					<div class="col12">
 						<label for="screened-prostrate-cancer">Prostrate Cancer:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% prostrateCancerScreeningAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: prostrateCancerScreeningAnswer" value="${answer.answerConcept.id}" name="prostrateCancerScreeningAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
+					</div>
+					<div class="col6">
+						<label for="types-screened-prostratecancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<select id="types-screened-prostratecancer" name="types-screened-prostratecancer" autocomplete="on" data-bind="value: \$root.prostrateCancerScreeningType">
+							<option value="">-- Select Relation --</option> 
+							<% prostrateCancerScreeningTypesAnswers.each { answer -> %>
+								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+							<% } %>
+						</select>
 					</div>
 					<div class="col5 inner-date">
 						<label for="date-screened-prostratecancer">Date<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col11">
-						<label for="types-screened-prostratecancer">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="types-screened-prostratecancer" name="types-screened-prostratecancer" />
+						<input type="date" id="prostrateCancerScreeningDate" name="prostrateCancerScreeningDate" data-bind="value: \$root.prostrateCancerScreeningDate"/>
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
-						<label for="male-screened-colorectal">Colorectal Cancer:<span style="color: #f00 !important;
+					<div class="col12">
+						<label for="female-screened-colorectal-answer">Colorectal Cancer:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="male-screened-colorectal" name="male-screened-colorectal" />
+						<% colorectalCancerScreeningAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: colorectalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="colorectalCancerScreeningAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
+					</div>
+					<div class="col6">
+						<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<select id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" autocomplete="on" data-bind="value: \$root.colorectalCancerScreeningType">
+							<option value="">-- Select Relation --</option> 
+							<% breastCancerScreeningTypesAnswers.each { answer -> %>
+								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+							<% } %>
+						</select>
 					</div>
 					<div class="col5 inner-date">
-						<label for="date-male-screened-colorectalcancer">Date<span style="color: #f00 !important;
+						<label for="date-female-screened-colorectalcancer">Date<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="date" id="date-male-screened-colorectalcancer" name="date-male-screened-colorectalcancer" />
-					</div>
-					<div class="col11">
-						<label for="types-male-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="types-male-screened-colorectalcancer" name="types-male-screened-colorectalcancer" />
+						<input type="date" id="colorectalCancerScreeningDate" name="colorectalCancerScreeningDate" data-bind="value: \$root.colorectalCancerScreeningDate"/>
 					</div>
 				</div>
 				<div style="padding: 100 4px;margin-bottom:40px">

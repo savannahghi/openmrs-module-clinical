@@ -38,6 +38,9 @@ function Note(noteObj) {
 	self.colorectalCancerScreeningAnswer = noteObj.colorectalCancerScreeningAnswer;
 	self.colorectalCancerScreeningType = noteObj.colorectalCancerScreeningType;
 	self.colorectalCancerScreeningDate = noteObj.colorectalCancerScreeningDate;
+	self.prostrateCancerScreeningAnswer = noteObj.prostrateCancerScreeningAnswer;
+	self.prostrateCancerScreeningType = noteObj.prostrateCancerScreeningType;
+	self.prostrateCancerScreeningDate = noteObj.prostrateCancerScreeningDate;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
