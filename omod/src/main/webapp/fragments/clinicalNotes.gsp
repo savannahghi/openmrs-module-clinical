@@ -352,10 +352,17 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div>&nbsp;</div> 
-				<div class="col11" style="padding: 100 4px; padding-bottom:20px;">
+				<div class="col12" style="padding: 100 4px; padding-bottom:20px;">
 					<label for="male-hormonal-therapy-type">If yes, specify type:<span style="color: #f00 !important;
 							padding-left: 5px;"></span></label>
-					<input type="text" id="male-hormonal-therapy-type" name="male-hormonal-therapy-type" />
+					<% currentContraceptiveUseAnswers.each { answer -> %>
+						<div class="radios col3">
+							<label>
+								<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
+								<label>${answer.answerConcept.getName()}</label>
+							</label>
+						</div>
+					<% } %>
 				</div>
 				<p>
 					<input type="hidden" id="male-history-set" />
