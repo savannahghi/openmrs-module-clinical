@@ -1477,7 +1477,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</div>
 			</fieldset>
 		</section>
-		${ ui.includeFragment("patientdashboardapp", "consentForms") }
 		<section>
 			<span class="title">Clinical Notes</span>
 			${ ui.includeFragment("patientdashboardapp", "patientDashboard") }
