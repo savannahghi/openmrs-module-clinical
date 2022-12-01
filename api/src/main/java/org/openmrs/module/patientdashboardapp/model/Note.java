@@ -61,6 +61,7 @@ public class Note {
 	private static Set<Integer> collectionOfRadiologyConceptIds = new HashSet<Integer>();
 
 	private static final String YES = "1065";
+	private static final int CHILDAGESEPARATOR = 5;
 
 	static {
 		List<Lab> labs = Context.getService(LabService.class).getAllLab();
@@ -460,6 +461,18 @@ public class Note {
 		this.physicalExamination = physicalExamination;
 	}
 
+	public Boolean isAdultMale(Patient patient){
+		return patient.getGender().equals("M") && !isChild(patient);
+	}
+
+	public Boolean isAdultFemale(Patient patient){
+		return patient.getGender().equals("F") && !isChild(patient);
+	}
+
+	public Boolean isChild(Patient patient){
+		return patient.getAge()<=CHILDAGESEPARATOR;
+	}
+
 	@Transactional
 	public Encounter saveInvestigations() {
 		Patient patient = Context.getPatientService().getPatient(this.patientId);
@@ -517,10 +530,16 @@ public class Note {
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {
 			addFamilyHistory(encounter, obsGroup);
 		}
-		
-		addFemaleHistory(encounter, obsGroup);
-
-		addMaleHistory(encounter, obsGroup);
+		if(isAdultFemale(encounter.getPatient())){
+			addFemaleHistory(encounter, obsGroup);
+		}
+		if(isAdultMale(encounter.getPatient())){
+			addMaleHistory(encounter, obsGroup);
+		}
+		if(isChild(encounter.getPatient()))
+		{
+			addChildHistory(encounter, obsGroup);
+		}
 
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
@@ -556,6 +575,8 @@ public class Note {
 			this.outcome.addObs(encounter, obsGroup);
 		}
 	}
+
+	
 
 	private void addFacility(Encounter encounter, Obs obsGroup) {
 		Concept facilityConcept = Context.getConceptService().getConceptByUuid(PROPERTY_FACILITY);
@@ -818,6 +839,8 @@ public class Note {
 			this.addValueDate(encounter, obsGroup, conceptColorectalCancerScreeningDate, this.colorectalCancerScreeningDate);
 		}
 	}
+
+	private void addChildHistory(Encounter encounter, Obs obsGroup) {}
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{

@@ -139,146 +139,148 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="family-history-set" />
 				</p>
 			</fieldset>
-			<fieldset class="no-confirmation">
-				<legend>Female History</legend>
-				<div style="padding: 0 4px; margin-bottom:60px">
-					<div class="col6 inner-date">
-						<label for="last-lmp">Last LMP<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" data-bind="value: \$root.lastLmp" id="last-lmp" name="last-lmp" />
+			<% if (patient.gender == "F" && patient.age > 12){ %>
+				<fieldset class="no-confirmation">
+					<legend>Female History</legend>
+					<div style="padding: 0 4px; margin-bottom:60px">
+						<div class="col6 inner-date">
+							<label for="last-lmp">Last LMP<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<input type="date" data-bind="value: \$root.lastLmp" id="last-lmp" name="last-lmp" />
+						</div>
+						<div class="col5">
+							<label for="parity">Parity<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<input type="text" data-bind="value: \$root.parity" id="parity" name="parity" />
+						</div>
 					</div>
-					<div class="col5">
-						<label for="parity">Parity<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" data-bind="value: \$root.parity" id="parity" name="parity" />
-					</div>
-				</div>
-				<div>&nbsp;</div> 
-				<div class="col12" style="padding: 0 4px; margin-bottom:40px">
-					<div class="co12">
-						<label for="currently-breastfeeding">Are you currently breastfeeding?<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-					</div>
-					<div class="col12">
-						<% currentlyBreastFeedingAnswers.each { answer -> %>
-							<div class="radios col3">
-								<label>
-									<input data-bind="checked: currentlyBreastFeedingAnswer" value="${answer.answerConcept.id}" name="currentlyBreastFeedingAnswer" type="radio">
-									<label>${answer.answerConcept.getName()}</label>
-								</label>
-							</div>
-						 <% } %>
-					</div>
-				</div>
-				<div>&nbsp;</div> 
-				<div style="padding: 100 4px;margin-bottom:40px">
-					<div class="col12">
-						<label for="currently-on-contraceptives">Are you currently using contraceptives/hormonal replacement therapy?<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-					</div>
-					<div class="col12">
-						<% currentContraceptiveUseAnswers.each { answer -> %>
-							<div class="radios col3">
-								<label>
-									<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
-									<label>${answer.answerConcept.getName()}</label>
-								</label>
-							</div>
-						 <% } %>
-					</div>
-				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<label for="screened-before-answer-div" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
-					<div class="col12">
-						<label for="screened-before-answer">Cervical Cancer:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<% cervicalCancerScreeningAnswers.each { answer -> %>
-							<div class="radios col3">
-								<label>
-									<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="cervicalCancerScreeningAnswer" type="radio">
-									<label>${answer.answerConcept.getName()}</label>
-								</label>
-							</div>
-						 <% } %>
-					</div>
-					<div class="col6">
-						<label for="types-of-screening">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<select id="type-of-cervical-cancer-screening" name="type-of-cervical-cancer-screening" autocomplete="on" data-bind="value: \$root.cervicalCancerScreeningType">
-							<option value="">-- Select Relation --</option> 
-							<% cervicalCancerScreeningTypesAnswers.each { answer -> %>
-								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+					<div>&nbsp;</div> 
+					<div class="col12" style="padding: 0 4px; margin-bottom:40px">
+						<div class="co12">
+							<label for="currently-breastfeeding">Are you currently breastfeeding?<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+						</div>
+						<div class="col12">
+							<% currentlyBreastFeedingAnswers.each { answer -> %>
+								<div class="radios col3">
+									<label>
+										<input data-bind="checked: currentlyBreastFeedingAnswer" value="${answer.answerConcept.id}" name="currentlyBreastFeedingAnswer" type="radio">
+										<label>${answer.answerConcept.getName()}</label>
+									</label>
+								</div>
 							<% } %>
-						</select>
+						</div>
 					</div>
-					<div class="col5 inner-date">
-						<label for="screened-date">Date<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="cervicalCancerScreeningDate" name="cervicalCancerScreeningDate" data-bind="value: \$root.cervicalCancerScreeningDate"/>
-					</div>
-				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col12">
-						<label for="female-screened-for-breastcancer-answer">Breast Cancer:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<% breastCancerScreeningAnswers.each { answer -> %>
-							<div class="radios col3">
-								<label>
-									<input data-bind="checked: breastCancerScreeningAnswer" value="${answer.answerConcept.id}" name="breastCancerScreeningAnswer" type="radio">
-									<label>${answer.answerConcept.getName()}</label>
-								</label>
-							</div>
-						 <% } %>
-					</div>
-					<div class="col6">
-						<label for="types-screened-for-breastcancer">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<select id="types-screened-for-breastcancer" name="types-screened-for-breastcancer" autocomplete="on" data-bind="value: \$root.breastCancerScreeningType">
-							<option value="">-- Select Relation --</option> 
-							<% breastCancerScreeningTypesAnswers.each { answer -> %>
-								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+					<div>&nbsp;</div> 
+					<div style="padding: 100 4px;margin-bottom:40px">
+						<div class="col12">
+							<label for="currently-on-contraceptives">Are you currently using contraceptives/hormonal replacement therapy?<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+						</div>
+						<div class="col12">
+							<% currentContraceptiveUseAnswers.each { answer -> %>
+								<div class="radios col3">
+									<label>
+										<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
+										<label>${answer.answerConcept.getName()}</label>
+									</label>
+								</div>
 							<% } %>
-						</select>
+						</div>
 					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-for-breastcancer">Date<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="breastCancerScreeningDate" name="breastCancerScreeningDate" data-bind="value: \$root.breastCancerScreeningDate"/>
-					</div>
-				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col12">
-						<label for="female-screened-colorectal-answer">Colorectal Cancer:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<% colorectalCancerScreeningAnswers.each { answer -> %>
-							<div class="radios col3">
-								<label>
-									<input data-bind="checked: colorectalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="colorectalCancerScreeningAnswer" type="radio">
-									<label>${answer.answerConcept.getName()}</label>
-								</label>
-							</div>
-						 <% } %>
-					</div>
-					<div class="col6">
-						<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<select id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" autocomplete="on" data-bind="value: \$root.colorectalCancerScreeningType">
-							<option value="">-- Select Relation --</option> 
-							<% breastCancerScreeningTypesAnswers.each { answer -> %>
-								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+					<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+						<label for="screened-before-answer-div" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
+						<div class="col12">
+							<label for="screened-before-answer">Cervical Cancer:<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<% cervicalCancerScreeningAnswers.each { answer -> %>
+								<div class="radios col3">
+									<label>
+										<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="cervicalCancerScreeningAnswer" type="radio">
+										<label>${answer.answerConcept.getName()}</label>
+									</label>
+								</div>
 							<% } %>
-						</select>
+						</div>
+						<div class="col6">
+							<label for="types-of-screening">Types of Screening<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<select id="type-of-cervical-cancer-screening" name="type-of-cervical-cancer-screening" autocomplete="on" data-bind="value: \$root.cervicalCancerScreeningType">
+								<option value="">-- Select Relation --</option> 
+								<% cervicalCancerScreeningTypesAnswers.each { answer -> %>
+									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+								<% } %>
+							</select>
+						</div>
+						<div class="col5 inner-date">
+							<label for="screened-date">Date<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<input type="date" id="cervicalCancerScreeningDate" name="cervicalCancerScreeningDate" data-bind="value: \$root.cervicalCancerScreeningDate"/>
+						</div>
 					</div>
-					<div class="col5 inner-date">
-						<label for="date-female-screened-colorectalcancer">Date<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="colorectalCancerScreeningDate" name="colorectalCancerScreeningDate" data-bind="value: \$root.colorectalCancerScreeningDate"/>
+					<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+						<div class="col12">
+							<label for="female-screened-for-breastcancer-answer">Breast Cancer:<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<% breastCancerScreeningAnswers.each { answer -> %>
+								<div class="radios col3">
+									<label>
+										<input data-bind="checked: breastCancerScreeningAnswer" value="${answer.answerConcept.id}" name="breastCancerScreeningAnswer" type="radio">
+										<label>${answer.answerConcept.getName()}</label>
+									</label>
+								</div>
+							<% } %>
+						</div>
+						<div class="col6">
+							<label for="types-screened-for-breastcancer">Types of Screening<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<select id="types-screened-for-breastcancer" name="types-screened-for-breastcancer" autocomplete="on" data-bind="value: \$root.breastCancerScreeningType">
+								<option value="">-- Select Relation --</option> 
+								<% breastCancerScreeningTypesAnswers.each { answer -> %>
+									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+								<% } %>
+							</select>
+						</div>
+						<div class="col5 inner-date">
+							<label for="date-screened-for-breastcancer">Date<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<input type="date" id="breastCancerScreeningDate" name="breastCancerScreeningDate" data-bind="value: \$root.breastCancerScreeningDate"/>
+						</div>
 					</div>
-				</div>
-				<p>
-					<input type="hidden" id="female-history-set" />
-				</p>
-			</fieldset>
+					<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+						<div class="col12">
+							<label for="female-screened-colorectal-answer">Colorectal Cancer:<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<% colorectalCancerScreeningAnswers.each { answer -> %>
+								<div class="radios col3">
+									<label>
+										<input data-bind="checked: colorectalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="colorectalCancerScreeningAnswer" type="radio">
+										<label>${answer.answerConcept.getName()}</label>
+									</label>
+								</div>
+							<% } %>
+						</div>
+						<div class="col6">
+							<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<select id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" autocomplete="on" data-bind="value: \$root.colorectalCancerScreeningType">
+								<option value="">-- Select Relation --</option> 
+								<% breastCancerScreeningTypesAnswers.each { answer -> %>
+									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+								<% } %>
+							</select>
+						</div>
+						<div class="col5 inner-date">
+							<label for="date-female-screened-colorectalcancer">Date<span style="color: #f00 !important;
+							padding-left: 5px;"></span></label>
+							<input type="date" id="colorectalCancerScreeningDate" name="colorectalCancerScreeningDate" data-bind="value: \$root.colorectalCancerScreeningDate"/>
+						</div>
+					</div>
+					<p>
+						<input type="hidden" id="female-history-set" />
+					</p>
+				</fieldset>
+			<% } %>
 			<fieldset class="no-confirmation">
 				<legend>Male History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
@@ -293,7 +295,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
-						 <% } %>
+						<% } %>
 					</div>
 					<div class="col6">
 						<label for="types-screened-prostratecancer">Types of Screening<span style="color: #f00 !important;
@@ -322,7 +324,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
-						 <% } %>
+						<% } %>
 					</div>
 					<div class="col6">
 						<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
