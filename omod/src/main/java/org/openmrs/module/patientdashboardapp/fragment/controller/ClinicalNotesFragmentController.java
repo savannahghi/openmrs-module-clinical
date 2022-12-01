@@ -67,6 +67,11 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> breastCancerScreeningAnswers = conceptBreastCancerScreening.getAnswers();
         Concept conceptBreastCancerScreeningTypes = Context.getConceptService().getConceptByUuid("5b2c1d27-59df-4361-a16c-ed60e4a2125c");
         Collection<ConceptAnswer> breastCancerScreeningTypesAnswers = conceptBreastCancerScreeningTypes.getAnswers();
+        Concept conceptColorectalCancerScreening = Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
+        Collection<ConceptAnswer> colorectalCancerScreeningAnswers = conceptColorectalCancerScreening.getAnswers();
+        Concept conceptColorectalCancerScreeningTypes = Context.getConceptService().getConceptByUuid("ae19ee8c-d8fc-4d94-84a1-32f84a7e0fff");
+        Collection<ConceptAnswer> colorectalCancerScreeningTypesAnswers = conceptColorectalCancerScreeningTypes.getAnswers();
+        
 
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
         model.addAttribute("familyMemberAnswers", familyMemberAnswers);
@@ -76,6 +81,8 @@ public class ClinicalNotesFragmentController {
         model.addAttribute("cervicalCancerScreeningTypesAnswers", cervicalCancerScreeningTypesAnswers);
         model.addAttribute("breastCancerScreeningAnswers", breastCancerScreeningAnswers);
         model.addAttribute("breastCancerScreeningTypesAnswers", breastCancerScreeningTypesAnswers);
+        model.addAttribute("colorectalCancerScreeningAnswers", colorectalCancerScreeningAnswers);
+        model.addAttribute("colorectalCancerScreeningTypesAnswers", colorectalCancerScreeningTypesAnswers);
         model.addAttribute("cancerTypes", this.getDiagnosis("cancer", ui));
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));

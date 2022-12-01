@@ -247,20 +247,32 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col12">
 						<label for="female-screened-colorectal-answer">Colorectal Cancer:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="female-screened-colorectal-answer" name="female-screened-colorectal-answer" />
+						<% colorectalCancerScreeningAnswers.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: colorectalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="colorectalCancerScreeningAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						 <% } %>
+					</div>
+					<div class="col6">
+						<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
+						padding-left: 5px;"></span></label>
+						<select id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" autocomplete="on" data-bind="value: \$root.colorectalCancerScreeningType">
+							<option value="">-- Select Relation --</option> 
+							<% breastCancerScreeningTypesAnswers.each { answer -> %>
+								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
+							<% } %>
+						</select>
 					</div>
 					<div class="col5 inner-date">
 						<label for="date-female-screened-colorectalcancer">Date<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="date" id="date-female-screened-colorectalcancer" name="date-female-screened-colorectalcancer" />
-					</div>
-					<div class="col11">
-						<label for="types-female-screened-colorectalcancer">Types of Screening<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" />
+						<input type="date" id="colorectalCancerScreeningDate" name="colorectalCancerScreeningDate" data-bind="value: \$root.colorectalCancerScreeningDate"/>
 					</div>
 				</div>
 				<p>

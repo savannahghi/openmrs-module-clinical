@@ -127,6 +127,9 @@ public class Note {
 	private String breastCancerScreeningAnswer;
 	private String breastCancerScreeningType;
 	private String breastCancerScreeningDate;
+	private String colorectalCancerScreeningAnswer;
+	private String colorectalCancerScreeningType;
+	private String colorectalCancerScreeningDate;
 	private String lastLmp;
 	private String parity;
 	private String relationshipToPatient;
@@ -327,6 +330,14 @@ public class Note {
 	public void setBreastCancerScreeningAnswer(String breastCancerScreeningAnswer) {
 		this.breastCancerScreeningAnswer= breastCancerScreeningAnswer;
 	}
+
+	public String getColorectalCancerScreeningAnswer() {
+		return colorectalCancerScreeningAnswer;
+	}
+
+	public void setColorectalCancerScreeningAnswer(String colorectalCancerScreeningAnswer) {
+		this.colorectalCancerScreeningAnswer= colorectalCancerScreeningAnswer;
+	}
 	
 	public String getCervicalCancerScreeningType() {
 		return cervicalCancerScreeningType;
@@ -344,6 +355,14 @@ public class Note {
 		this.breastCancerScreeningType= breastCancerScreeningType;
 	}
 
+	public String getColorectalCancerScreeningType() {
+		return colorectalCancerScreeningType;
+	}
+
+	public void setColorectalCancerScreeningType(String colorectalCancerScreeningType) {
+		this.colorectalCancerScreeningType= colorectalCancerScreeningType;
+	}
+
 	public String getCervicalCancerScreeningDate() {
 		return cervicalCancerScreeningDate;
 	}
@@ -358,6 +377,14 @@ public class Note {
 
 	public void setBreastCancerScreeningDate(String breastCancerScreeningDate) {
 		this.breastCancerScreeningDate= breastCancerScreeningDate;
+	}
+
+	public String getColorectalCancerScreeningDate() {
+		return colorectalCancerScreeningDate;
+	}
+
+	public void setColorectalCancerScreeningDate(String colorectalCancerScreeningDate) {
+		this.colorectalCancerScreeningDate= colorectalCancerScreeningDate;
 	}
 
 	public String getRelationshipToPatient() {
@@ -677,6 +704,33 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.breastCancerScreeningDate)) {
 			this.addValueDate(encounter, obsGroup, conceptBreastCancerScreeningDate, this.breastCancerScreeningDate);
+		}
+
+		//colorectal cancer screening status
+		Concept conceptColorectalCancerScreening= Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
+		if (conceptColorectalCancerScreening == null) {
+			throw new NullPointerException("Colorectal cancer screening status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.colorectalCancerScreeningAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptColorectalCancerScreening, this.colorectalCancerScreeningAnswer);
+		}
+
+		//colorectal cancer screening type
+		Concept conceptColorectalCancerScreeningType= Context.getConceptService().getConceptByUuid("ae19ee8c-d8fc-4d94-84a1-32f84a7e0fff");
+		if (conceptColorectalCancerScreeningType == null) {
+			throw new NullPointerException("Colorectal cancer screening type concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.colorectalCancerScreeningType)) {
+			this.addValueCoded(encounter, obsGroup, conceptColorectalCancerScreeningType, this.colorectalCancerScreeningType);
+		}
+
+		//colorectal cancer screening date
+		Concept conceptColorectalCancerScreeningDate= Context.getConceptService().getConceptByUuid("8a3c493a-5fdf-4e51-ba73-706d72d5bb41");
+		if (conceptColorectalCancerScreeningDate == null) {
+			throw new NullPointerException("Colorectal cancer screening date concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.colorectalCancerScreeningDate)) {
+			this.addValueDate(encounter, obsGroup, conceptColorectalCancerScreeningDate, this.colorectalCancerScreeningDate);
 		}
 	}
 
