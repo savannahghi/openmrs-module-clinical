@@ -393,10 +393,17 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Risk Factor</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col12">
 						<label for="screened-prostrate-cancer">Do you smoke cigarettes?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% cigaretteUsage.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 					<div class="col5">
 						<label for="date-screened-prostratecancer">If yes, how many cigarrets per day?<span style="color: #f00 !important;
@@ -408,30 +415,58 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						padding-left: 5px;"></span></label>
 						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
 					</div>
-					<div class="col5">
+					<div class="col12">
 						<label for="date-screened-prostratecancer">Do you use other forms of tobacco?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+						<% tobaccoUsage.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col6">
+					<div class="col12">
 						<label for="screened-prostrate-cancer">Do you take alcohol?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% alcoholUsage.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 					<div class="col5">
-						<label for="date-screened-prostratecancer">What is the frequency?<span style="color: #f00 !important;
+						<label for="date-screened-prostratecancer">What is the frequency(bottles per day)?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
 					</div>
-					<div class="col6">
+					<div class="col12">
 						<label for="screened-prostrate-cancer">Are you physically active?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% physicalActivity.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col11">
+					<div class="col12">
 						<label for="types-of-screening">Previous exposure to radiation (radiotherapy?)<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="types-of-screening" name="types-of-screening" />
+						<% radiotherapyExposure.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 				</div>
 				<p>
