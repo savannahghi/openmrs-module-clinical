@@ -517,7 +517,7 @@
 							"currentContraceptiveUseAnswer", "cervicalCancerScreeningAnswer", "cervicalCancerScreeningType","cervicalCancerScreeningDate", 
 							"breastCancerScreeningAnswer", "breastCancerScreeningType", "breastCancerScreeningDate", "colorectalCancerScreeningAnswer", 
 							"colorectalCancerScreeningType", "colorectalCancerScreeningDate","prostrateCancerScreeningAnswer", "prostrateCancerScreeningType", 
-							"prostrateCancerScreeningDate", "relationshipToPatient", "ageAtDiagnosis", "cancerType", "patientId",
+							"prostrateCancerScreeningDate", "retinoblastomaState", "relationshipToPatient", "ageAtDiagnosis", "cancerType", "patientId",
 							"procedures", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option",
 							"drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",

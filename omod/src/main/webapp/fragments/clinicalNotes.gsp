@@ -377,9 +377,14 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">						
-						<input type="text" id="signs-of-retinoblasoma" name="signs-of-retinoblasoma" />
-					</div>				
+					<% retinoblastomaSigns.each { answer -> %>
+						<div class="radios col3">
+							<label>
+								<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+								<label>${answer.answerConcept.getName()}</label>
+							</label>
+						</div>
+					<% } %>			
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -389,7 +394,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<legend>Risk Factor</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col6">
-						<label for="screened-prostrate-cancer">Do you some cigarettes?<span style="color: #f00 !important;
+						<label for="screened-prostrate-cancer">Do you smoke cigarettes?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
 					</div>

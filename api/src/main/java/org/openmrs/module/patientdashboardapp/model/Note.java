@@ -136,6 +136,7 @@ public class Note {
 	private String prostrateCancerScreeningDate;
 	private String lastLmp;
 	private String parity;
+	private String retinoblastomaState;
 	private String relationshipToPatient;
 	private String ageAtDiagnosis;
 	private String cancerType;
@@ -341,6 +342,14 @@ public class Note {
 
 	public void setColorectalCancerScreeningAnswer(String colorectalCancerScreeningAnswer) {
 		this.colorectalCancerScreeningAnswer= colorectalCancerScreeningAnswer;
+	}
+
+	public String getRetinoBlastomaState() {
+		return retinoblastomaState;
+	}
+
+	public void setRetinoBlastomaState(String retinoblastomaState) {
+		this.retinoblastomaState= retinoblastomaState;
 	}
 
 	public String getProstrateCancerScreeningAnswer() {
@@ -840,7 +849,16 @@ public class Note {
 		}
 	}
 
-	private void addChildHistory(Encounter encounter, Obs obsGroup) {}
+	private void addChildHistory(Encounter encounter, Obs obsGroup) {
+		//retinoblatoma state
+		Concept conceptRetinoBlastomaState= Context.getConceptService().getConceptByUuid("8337f818-79eb-4360-8b3e-8f90927ddbd3");
+		if (conceptRetinoBlastomaState == null) {
+			throw new NullPointerException("Retinoblastoma status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.retinoblastomaState)) {
+			this.addValueCoded(encounter, obsGroup, conceptRetinoBlastomaState, this.retinoblastomaState);
+		}
+	}
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{

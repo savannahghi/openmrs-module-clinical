@@ -75,6 +75,18 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> prostrateCancerScreeningAnswers = conceptProstrateCancerScreening.getAnswers();
         Concept conceptProstrateCancerScreeningTypes = Context.getConceptService().getConceptByUuid("c805a0f3-5244-4f20-ae56-57b605f7aeeb");
         Collection<ConceptAnswer> prostrateCancerScreeningTypesAnswers = conceptProstrateCancerScreeningTypes.getAnswers();
+        Concept conceptRetinoblastomaSigns = Context.getConceptService().getConceptByUuid("8337f818-79eb-4360-8b3e-8f90927ddbd3");
+        Collection<ConceptAnswer> retinoblastomaSigns = conceptRetinoblastomaSigns.getAnswers();
+        Concept conceptCigaretteUsage = Context.getConceptService().getConceptByUuid("548e14dc-2128-434e-b365-becd398b86e4");
+        Collection<ConceptAnswer> cigaretteUsage = conceptCigaretteUsage.getAnswers();
+        Concept conceptTobaccoUsage = Context.getConceptService().getConceptByUuid("163731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> tobaccoUsage = conceptTobaccoUsage.getAnswers();
+        Concept conceptAlcoholUsage = Context.getConceptService().getConceptByUuid("159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> alcoholUsage = conceptAlcoholUsage.getAnswers();
+        Concept conceptPhysicalActivity = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> physicalActivity = conceptPhysicalActivity.getAnswers();
+        Concept conceptPreviousRadioTherapyExposure = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Collection<ConceptAnswer> radiotherapyExposure= conceptPreviousRadioTherapyExposure.getAnswers();
         
 
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
@@ -89,6 +101,12 @@ public class ClinicalNotesFragmentController {
         model.addAttribute("colorectalCancerScreeningTypesAnswers", colorectalCancerScreeningTypesAnswers);
         model.addAttribute("prostrateCancerScreeningAnswers", prostrateCancerScreeningAnswers);
         model.addAttribute("prostrateCancerScreeningTypesAnswers", prostrateCancerScreeningTypesAnswers);
+        model.addAttribute("retinoblastomaSigns", retinoblastomaSigns);
+        model.addAttribute("cigaretteUsage", cigaretteUsage);
+        model.addAttribute("tobaccoUsage", tobaccoUsage);
+        model.addAttribute("alcoholUsage", alcoholUsage);
+        model.addAttribute("physicalActivity", physicalActivity);
+        model.addAttribute("radiotherapyExposure", radiotherapyExposure);
         model.addAttribute("cancerTypes", this.getDiagnosis("cancer", ui));
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));
