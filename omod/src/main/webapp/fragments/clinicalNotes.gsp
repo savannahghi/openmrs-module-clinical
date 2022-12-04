@@ -494,11 +494,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="text" id="types-of-screening" name="types-of-screening" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">CNS:<span style="color: #f00 !important;
-					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
-				</div>
-				<div class="col11">
 					<label for="types-of-screening">CVS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
 					<input type="text" id="types-of-screening" name="types-of-screening" />

@@ -141,6 +141,78 @@ public class Note {
 	private String ageAtDiagnosis;
 	private String cancerType;
 	private String physicalExamination;
+	private String cigaretteUsageAnswer;
+	private String cigarettesPerDay;
+	private String yearsSmokedCigarette;
+	private String tobaccoUsageAnswer;
+	private String alcoholUsageAnswer;
+	private String alcoholIntakeFrequency;
+	private String physicalActivityAnswer;
+	private String radiotherapyExposureAnswer;
+
+	public String getCigarettesPerDay() {
+		return cigarettesPerDay;
+	}
+
+	public void setCigarettesPerDay(String cigarettesPerDay) {
+		this.cigarettesPerDay = cigarettesPerDay;
+	}
+
+	public String getYearsSmokedCigarette() {
+		return yearsSmokedCigarette;
+	}
+
+	public void setYearsSmokedCigarette(String yearsSmokedCigarette) {
+		this.yearsSmokedCigarette = yearsSmokedCigarette;
+	}
+
+	public String getTobaccoUsageAnswer() {
+		return tobaccoUsageAnswer;
+	}
+
+	public void setTobaccoUsageAnswer(String tobaccoUsageAnswer) {
+		this.tobaccoUsageAnswer = tobaccoUsageAnswer;
+	}
+
+	public String getAlcoholUsageAnswer() {
+		return alcoholUsageAnswer;
+	}
+
+	public void setAlcoholUsageAnswer(String alcoholUsageAnswer) {
+		this.alcoholUsageAnswer = alcoholUsageAnswer;
+	}
+
+	public String getAlcoholIntakeFrequency() {
+		return alcoholIntakeFrequency;
+	}
+
+	public void setAlcoholIntakeFrequency(String alcoholIntakeFrequency) {
+		this.alcoholIntakeFrequency = alcoholIntakeFrequency;
+	}
+
+	public String getPhysicalActivityAnswer() {
+		return physicalActivityAnswer;
+	}
+
+	public void setPhysicalActivityAnswer(String physicalActivityAnswer) {
+		this.physicalActivityAnswer = physicalActivityAnswer;
+	}
+
+	public String getRadiotherapyExposureAnswer() {
+		return radiotherapyExposureAnswer;
+	}
+
+	public void setRadiotherapyExposureAnswer(String radiotherapyExposureAnswer) {
+		this.radiotherapyExposureAnswer = radiotherapyExposureAnswer;
+	}
+
+	public String getCigaretteUsageAnswer() {
+		return cigaretteUsageAnswer;
+	}
+
+	public void setCigaretteUsageAnswer(String cigaretteUsageAnswer) {
+		this.cigaretteUsageAnswer = cigaretteUsageAnswer;
+	}
 
 	public String getOnSetDate() {
 		return onSetDate;
@@ -550,6 +622,8 @@ public class Note {
 			addChildHistory(encounter, obsGroup);
 		}
 
+		addRiskFactors(encounter, obsGroup);
+
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -857,6 +931,80 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.retinoblastomaState)) {
 			this.addValueCoded(encounter, obsGroup, conceptRetinoBlastomaState, this.retinoblastomaState);
+		}
+	}
+
+	private void addRiskFactors(Encounter encounter, Obs obsGroup) {
+		//cigarette usage state
+		Concept conceptCigaretteUsage= Context.getConceptService().getConceptByUuid("548e14dc-2128-434e-b365-becd398b86e4");
+		if (conceptCigaretteUsage == null) {
+			throw new NullPointerException("Cigarette usage status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cigaretteUsageAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptCigaretteUsage, this.cigaretteUsageAnswer);
+		}
+
+		//number of cigaretts per day
+		Concept conceptCigarettesPerDay= Context.getConceptService().getConceptByUuid("165595AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptCigarettesPerDay == null) {
+			throw new NullPointerException("Number of cigarettes smoked per day concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cigarettesPerDay)) {
+			this.addValueNumeric(encounter, obsGroup, conceptCigarettesPerDay, this.cigarettesPerDay);
+		}
+
+		//number of years smoked cigarette
+		Concept conceptYearsSmoked= Context.getConceptService().getConceptByUuid("19aa1daa-7a2c-4bfe-9d46-ec09881f7487");
+		if (conceptYearsSmoked == null) {
+			throw new NullPointerException("Number of years smoked concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.yearsSmokedCigarette)) {
+			this.addValueNumeric(encounter, obsGroup, conceptYearsSmoked, this.yearsSmokedCigarette);
+		}
+
+		//tobacco usage state
+		Concept conceptTobaccoUsage= Context.getConceptService().getConceptByUuid("163731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptTobaccoUsage == null) {
+			throw new NullPointerException("Tobacco usage status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.tobaccoUsageAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptTobaccoUsage, this.tobaccoUsageAnswer);
+		}
+
+		//alcohol usage state
+		Concept conceptAlcoholUsage= Context.getConceptService().getConceptByUuid("159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptAlcoholUsage == null) {
+			throw new NullPointerException("Alcohol usage status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.alcoholUsageAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptAlcoholUsage, this.alcoholUsageAnswer);
+		}
+
+		//number of botlles per day
+		Concept conceptAlcoholIntake= Context.getConceptService().getConceptByUuid("166678AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptAlcoholIntake== null) {
+			throw new NullPointerException("Number of alcohol bottles per day concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.alcoholIntakeFrequency)) {
+			this.addValueNumeric(encounter, obsGroup, conceptAlcoholIntake, this.alcoholIntakeFrequency);
+		}
+
+		//physical activity state
+		Concept conceptPhysicalActivity = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptPhysicalActivity == null) {
+			throw new NullPointerException("Physical activity status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.physicalActivityAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptPhysicalActivity, this.physicalActivityAnswer);
+		}
+
+		//physical activity state
+		Concept conceptRadiotherapyExposure = Context.getConceptService().getConceptByUuid("0693aab4-9756-454e-b693-6d4454c55043");
+		if (conceptRadiotherapyExposure == null) {
+			throw new NullPointerException("Previous radiotherapy exposure status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.radiotherapyExposureAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptRadiotherapyExposure, this.radiotherapyExposureAnswer);
 		}
 	}
 
