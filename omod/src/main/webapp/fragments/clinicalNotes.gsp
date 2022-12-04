@@ -477,41 +477,41 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<legend>Clinicals</legend>
 				<p class="input-position-class">
 					<label>Presenting Complains</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.presentingComplains" id="presentingComplains" name="presentingComplains" rows="2" cols="74"></textarea>
 				</p>
 				<p class="input-position-class">
 					<label>History of Present Illness</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.historyOfPresentIllness" id="historyOfPresentIllness" name="historyOfPresentIllness" rows="2" cols="74"></textarea>
 				</p>
 				<p class="input-position-class">
 					<label>Past Medical and Surgical History</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.pastMedicalSurgicalHistory" id="pastMedicalSurgicalHistory" name="pastMedicalSurgicalHistory" rows="2" cols="74"></textarea>
 				</p>
-				<label for="screened-before-answer-div" class="label">Review of Systems</label>
+				<label for="cns" class="label">Review of Systems</label>
 				<div class="col11">
-					<label for="types-of-screening">CNS:<span style="color: #f00 !important;
+					<label for="cns">CNS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.cns" id="cns" name="cns" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">CVS:<span style="color: #f00 !important;
+					<label for="cvs">CVS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.cvs" id="cvs" name="cvs" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">RS:<span style="color: #f00 !important;
+					<label for="rs">RS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rs" id="rs" name="rs" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">GUS:<span style="color: #f00 !important;
+					<label for="gus">GUS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.gus" id="gus" name="gus" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">MSS:<span style="color: #f00 !important;
+					<label for="mss">MSS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.mss" id="mss" name="mss" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />

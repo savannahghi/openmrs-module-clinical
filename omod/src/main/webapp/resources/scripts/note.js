@@ -51,6 +51,14 @@ function Note(noteObj) {
 	self.physicalActivityAnswer = noteObj.physicalActivityAnswer;
 	self.radiotherapyExposureAnswer = noteObj.radiotherapyExposureAnswer;
 	self.comments = noteObj.comments;
+	self.presentingComplains = noteObj.presentingComplains;
+	self.historyOfPresentIllness = noteObj.historyOfPresentIllness;
+	self.pastMedicalSurgicalHistory = noteObj.pastMedicalSurgicalHistory;
+	self.cns = noteObj.cns;
+	self.cvs = noteObj.cvs;
+	self.rs = noteObj.rs;
+	self.gus = noteObj.gus;
+	self.mss = noteObj.mss;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
 	self.specify = noteObj.specify;
