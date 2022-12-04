@@ -517,6 +517,7 @@
 							"currentContraceptiveUseAnswer", "cervicalCancerScreeningAnswer", "cervicalCancerScreeningType","cervicalCancerScreeningDate", 
 							"breastCancerScreeningAnswer", "breastCancerScreeningType", "breastCancerScreeningDate", "colorectalCancerScreeningAnswer", 
 							"colorectalCancerScreeningType", "colorectalCancerScreeningDate","prostrateCancerScreeningAnswer", "prostrateCancerScreeningType", 
+							"presentingComplains", "historyOfPresentIllness", "pastMedicalSurgicalHistory", "cns", "cvs", "rs", "gus", "mss",
 							"prostrateCancerScreeningDate", "retinoblastomaState", "cigaretteUsageAnswer", "cigarettesPerDay", "yearsSmokedCigarette", 
 							"tobaccoUsageAnswer", "alcoholUsageAnswer", "alcoholIntakeFrequency", "physicalActivityAnswer", "radiotherapyExposureAnswer", 
 							"relationshipToPatient", "ageAtDiagnosis", "cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",

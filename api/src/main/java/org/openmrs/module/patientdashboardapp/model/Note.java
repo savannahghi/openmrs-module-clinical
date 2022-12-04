@@ -149,6 +149,78 @@ public class Note {
 	private String alcoholIntakeFrequency;
 	private String physicalActivityAnswer;
 	private String radiotherapyExposureAnswer;
+	private String presentingComplains; 
+	private String historyOfPresentIllness;
+	private String pastMedicalSurgicalHistory;
+	private String cns;
+	private String cvs;
+	private String rs;
+	private String gus;
+	private String mss;
+
+	public String getPresentingComplains() {
+		return presentingComplains;
+	}
+
+	public void setPresentingComplains(String presentingComplains) {
+		this.presentingComplains = presentingComplains;
+	}
+
+	public String getHistoryOfPresentIllness() {
+		return historyOfPresentIllness;
+	}
+
+	public void setHistoryOfPresentIllness(String historyOfPresentIllness) {
+		this.historyOfPresentIllness = historyOfPresentIllness;
+	}
+
+	public String getPastMedicalSurgicalHistory() {
+		return pastMedicalSurgicalHistory;
+	}
+
+	public void setPastMedicalSurgicalHistory(String pastMedicalSurgicalHistory) {
+		this.pastMedicalSurgicalHistory = pastMedicalSurgicalHistory;
+	}
+
+	public String getCns() {
+		return cns;
+	}
+
+	public void setCns(String cns) {
+		this.cns = cns;
+	}
+
+	public String getCvs() {
+		return cvs;
+	}
+
+	public void setCvs(String cvs) {
+		this.cvs = cvs;
+	}
+
+	public String getRs() {
+		return rs;
+	}
+
+	public void setRs(String rs) {
+		this.rs = rs;
+	}
+
+	public String getGus() {
+		return gus;
+	}
+
+	public void setGus(String gus) {
+		this.gus = gus;
+	}
+
+	public String getMss() {
+		return mss;
+	}
+
+	public void setMss(String mss) {
+		this.mss = mss;
+	}
 
 	public String getCigarettesPerDay() {
 		return cigarettesPerDay;
@@ -617,13 +689,13 @@ public class Note {
 		if(isAdultMale(encounter.getPatient())){
 			addMaleHistory(encounter, obsGroup);
 		}
-		if(isChild(encounter.getPatient()))
-		{
+		//if(isChild(encounter.getPatient()))
+		//{
 			addChildHistory(encounter, obsGroup);
-		}
+		//}
 
 		addRiskFactors(encounter, obsGroup);
-
+		addClinicals(encounter, obsGroup);
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1005,6 +1077,80 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.radiotherapyExposureAnswer)) {
 			this.addValueCoded(encounter, obsGroup, conceptRadiotherapyExposure, this.radiotherapyExposureAnswer);
+		}
+	}
+
+	private void addClinicals(Encounter encounter, Obs obsGroup) {
+		//PresentingComplains
+		Concept conceptPresentingComplains = Context.getConceptService().getConceptByUuid("	160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptPresentingComplains== null) {
+			throw new NullPointerException("PresentingComplains concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.presentingComplains)) {
+			this.addValueText(encounter, obsGroup, conceptPresentingComplains, this.presentingComplains);
+		}
+
+		//HistoryOfPresentIllness
+		Concept conceptHistoryOfPresentIllness= Context.getConceptService().getConceptByUuid("1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptHistoryOfPresentIllness== null) {
+			throw new NullPointerException("HistoryOfPresentIllness concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.historyOfPresentIllness)) {
+			this.addValueText(encounter, obsGroup, conceptHistoryOfPresentIllness, this.historyOfPresentIllness);
+		}
+
+		//PastMedicalSurgicalHistory
+		Concept conceptPastMedicalSurgicalHistory= Context.getConceptService().getConceptByUuid("160221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptPastMedicalSurgicalHistory== null) {
+			throw new NullPointerException("PastMedicalSurgicalHistory concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.pastMedicalSurgicalHistory)) {
+			this.addValueText(encounter, obsGroup, conceptPastMedicalSurgicalHistory, this.pastMedicalSurgicalHistory);
+		}
+
+		//Cns
+		Concept conceptCns= Context.getConceptService().getConceptByUuid("e1cf1934-1d17-4912-9bf5-8b4175915c72");
+		if (conceptCns== null) {
+			throw new NullPointerException("Cns concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cns)) {
+			this.addValueText(encounter, obsGroup, conceptCns, this.cns);
+		}
+
+		//Cvs
+		Concept conceptCvs= Context.getConceptService().getConceptByUuid("1c1b7c40-1c74-41d7-aa61-b823ddec7880");
+		if (conceptCvs== null) {
+			throw new NullPointerException("Cvs concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cvs)) {
+			this.addValueText(encounter, obsGroup, conceptCvs, this.cvs);
+		}
+
+		//Cns
+		Concept conceptRs= Context.getConceptService().getConceptByUuid("de175504-853b-4eca-a47c-cd0f84296add");
+		if (conceptRs== null) {
+			throw new NullPointerException("Rs concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rs)) {
+			this.addValueText(encounter, obsGroup, conceptRs, this.rs);
+		}
+
+		//Gus
+		Concept conceptGus= Context.getConceptService().getConceptByUuid("c517d726-a89b-4c48-b859-872ac7dfe411");
+		if (conceptGus== null) {
+			throw new NullPointerException("Gus concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.gus)) {
+			this.addValueText(encounter, obsGroup, conceptGus, this.gus);
+		}
+
+		//Mss
+		Concept conceptMss= Context.getConceptService().getConceptByUuid("c2dded2d-ea28-49e1-9c52-dfb68e5f3460");
+		if (conceptMss== null) {
+			throw new NullPointerException("Mss concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.mss)) {
+			this.addValueText(encounter, obsGroup, conceptMss, this.mss);
 		}
 	}
 
