@@ -42,6 +42,14 @@ function Note(noteObj) {
 	self.prostrateCancerScreeningType = noteObj.prostrateCancerScreeningType;
 	self.prostrateCancerScreeningDate = noteObj.prostrateCancerScreeningDate;
 	self.retinoblastomaState = noteObj.retinoblastomaState;
+	self.cigaretteUsageAnswer = noteObj.cigaretteUsageAnswer;
+	self.cigarettesPerDay = noteObj.cigarettesPerDay;
+	self.yearsSmokedCigarette = noteObj.yearsSmokedCigarette;
+	self.tobaccoUsageAnswer = noteObj.tobaccoUsageAnswer;
+	self.alcoholUsageAnswer = noteObj.alcoholUsageAnswer;
+	self.alcoholIntakeFrequency = noteObj.alcoholIntakeFrequency;
+	self.physicalActivityAnswer = noteObj.physicalActivityAnswer;
+	self.radiotherapyExposureAnswer = noteObj.radiotherapyExposureAnswer;
 	self.comments = noteObj.comments;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

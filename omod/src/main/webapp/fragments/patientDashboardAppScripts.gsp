@@ -517,10 +517,10 @@
 							"currentContraceptiveUseAnswer", "cervicalCancerScreeningAnswer", "cervicalCancerScreeningType","cervicalCancerScreeningDate", 
 							"breastCancerScreeningAnswer", "breastCancerScreeningType", "breastCancerScreeningDate", "colorectalCancerScreeningAnswer", 
 							"colorectalCancerScreeningType", "colorectalCancerScreeningDate","prostrateCancerScreeningAnswer", "prostrateCancerScreeningType", 
-							"prostrateCancerScreeningDate", "retinoblastomaState", "relationshipToPatient", "ageAtDiagnosis", "cancerType", "patientId",
-							"procedures", "queueId", "signs", "referredTo","facility",
-							"outcome", "admitTo", "followUpDate", "option",
-							"drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
+							"prostrateCancerScreeningDate", "retinoblastomaState", "cigaretteUsageAnswer", "cigarettesPerDay", "yearsSmokedCigarette", 
+							"tobaccoUsageAnswer", "alcoholUsageAnswer", "alcoholIntakeFrequency", "physicalActivityAnswer", "radiotherapyExposureAnswer", 
+							"relationshipToPatient", "ageAtDiagnosis", "cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
+							"outcome", "admitTo", "followUpDate", "option", "drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
 							"drugName", "numberOfDays", "qualifiers","answer","freeText"
 						])
 					},

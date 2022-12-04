@@ -85,7 +85,7 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> alcoholUsage = conceptAlcoholUsage.getAnswers();
         Concept conceptPhysicalActivity = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> physicalActivity = conceptPhysicalActivity.getAnswers();
-        Concept conceptPreviousRadioTherapyExposure = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Concept conceptPreviousRadioTherapyExposure = Context.getConceptService().getConceptByUuid("0693aab4-9756-454e-b693-6d4454c55043");
         Collection<ConceptAnswer> radiotherapyExposure= conceptPreviousRadioTherapyExposure.getAnswers();
         
 

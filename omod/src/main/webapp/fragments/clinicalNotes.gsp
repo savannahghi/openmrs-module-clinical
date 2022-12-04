@@ -399,7 +399,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% cigaretteUsage.each { answer -> %>
 							<div class="radios col3">
 								<label>
-									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<input data-bind="checked: cigaretteUsageAnswer" value="${answer.answerConcept.id}" name="cigaretteUsageAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
@@ -408,12 +408,12 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col5">
 						<label for="date-screened-prostratecancer">If yes, how many cigarrets per day?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+						<input type="text" id="cigarettesPerDay" name="cigarettesPerDay" data-bind="value: \$root.cigarettesPerDay" />
 					</div>
 					<div class="col6">
 						<label for="screened-prostrate-cancer">For how many many years?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<input type="text" id="yearsSmokedCigarette" name="yearsSmokedCigarette" data-bind="value: \$root.yearsSmokedCigarette" />
 					</div>
 					<div class="col12">
 						<label for="date-screened-prostratecancer">Do you use other forms of tobacco?<span style="color: #f00 !important;
@@ -421,7 +421,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% tobaccoUsage.each { answer -> %>
 							<div class="radios col3">
 								<label>
-									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<input data-bind="checked: tobaccoUsageAnswer" value="${answer.answerConcept.id}" name="tobaccoUsageAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
@@ -433,24 +433,24 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% alcoholUsage.each { answer -> %>
 							<div class="radios col3">
 								<label>
-									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<input data-bind="checked: alcoholUsageAnswer" value="${answer.answerConcept.id}" name="alcoholUsageAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col5">
-						<label for="date-screened-prostratecancer">What is the frequency(bottles per day)?<span style="color: #f00 !important;
+						<label for="alcoholIntakeFrequency">What is the frequency(bottles per day)?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+						<input type="text" id="alcoholIntakeFrequency" name="alcoholIntakeFrequency" data-bind="value: \$root.alcoholIntakeFrequency" />
 					</div>
 					<div class="col12">
-						<label for="screened-prostrate-cancer">Are you physically active?<span style="color: #f00 !important;
+						<label for="physicalActivity">Are you physically active?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<% physicalActivity.each { answer -> %>
 							<div class="radios col3">
 								<label>
-									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<input data-bind="checked: physicalActivityAnswer" value="${answer.answerConcept.id}" name="physicalActivityAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
@@ -462,7 +462,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% radiotherapyExposure.each { answer -> %>
 							<div class="radios col3">
 								<label>
-									<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
