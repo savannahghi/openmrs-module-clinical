@@ -157,6 +157,69 @@ public class Note {
 	private String rs;
 	private String gus;
 	private String mss;
+	private String generalExamination;
+	private String jaundiceExamination;
+	private String anaemiaExamination;
+	private String cyanosisExamination;
+	private String clubbingExamination;
+	private String oedemaExamination;
+	private String dehydrationExamination;
+
+	public String getGeneralExamination() {
+		return generalExamination;
+	}
+
+	public void setGeneralExamination(String generalExamination) {
+		this.generalExamination = generalExamination;
+	}
+
+	public String getJaundiceExamination() {
+		return jaundiceExamination;
+	}
+
+	public void setJaundiceExamination(String jaundiceExamination) {
+		this.jaundiceExamination = jaundiceExamination;
+	}
+
+	public String getAnaemiaExamination() {
+		return anaemiaExamination;
+	}
+
+	public void setAnaemiaExamination(String anaemiaExamination) {
+		this.anaemiaExamination = anaemiaExamination;
+	}
+
+	public String getCyanosisExamination() {
+		return cyanosisExamination;
+	}
+
+	public void setCyanosisExamination(String cyanosisExamination) {
+		this.cyanosisExamination = cyanosisExamination;
+	}
+
+	public String getClubbingExamination() {
+		return clubbingExamination;
+	}
+
+	public void setClubbingExamination(String clubbingExamination) {
+		this.clubbingExamination = clubbingExamination;
+	}
+
+	public String getOedemaExamination() {
+		return oedemaExamination;
+	}
+
+	public void setOedemaExamination(String oedemaExamination) {
+		this.oedemaExamination = oedemaExamination;
+	}
+
+	public String getDehydrationExamination() {
+		return dehydrationExamination;
+	}
+
+	public void setDehydrationExamination(String dehydrationExamination) {
+		this.dehydrationExamination = dehydrationExamination;
+	}
 
 	public String getPresentingComplains() {
 		return presentingComplains;
@@ -696,6 +759,7 @@ public class Note {
 
 		addRiskFactors(encounter, obsGroup);
 		addClinicals(encounter, obsGroup);
+		addPerformanceStatus(encounter, obsGroup);
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1151,6 +1215,70 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.mss)) {
 			this.addValueText(encounter, obsGroup, conceptMss, this.mss);
+		}
+	}
+
+	private void addPerformanceStatus(Encounter encounter, Obs obsGroup) {
+		//GeneralExamination
+		Concept conceptGeneralExamination= Context.getConceptService().getConceptByUuid("163042AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptGeneralExamination== null) {
+			throw new NullPointerException("GeneralExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.generalExamination)) {
+			this.addValueText(encounter, obsGroup, conceptGeneralExamination, this.generalExamination);
+		}
+		//JaundiceExamination
+		Concept conceptJaundiceExamination= Context.getConceptService().getConceptByUuid("a26a4f11-0169-42d3-9501-1e1835f319c0");
+		if (conceptJaundiceExamination== null) {
+			throw new NullPointerException("JaundiceExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.jaundiceExamination)) {
+			this.addValueText(encounter, obsGroup, conceptJaundiceExamination, this.jaundiceExamination);
+		}
+
+		//AnaemiaExamination
+		Concept conceptAnaemiaExamination= Context.getConceptService().getConceptByUuid("569ebdae-ecca-4aa8-9a4f-3b95b76b1d9b");
+		if (conceptAnaemiaExamination== null) {
+			throw new NullPointerException("AnaemiaExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.anaemiaExamination)) {
+			this.addValueText(encounter, obsGroup, conceptAnaemiaExamination, this.anaemiaExamination);
+		}
+
+		//CyanosisExamination
+		Concept conceptCyanosisExamination= Context.getConceptService().getConceptByUuid("96106fae-28ca-4b64-9dfd-34eb843fcb7c");
+		if (conceptCyanosisExamination== null) {
+			throw new NullPointerException("CyanosisExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cyanosisExamination)) {
+			this.addValueText(encounter, obsGroup, conceptCyanosisExamination, this.cyanosisExamination);
+		}
+
+		//ClubbingExamination
+		Concept conceptClubbingExamination= Context.getConceptService().getConceptByUuid("b662f818-da0e-4894-94d4-1e546215edcc");
+		if (conceptClubbingExamination== null) {
+			throw new NullPointerException("ClubbingExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.clubbingExamination)) {
+			this.addValueText(encounter, obsGroup, conceptClubbingExamination, this.clubbingExamination);
+		}
+
+		//OedemaExamination
+		Concept conceptOedemaExamination= Context.getConceptService().getConceptByUuid("a86b8602-2fed-4736-93c2-532fffb45dc5");
+		if (conceptOedemaExamination== null) {
+			throw new NullPointerException("OedemaExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.oedemaExamination)) {
+			this.addValueText(encounter, obsGroup, conceptOedemaExamination, this.oedemaExamination);
+		}
+
+		//DehydrationExamination
+		Concept conceptDehydrationExamination= Context.getConceptService().getConceptByUuid("97bb17db-ce1e-4c82-87e0-b2488636ddfe");
+		if (conceptDehydrationExamination== null) {
+			throw new NullPointerException("DehydrationExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.dehydrationExamination)) {
+			this.addValueText(encounter, obsGroup, conceptDehydrationExamination, this.dehydrationExamination);
 		}
 	}
 
