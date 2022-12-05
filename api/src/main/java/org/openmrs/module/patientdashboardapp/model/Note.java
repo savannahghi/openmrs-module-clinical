@@ -488,11 +488,11 @@ public class Note {
 		this.colorectalCancerScreeningAnswer= colorectalCancerScreeningAnswer;
 	}
 
-	public String getRetinoBlastomaState() {
+	public String getRetinoblastomaState() {
 		return retinoblastomaState;
 	}
 
-	public void setRetinoBlastomaState(String retinoblastomaState) {
+	public void setRetinoblastomaState(String retinoblastomaState) {
 		this.retinoblastomaState= retinoblastomaState;
 	}
 
@@ -689,10 +689,10 @@ public class Note {
 		if(isAdultMale(encounter.getPatient())){
 			addMaleHistory(encounter, obsGroup);
 		}
-		//if(isChild(encounter.getPatient()))
-		//{
+		if(isChild(encounter.getPatient()))
+		{
 			addChildHistory(encounter, obsGroup);
-		//}
+		}
 
 		addRiskFactors(encounter, obsGroup);
 		addClinicals(encounter, obsGroup);
@@ -1082,7 +1082,7 @@ public class Note {
 
 	private void addClinicals(Encounter encounter, Obs obsGroup) {
 		//PresentingComplains
-		Concept conceptPresentingComplains = Context.getConceptService().getConceptByUuid("	160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		Concept conceptPresentingComplains = Context.getConceptService().getConceptByUuid("160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptPresentingComplains== null) {
 			throw new NullPointerException("PresentingComplains concept is not defined");
 		}
