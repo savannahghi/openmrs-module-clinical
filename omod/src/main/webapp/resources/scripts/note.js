@@ -59,6 +59,13 @@ function Note(noteObj) {
 	self.rs = noteObj.rs;
 	self.gus = noteObj.gus;
 	self.mss = noteObj.mss;
+	self.generalExamination = noteObj.generalExamination;
+	self.jaundiceExamination = noteObj.jaundiceExamination;
+	self.anaemiaExamination = noteObj.anaemiaExamination;
+	self.cyanosisExamination = noteObj.cyanosisExamination;
+	self.clubbingExamination = noteObj.clubbingExamination;
+	self.oedemaExamination = noteObj.oedemaExamination;
+	self.dehydrationExamination = noteObj.dehydrationExamination;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
 	self.specify = noteObj.specify;

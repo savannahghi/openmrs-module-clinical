@@ -525,37 +525,37 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<div class="col11">
 					<label for="types-of-screening">General Examination:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.generalExamination" id="generalExamination" name="generalExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Jaundice:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.jaundiceExamination" id="jaundiceExamination" name="jaundiceExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Anaemia:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.anaemiaExamination" id="anaemiaExamination" name="anaemiaExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Cyanosis:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.cyanosisExamination" id="cyanosisExamination" name="cyanosisExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Clubbing:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.clubbingExamination" id="clubbingExamination" name="clubbingExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Oedema:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.oedemaExamination" id="oedemaExamination" name="oedemaExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Dehydration:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.dehydrationExamination" id="dehydrationExamination" name="dehydrationExamination" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
