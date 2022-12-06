@@ -87,6 +87,22 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> physicalActivity = conceptPhysicalActivity.getAnswers();
         Concept conceptPreviousRadioTherapyExposure = Context.getConceptService().getConceptByUuid("0693aab4-9756-454e-b693-6d4454c55043");
         Collection<ConceptAnswer> radiotherapyExposure= conceptPreviousRadioTherapyExposure.getAnswers();
+        Concept conceptPalpablility = Context.getConceptService().getConceptByUuid("d4e9a56b-b980-4ada-9f33-7018e7398281");
+        Collection<ConceptAnswer> palpability = conceptPalpablility.getAnswers();
+        Concept conceptSubmandibularExamination = Context.getConceptService().getConceptByUuid("b2a84e52-34da-49f4-9c14-60b86e88eecd");
+        Collection<ConceptAnswer> submandibularExamination = conceptSubmandibularExamination.getAnswers();
+        Concept conceptSupraciavicularExamination = Context.getConceptService().getConceptByUuid("6d813dae-6389-4dc5-bc04-3d48f4658c5f");
+        Collection<ConceptAnswer> supraciavicularExamination = conceptSupraciavicularExamination.getAnswers();
+        Concept conceptCervicalExamination = Context.getConceptService().getConceptByUuid("2bdab135-118a-4659-aa9b-0793de7c54e8");
+        Collection<ConceptAnswer> cervicalExamination = conceptCervicalExamination.getAnswers();
+        Concept conceptAxillaryExamination = Context.getConceptService().getConceptByUuid("0c1db25e-ca62-43fa-9477-4196451d01bb");
+        Collection<ConceptAnswer> axillaryExamination = conceptAxillaryExamination.getAnswers();
+        Concept conceptInguinalExamination = Context.getConceptService().getConceptByUuid("5b898de3-8151-4456-b3c0-12b42b1c7f22");
+        Collection<ConceptAnswer> inguinalExamination = conceptInguinalExamination.getAnswers();
+        Concept conceptGeneralizedLymadenopathyExamination = Context.getConceptService().getConceptByUuid("8dc6f3f7-2f69-498a-b2e2-d87475f4bd32");
+        Collection<ConceptAnswer> generalizedLymadenopathyExamination = conceptGeneralizedLymadenopathyExamination.getAnswers();
+        Concept conceptOtherLymphNodeExamination = Context.getConceptService().getConceptByUuid("61d118c2-fd66-4f18-b9a0-e23eb71a4bcc");
+        Collection<ConceptAnswer> otherLymphNodeExamination = conceptOtherLymphNodeExamination.getAnswers();
         
 
         model.addAttribute("familyHistoryAnswers", familyHistoryAnswers);
@@ -107,6 +123,14 @@ public class ClinicalNotesFragmentController {
         model.addAttribute("alcoholUsage", alcoholUsage);
         model.addAttribute("physicalActivity", physicalActivity);
         model.addAttribute("radiotherapyExposure", radiotherapyExposure);
+        model.addAttribute("palpability", palpability);
+        model.addAttribute("submandibularExamination", submandibularExamination);
+        model.addAttribute("supraciavicularExamination", supraciavicularExamination);
+        model.addAttribute("cervicalExamination", cervicalExamination);
+        model.addAttribute("axillaryExamination", axillaryExamination);
+        model.addAttribute("inguinalExamination", inguinalExamination);
+        model.addAttribute("generalizedLymadenopathyExamination", generalizedLymadenopathyExamination);
+        model.addAttribute("otherLymphNodeExamination", otherLymphNodeExamination);
         model.addAttribute("cancerTypes", this.getDiagnosis("cancer", ui));
 		model.addAttribute("outcomeOptions", SimpleObject.fromCollection(Outcome.getAvailableOutcomes(), ui, "label", "id"));
 		model.addAttribute("listOfWards", SimpleObject.fromCollection(Outcome.getInpatientWards(), ui, "label", "id"));
