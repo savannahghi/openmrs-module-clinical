@@ -1611,7 +1611,7 @@ public class Note {
 	}
 	private void addHeentExam(Encounter encounter, Obs obsGroup) {
 		//EyeExam
-		Concept conceptEyeExam = Context.getConceptService().getConceptByUuid("");
+		Concept conceptEyeExam = Context.getConceptService().getConceptByUuid("166441AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptEyeExam == null) {
 			throw new NullPointerException("EyeExam concept is not defined");
 		}
@@ -1619,7 +1619,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptEyeExam, this.eyeExam);
 		}
 		//NeckExam
-		Concept conceptNeckExam = Context.getConceptService().getConceptByUuid("");
+		Concept conceptNeckExam = Context.getConceptService().getConceptByUuid("165983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptNeckExam == null) {
 			throw new NullPointerException("NeckExam concept is not defined");
 		}
@@ -1627,7 +1627,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptNeckExam, this.neckExam);
 		}
 		//MouthExam
-		Concept conceptMouthExam = Context.getConceptService().getConceptByUuid("");
+		Concept conceptMouthExam = Context.getConceptService().getConceptByUuid("7f38a847-809a-4900-90dc-e9bc6f961873");
 		if (conceptMouthExam == null) {
 			throw new NullPointerException("MouthExam concept is not defined");
 		}
@@ -1635,7 +1635,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptMouthExam, this.mouthExam);
 		}
 		//EarExam
-		Concept conceptEarExam = Context.getConceptService().getConceptByUuid("");
+		Concept conceptEarExam = Context.getConceptService().getConceptByUuid("7523ddac-705a-4da0-91c6-96c6256b6cae");
 		if (conceptEarExam == null) {
 			throw new NullPointerException("EarExam concept is not defined");
 		}
@@ -1643,7 +1643,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptEarExam, this.earExam);
 		}
 		//NoseExam
-		Concept conceptNoseExam = Context.getConceptService().getConceptByUuid("");
+		Concept conceptNoseExam = Context.getConceptService().getConceptByUuid("372f2e6b-b8a1-4260-bd83-f14ae09e5fe3");
 		if (conceptNoseExam == null) {
 			throw new NullPointerException("NoseExam concept is not defined");
 		}
@@ -1651,7 +1651,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptNoseExam, this.noseExam);
 		}
 		//ThroatExam
-		Concept conceptThroatExam = Context.getConceptService().getConceptByUuid("");
+		Concept conceptThroatExam = Context.getConceptService().getConceptByUuid("5c931ad2-28e8-41f3-9291-ee9f66d3c46e");
 		if (conceptThroatExam == null) {
 			throw new NullPointerException("ThroatExam concept is not defined");
 		}
