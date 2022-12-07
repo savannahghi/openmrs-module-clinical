@@ -754,24 +754,24 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Respiratory System</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="rsInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsInspection"  id="rsInspection" name="rsInspection" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					<label for="rsPalpation">Palpation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsPalpation" id="rsPalpation" name="rsPalpation" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Percussion:<span style="color: #f00 !important;
+					<label for="rsPercussion">Percussion:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsPercussion" id="rsPercussion" name="rsPercussion" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
+					<label for="rsAuscultation">Auscultation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsAuscultation" id="rsAuscultation" name="rsAuscultation" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />

@@ -185,6 +185,43 @@ public class Note {
 	private String earExam; 
 	private String noseExam;
 	private String throatExam;
+	private String rsInspection;
+	private String rsPalpation;
+	private String rsPercussion;
+	private String rsAuscultation;
+
+
+	public String getRsInspection() {
+		return rsInspection;
+	}
+
+	public void setRsInspection(String rsInspection) {
+		this.rsInspection = rsInspection;
+	}
+
+	public String getRsPalpation() {
+		return rsPalpation;
+	}
+
+	public void setRsPalpation(String rsPalpation) {
+		this.rsPalpation = rsPalpation;
+	}
+
+	public String getRsPercussion() {
+		return rsPercussion;
+	}
+
+	public void setRsPercussion(String rsPercussion) {
+		this.rsPercussion = rsPercussion;
+	}
+
+	public String getRsAuscultation() {
+		return rsAuscultation;
+	}
+
+	public void setRsAuscultation(String rsAuscultation) {
+		this.rsAuscultation = rsAuscultation;
+	}
 
 	public String getEyeExam() {
 		return eyeExam;
@@ -951,6 +988,7 @@ public class Note {
 		addPerformanceStatus(encounter, obsGroup);
 		addLymphNodeExam(encounter, obsGroup);
 		addHeentExam(encounter, obsGroup);
+		addRespiratorySystemExam(encounter, obsGroup);
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1659,6 +1697,42 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptThroatExam, this.throatExam);
 		}
 	}
+
+	private void addRespiratorySystemExam(Encounter encounter, Obs obsGroup) {
+		//RsInspection
+		Concept conceptRsInspection = Context.getConceptService().getConceptByUuid("0d7eb03f-cf61-4953-bd0b-e0845b7792bb");
+		if (conceptRsInspection == null) {
+			throw new NullPointerException("RsInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsInspection)) {
+			this.addValueText(encounter, obsGroup, conceptRsInspection, this.rsInspection);
+		}
+		//RsPalpation
+		Concept conceptRsPalpation = Context.getConceptService().getConceptByUuid("3eb9282b-11f0-4d26-87ec-fd3c24b8200d");
+		if (conceptRsPalpation == null) {
+			throw new NullPointerException("RsPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptRsPalpation, this.rsPalpation);
+		}
+		//RsPercussion
+		Concept conceptRsPercussion = Context.getConceptService().getConceptByUuid("5ac26284-223f-4c43-b665-75dae05fd65c");
+		if (conceptRsPercussion == null) {
+			throw new NullPointerException("RsPercussion concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsPercussion)) {
+			this.addValueText(encounter, obsGroup, conceptRsPercussion, this.rsPercussion);
+		}
+		//RsAuscultation
+		Concept conceptRsAuscultation = Context.getConceptService().getConceptByUuid("54cb8488-d4d4-42c4-9f75-a12024fb7138");
+		if (conceptRsAuscultation == null) {
+			throw new NullPointerException("RsAuscultation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsAuscultation)) {
+			this.addValueText(encounter, obsGroup, conceptRsAuscultation, this.rsAuscultation);
+		}
+	}
+
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{
 		Obs obs = new Obs();

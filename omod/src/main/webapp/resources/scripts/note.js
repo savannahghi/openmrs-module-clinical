@@ -86,6 +86,10 @@ function Note(noteObj) {
 	self.earExam = noteObj.earExam;
 	self.noseExam = noteObj.noseExam;
 	self.throatExam = noteObj.throatExam;
+	self.rsInspection = noteObj.rsInspection;
+	self.rsPalpation = noteObj.rsPalpation;
+	self.rsPercussion = noteObj.rsPercussion;
+	self.rsAuscultation = noteObj.rsAuscultation;
 	self.otherLymphNodeExaminationComment = noteObj.otherLymphNodeExaminationComment;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
