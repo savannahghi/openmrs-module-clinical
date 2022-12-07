@@ -521,7 +521,10 @@
 							"jaundiceExamination", "anaemiaExamination", "cyanosisExamination", "clubbingExamination", "oedemaExamination", "dehydrationExamination",
 							"prostrateCancerScreeningDate", "retinoblastomaState", "cigaretteUsageAnswer", "cigarettesPerDay", "yearsSmokedCigarette", 
 							"tobaccoUsageAnswer", "alcoholUsageAnswer", "alcoholIntakeFrequency", "physicalActivityAnswer", "radiotherapyExposureAnswer", 
-							"relationshipToPatient", "ageAtDiagnosis", "cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
+							"relationshipToPatient", "ageAtDiagnosis","palpabilityAnswer", "submandibularAnswer", "submandibularComment", "supraciavicularAnswer", 
+							"supraciavicularComment", "cervicalExaminationAnswe"r, "cervicalExaminationComment", "axillaryExaminationAnswer", "axillaryExaminationComment", 
+							"inguinalExaminationAnswer", "inguinalExaminationComment", "generalizedLymadenopathyExaminationAnswer", "generalizedLymadenopathyExaminationComment", 
+							"otherLymphNodeExaminationAnswer", "otherLymphNodeExaminationComment" "cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option", "drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
 							"drugName", "numberOfDays", "qualifiers","answer","freeText"
 						])

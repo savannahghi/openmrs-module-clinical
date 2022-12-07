@@ -570,7 +570,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% palpability.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: palpabilityAnswer" value="${answer.answerConcept.id}" name="palpabilityAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
@@ -580,21 +580,21 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<label for="screened-before-answer-div">If yes, Indicate location and characteristics below:</label>
 				<div style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col7">
-						<label for="degree-of-relation">Submandibular<span style="color: #f00 !important;
+						<label for="submandibular">Submandibular<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
 						<% submandibularExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: submandibularAnswer" value="${answer.answerConcept.id}" name="submandibularAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="submandibularComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.submandibularComment" id="submandibularComment" name="submandibularComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -604,16 +604,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% supraciavicularExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: supraciavicularAnswer" value="${answer.answerConcept.id}" name="supraciavicularAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="supraciavicularComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.supraciavicularComment" id="supraciavicularComment" name="supraciavicularComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -623,16 +623,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% cervicalExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: cervicalExaminationAnswer" value="${answer.answerConcept.id}" name="cervicalExaminationAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="cervicalExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.cervicalExaminationComment" id="cervicalExaminationComment" name="cervicalExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -642,16 +642,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% axillaryExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: axillaryExaminationAnswer" value="${answer.answerConcept.id}" name="axillaryExaminationAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="axillaryExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.axillaryExaminationComment" id="axillaryExaminationComment" name="axillaryExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -661,16 +661,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% inguinalExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: inguinalExaminationAnswer" value="${answer.answerConcept.id}" name="inguinalExaminationAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="inguinalExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.inguinalExaminationComment" id="inguinalExaminationComment" name="inguinalExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -680,16 +680,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% generalizedLymadenopathyExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: generalizedLymadenopathyExaminationAnswer" value="${answer.answerConcept.id}" name="generalizedLymadenopathyExaminationAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="generalizedLymadenopathyExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root." id="generalizedLymadenopathyExaminationComment" name="generalizedLymadenopathyExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -699,16 +699,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<% otherLymphNodeExamination.each { answer -> %>
 							<div class="radios col2">
 								<label>
-									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<input data-bind="checked: otherLymphNodeExaminationAnswer" value="${answer.answerConcept.id}" name="otherLymphNodeExaminationAnswer" type="radio">
 									<label>${answer.answerConcept.getName()}</label>
 								</label>
 							</div>
 						<% } %>	
 					</div>
 					<div class="col4">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+						<label for="otherLymphNodeExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root." id="otherLymphNodeExaminationComment" name="otherLymphNodeExaminationComment" />
 					</div>
 				</div>
 				<p>
