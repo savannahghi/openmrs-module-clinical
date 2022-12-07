@@ -525,7 +525,8 @@
 							"supraciavicularComment", "cervicalExaminationAnswer", "cervicalExaminationComment", "axillaryExaminationAnswer", "axillaryExaminationComment", 
 							"inguinalExaminationAnswer", "inguinalExaminationComment", "generalizedLymadenopathyExaminationAnswer", "generalizedLymadenopathyExaminationComment", 
 							"otherLymphNodeExaminationAnswer", "otherLymphNodeExaminationComment", "eyeExam", "neckExam", "mouthExam", "earExam", "noseExam", "throatExam",
-							"rsInspection", "rsPalpation", "rsPercussion", "rsAuscultation", "breastExaminationComment", "cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
+							"rsInspection", "rsPalpation", "rsPercussion", "rsAuscultation", "breastExaminationComment", "csInspection", "csPalpation", "csPercussion", "csAuscultation",
+							"cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option", "drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
 							"drugName", "numberOfDays", "qualifiers","answer","freeText"
 						])

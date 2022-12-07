@@ -190,7 +190,43 @@ public class Note {
 	private String rsPercussion;
 	private String rsAuscultation;
 	private String breastExaminationComment;
+	private String csInspection;
+	private String csPalpation;
+	private String csPercussion;
+	private String csAuscultation;
 
+
+	public String getCsInspection() {
+		return csInspection;
+	}
+
+	public void setCsInspection(String csInspection) {
+		this.csInspection = csInspection;
+	}
+
+	public String getCsPalpation() {
+		return csPalpation;
+	}
+
+	public void setCsPalpation(String csPalpation) {
+		this.csPalpation = csPalpation;
+	}
+
+	public String getCsPercussion() {
+		return csPercussion;
+	}
+
+	public void setCsPercussion(String csPercussion) {
+		this.csPercussion = csPercussion;
+	}
+
+	public String getCsAuscultation() {
+		return csAuscultation;
+	}
+
+	public void setCsAuscultation(String csAuscultation) {
+		this.csAuscultation = csAuscultation;
+	}
 
 	public String getBreastExaminationComment() {
 		return breastExaminationComment;
@@ -999,6 +1035,7 @@ public class Note {
 		addHeentExam(encounter, obsGroup);
 		addRespiratorySystemExam(encounter, obsGroup);
 		addBreastExam(encounter, obsGroup);
+		addCardiovascularSystemExam(encounter, obsGroup);
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1754,6 +1791,40 @@ public class Note {
 		}
 	}
 
+	private void addCardiovascularSystemExam(Encounter encounter, Obs obsGroup) {
+		//CsInspection
+		Concept conceptCsInspection = Context.getConceptService().getConceptByUuid("5454529b-490e-4e4b-8e89-74b965356fbf");
+		if (conceptCsInspection == null) {
+			throw new NullPointerException("CsInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csInspection)) {
+			this.addValueText(encounter, obsGroup, conceptCsInspection, this.csInspection);
+		}
+		//CsPalpation
+		Concept conceptCsPalpation = Context.getConceptService().getConceptByUuid("d6879155-d79e-499f-8c16-c1d104133360");
+		if (conceptCsPalpation == null) {
+			throw new NullPointerException("CsPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptCsPalpation, this.csPalpation);
+		}
+		//CsPercussion
+		Concept conceptCsPercussion = Context.getConceptService().getConceptByUuid("b229aa3e-969e-49b8-a130-8d16d3bbab80");
+		if (conceptCsPercussion == null) {
+			throw new NullPointerException("CsPercussion concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csPercussion)) {
+			this.addValueText(encounter, obsGroup, conceptCsPercussion, this.csPercussion);
+		}
+		//CsAuscultation
+		Concept conceptCsAuscultation = Context.getConceptService().getConceptByUuid("826a1a15-b71f-449e-9173-cd9544a106cc");
+		if (conceptCsAuscultation == null) {
+			throw new NullPointerException("CsAuscultation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csAuscultation)) {
+			this.addValueText(encounter, obsGroup, conceptCsAuscultation, this.csAuscultation);
+		}
+	}
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{
