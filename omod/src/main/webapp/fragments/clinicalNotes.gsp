@@ -689,7 +689,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col4">
 						<label for="generalizedLymadenopathyExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" data-bind="value: \$root." id="generalizedLymadenopathyExaminationComment" name="generalizedLymadenopathyExaminationComment" />
+						<input type="text" data-bind="value: \$root.generalizedLymadenopathyExaminationComment" id="generalizedLymadenopathyExaminationComment" name="generalizedLymadenopathyExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
@@ -708,7 +708,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col4">
 						<label for="otherLymphNodeExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" data-bind="value: \$root." id="otherLymphNodeExaminationComment" name="otherLymphNodeExaminationComment" />
+						<input type="text" data-bind="value: \$root.otherLymphNodeExaminationComment" id="otherLymphNodeExaminationComment" name="otherLymphNodeExaminationComment" />
 					</div>
 				</div>
 				<p>
