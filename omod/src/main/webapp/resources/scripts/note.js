@@ -79,7 +79,13 @@ function Note(noteObj) {
 	self.inguinalExaminationComment = noteObj.inguinalExaminationComment;
 	self.generalizedLymadenopathyExaminationAnswer = noteObj.generalizedLymadenopathyExaminationAnswer;
 	self.generalizedLymadenopathyExaminationComment = noteObj.generalizedLymadenopathyExaminationComment;
-	otherLymphNodeExaminationAnswer = noteObj.otherLymphNodeExaminationAnswer;
+	self.otherLymphNodeExaminationAnswer = noteObj.otherLymphNodeExaminationAnswer;
+	self.eyeExam = noteObj.eyeExam;
+	self.neckExam = noteObj.neckExam;
+	self.mouthExam = noteObj.mouthExam;
+	self.earExam = noteObj.earExam;
+	self.noseExam = noteObj.noseExam;
+	self.throatExam = noteObj.throatExam;
 	self.otherLymphNodeExaminationComment = noteObj.otherLymphNodeExaminationComment;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;

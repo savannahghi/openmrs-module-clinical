@@ -179,6 +179,60 @@ public class Note {
 	private String generalizedLymadenopathyExaminationComment;
 	private String otherLymphNodeExaminationAnswer;
 	private String otherLymphNodeExaminationComment;
+	private String eyeExam; 
+	private String neckExam; 
+	private String mouthExam; 
+	private String earExam; 
+	private String noseExam;
+	private String throatExam;
+
+	public String getEyeExam() {
+		return eyeExam;
+	}
+
+	public void setEyeExam(String eyeExam) {
+		this.eyeExam = eyeExam;
+	}
+
+	public String getNeckExam() {
+		return neckExam;
+	}
+
+	public void setNeckExam(String neckExam) {
+		this.neckExam = neckExam;
+	}
+
+	public String getMouthExam() {
+		return mouthExam;
+	}
+
+	public void setMouthExam(String mouthExam) {
+		this.mouthExam = mouthExam;
+	}
+
+	public String getEarExam() {
+		return earExam;
+	}
+
+	public void setEarExam(String earExam) {
+		this.earExam = earExam;
+	}
+
+	public String getNoseExam() {
+		return noseExam;
+	}
+
+	public void setNoseExam(String noseExam) {
+		this.noseExam = noseExam;
+	}
+
+	public String getThroatExam() {
+		return throatExam;
+	}
+
+	public void setThroatExam(String throatExam) {
+		this.throatExam = throatExam;
+	}
 
 	public String getPalpabilityAnswer() {
 		return palpabilityAnswer;
@@ -896,6 +950,7 @@ public class Note {
 		addClinicals(encounter, obsGroup);
 		addPerformanceStatus(encounter, obsGroup);
 		addLymphNodeExam(encounter, obsGroup);
+		addHeentExam(encounter, obsGroup);
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1553,10 +1608,57 @@ public class Note {
 		if (StringUtils.isNotBlank(this.otherLymphNodeExaminationComment)) {
 			this.addValueText(encounter, obsGroup, conceptOtherLymphNodeExaminationComment, this.otherLymphNodeExaminationComment);
 		}
-		
-
 	}
-
+	private void addHeentExam(Encounter encounter, Obs obsGroup) {
+		//EyeExam
+		Concept conceptEyeExam = Context.getConceptService().getConceptByUuid("");
+		if (conceptEyeExam == null) {
+			throw new NullPointerException("EyeExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.eyeExam)) {
+			this.addValueText(encounter, obsGroup, conceptEyeExam, this.eyeExam);
+		}
+		//NeckExam
+		Concept conceptNeckExam = Context.getConceptService().getConceptByUuid("");
+		if (conceptNeckExam == null) {
+			throw new NullPointerException("NeckExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.neckExam)) {
+			this.addValueText(encounter, obsGroup, conceptNeckExam, this.neckExam);
+		}
+		//MouthExam
+		Concept conceptMouthExam = Context.getConceptService().getConceptByUuid("");
+		if (conceptMouthExam == null) {
+			throw new NullPointerException("MouthExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.mouthExam)) {
+			this.addValueText(encounter, obsGroup, conceptMouthExam, this.mouthExam);
+		}
+		//EarExam
+		Concept conceptEarExam = Context.getConceptService().getConceptByUuid("");
+		if (conceptEarExam == null) {
+			throw new NullPointerException("EarExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.earExam)) {
+			this.addValueText(encounter, obsGroup, conceptEarExam, this.earExam);
+		}
+		//NoseExam
+		Concept conceptNoseExam = Context.getConceptService().getConceptByUuid("");
+		if (conceptNoseExam == null) {
+			throw new NullPointerException("NoseExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.noseExam)) {
+			this.addValueText(encounter, obsGroup, conceptNoseExam, this.noseExam);
+		}
+		//ThroatExam
+		Concept conceptThroatExam = Context.getConceptService().getConceptByUuid("");
+		if (conceptThroatExam == null) {
+			throw new NullPointerException("ThroatExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.throatExam)) {
+			this.addValueText(encounter, obsGroup, conceptThroatExam, this.throatExam);
+		}
+	}
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{
 		Obs obs = new Obs();

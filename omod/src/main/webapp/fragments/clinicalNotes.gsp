@@ -718,34 +718,34 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>HEENT</legend>
 				<div class="col11">
-					<label for="types-of-screening">Eyes:<span style="color: #f00 !important;
+					<label for="eyeExam">Eyes:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.eyeExam" id="eyeExam" name="eyeExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Neck:<span style="color: #f00 !important;
+					<label for="neckExam">Neck:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.neckExam" id="neckExam" name="neckExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Mouth:<span style="color: #f00 !important;
+					<label for="mouthExam">Mouth:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.mouthExam" id="mouthExam" name="mouthExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Ears:<span style="color: #f00 !important;
+					<label for="earExam">Ears:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.earExam" id="earExam" name="earExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Nose:<span style="color: #f00 !important;
+					<label for="noseExam">Nose:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.noseExam" id="noseExam" name="noseExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Throat:<span style="color: #f00 !important;
+					<label for="throatExam">Throat:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.throatExam" id="throatExam" name="throatExam" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
