@@ -781,7 +781,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<legend>Breast Examination</legend>
 				<p class="input-position-class">
 					<label>Comments</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.breastExaminationComment" id="breastExaminationComment" name="breastExaminationComment" rows="2" cols="74"></textarea>
 				</p>
 				
 				<p>

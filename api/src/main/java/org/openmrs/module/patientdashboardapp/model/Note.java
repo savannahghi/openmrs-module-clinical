@@ -189,7 +189,16 @@ public class Note {
 	private String rsPalpation;
 	private String rsPercussion;
 	private String rsAuscultation;
+	private String breastExaminationComment;
 
+
+	public String getBreastExaminationComment() {
+		return breastExaminationComment;
+	}
+
+	public void setBreastExaminationComment(String breastExaminationComment) {
+		this.breastExaminationComment = breastExaminationComment;
+	}
 
 	public String getRsInspection() {
 		return rsInspection;
@@ -989,6 +998,7 @@ public class Note {
 		addLymphNodeExam(encounter, obsGroup);
 		addHeentExam(encounter, obsGroup);
 		addRespiratorySystemExam(encounter, obsGroup);
+		addBreastExam(encounter, obsGroup);
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1732,6 +1742,18 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptRsAuscultation, this.rsAuscultation);
 		}
 	}
+
+	private void addBreastExam(Encounter encounter, Obs obsGroup) {
+		//BreastExaminationComment
+		Concept conceptBreastExaminationComment = Context.getConceptService().getConceptByUuid("162825AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptBreastExaminationComment == null) {
+			throw new NullPointerException("BreastExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.breastExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptBreastExaminationComment, this.breastExaminationComment);
+		}
+	}
+
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{

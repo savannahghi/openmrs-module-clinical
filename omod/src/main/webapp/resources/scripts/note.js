@@ -80,6 +80,7 @@ function Note(noteObj) {
 	self.generalizedLymadenopathyExaminationAnswer = noteObj.generalizedLymadenopathyExaminationAnswer;
 	self.generalizedLymadenopathyExaminationComment = noteObj.generalizedLymadenopathyExaminationComment;
 	self.otherLymphNodeExaminationAnswer = noteObj.otherLymphNodeExaminationAnswer;
+	self.otherLymphNodeExaminationComment = noteObj.otherLymphNodeExaminationComment;
 	self.eyeExam = noteObj.eyeExam;
 	self.neckExam = noteObj.neckExam;
 	self.mouthExam = noteObj.mouthExam;
@@ -90,7 +91,7 @@ function Note(noteObj) {
 	self.rsPalpation = noteObj.rsPalpation;
 	self.rsPercussion = noteObj.rsPercussion;
 	self.rsAuscultation = noteObj.rsAuscultation;
-	self.otherLymphNodeExaminationComment = noteObj.otherLymphNodeExaminationComment;
+	self.breastExaminationComment = noteObj.breastExaminationComment;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
 	self.specify = noteObj.specify;
