@@ -198,7 +198,25 @@ public class Note {
 	private String asPalpation;
 	private String asPercussion;
 	private String asAuscultation;
+	private String guInspection;
+	private String guPalpation;
 
+
+	public String getGuInspection() {
+		return guInspection;
+	}
+
+	public void setGuInspection(String guInspection) {
+		this.guInspection = guInspection;
+	}
+
+	public String getGuPalpation() {
+		return guPalpation;
+	}
+
+	public void setGuPalpation(String guPalpation) {
+		this.guPalpation = guPalpation;
+	}
 
 	public String getAsInspection() {
 		return asInspection;
@@ -1073,6 +1091,7 @@ public class Note {
 		addBreastExam(encounter, obsGroup);
 		addCardiovascularSystemExam(encounter, obsGroup);
 		addAbdominalSystemExam(encounter, obsGroup);
+		addGenitoUrinarySystemExam(encounter, obsGroup);
 
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
@@ -1896,6 +1915,25 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.asAuscultation)) {
 			this.addValueText(encounter, obsGroup, conceptAsAuscultation, this.asAuscultation);
+		}
+	}
+
+	private void addGenitoUrinarySystemExam(Encounter encounter, Obs obsGroup) {
+		//GuInspection
+		Concept conceptGuInspection = Context.getConceptService().getConceptByUuid("56b9f55b-5d65-4656-90b1-ebed44c1ed54");
+		if (conceptGuInspection == null) {
+			throw new NullPointerException("GuInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.guInspection)) {
+			this.addValueText(encounter, obsGroup, conceptGuInspection, this.guInspection);
+		}
+		//GuPalpation
+		Concept conceptGuPalpation = Context.getConceptService().getConceptByUuid("9b434c03-9099-4f37-86b7-782dfa6d12be");
+		if (conceptGuPalpation == null) {
+			throw new NullPointerException("GuPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.guPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptGuPalpation, this.guPalpation);
 		}
 	}
 
