@@ -194,7 +194,43 @@ public class Note {
 	private String csPalpation;
 	private String csPercussion;
 	private String csAuscultation;
+	private String asInspection;
+	private String asPalpation;
+	private String asPercussion;
+	private String asAuscultation;
 
+
+	public String getAsInspection() {
+		return asInspection;
+	}
+
+	public void setAsInspection(String asInspection) {
+		this.asInspection = asInspection;
+	}
+
+	public String getAsPalpation() {
+		return asPalpation;
+	}
+
+	public void setAsPalpation(String asPalpation) {
+		this.asPalpation = asPalpation;
+	}
+
+	public String getAsPercussion() {
+		return asPercussion;
+	}
+
+	public void setAsPercussion(String asPercussion) {
+		this.asPercussion = asPercussion;
+	}
+
+	public String getAsAuscultation() {
+		return asAuscultation;
+	}
+
+	public void setAsAuscultation(String asAuscultation) {
+		this.asAuscultation = asAuscultation;
+	}
 
 	public String getCsInspection() {
 		return csInspection;
@@ -1823,6 +1859,41 @@ public class Note {
 		}
 		if (StringUtils.isNotBlank(this.csAuscultation)) {
 			this.addValueText(encounter, obsGroup, conceptCsAuscultation, this.csAuscultation);
+		}
+	}
+
+	private void addAbdominalSystemExam(Encounter encounter, Obs obsGroup) {
+		//AsInspection
+		Concept conceptAsInspection = Context.getConceptService().getConceptByUuid("5454529b-490e-4e4b-8e89-74b965356fbf");
+		if (conceptAsInspection == null) {
+			throw new NullPointerException("AsInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asInspection)) {
+			this.addValueText(encounter, obsGroup, conceptAsInspection, this.asInspection);
+		}
+		//AsPalpation
+		Concept conceptAsPalpation = Context.getConceptService().getConceptByUuid("d6879155-d79e-499f-8c16-c1d104133360");
+		if (conceptAsPalpation == null) {
+			throw new NullPointerException("AsPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptAsPalpation, this.asPalpation);
+		}
+		//AsPercussion
+		Concept conceptAsPercussion = Context.getConceptService().getConceptByUuid("b229aa3e-969e-49b8-a130-8d16d3bbab80");
+		if (conceptAsPercussion == null) {
+			throw new NullPointerException("AsPercussion concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asPercussion)) {
+			this.addValueText(encounter, obsGroup, conceptAsPercussion, this.asPercussion);
+		}
+		//AsAuscultation
+		Concept conceptAsAuscultation = Context.getConceptService().getConceptByUuid("826a1a15-b71f-449e-9173-cd9544a106cc");
+		if (conceptAsAuscultation == null) {
+			throw new NullPointerException("AsAuscultation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asAuscultation)) {
+			this.addValueText(encounter, obsGroup, conceptAsAuscultation, this.asAuscultation);
 		}
 	}
 

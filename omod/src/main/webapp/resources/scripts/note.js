@@ -96,6 +96,10 @@ function Note(noteObj) {
 	self.csPalpation = noteObj.csPalpation;
 	self.csPercussion = noteObj.csPercussion;
 	self.csAuscultation = noteObj.csAuscultation;
+	self.asInspection = noteObj.asInspection;
+	self.asPalpation = noteObj.asPalpation;
+	self.asPercussion = noteObj.asPercussion;
+	self.asAuscultation = noteObj.asAuscultation;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
 	self.specify = noteObj.specify;
