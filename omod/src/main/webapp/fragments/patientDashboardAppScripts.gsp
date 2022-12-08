@@ -526,7 +526,7 @@
 							"inguinalExaminationAnswer", "inguinalExaminationComment", "generalizedLymadenopathyExaminationAnswer", "generalizedLymadenopathyExaminationComment", 
 							"otherLymphNodeExaminationAnswer", "otherLymphNodeExaminationComment", "eyeExam", "neckExam", "mouthExam", "earExam", "noseExam", "throatExam",
 							"rsInspection", "rsPalpation", "rsPercussion", "rsAuscultation","asInspection", "asPalpation", "asPercussion", "asAuscultation","guInspection", "guPalpation", 
-							"breastExaminationComment", "csInspection", "csPalpation", "csPercussion", "csAuscultation",
+							"breastExaminationComment", "csInspection", "csPalpation", "csPercussion", "csAuscultation", "6500a240-8f2a-4b2c-a477-0fa45caa26ad",
 							"cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option", "drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
 							"drugName", "numberOfDays", "qualifiers","answer","freeText"

@@ -200,7 +200,16 @@ public class Note {
 	private String asAuscultation;
 	private String guInspection;
 	private String guPalpation;
+	private String skinInspection;
 
+
+	public String getSkinInspection() {
+		return skinInspection;
+	}
+
+	public void setSkinInspection(String skinInspection) {
+		this.skinInspection = skinInspection;
+	}
 
 	public String getGuInspection() {
 		return guInspection;
@@ -1092,6 +1101,7 @@ public class Note {
 		addCardiovascularSystemExam(encounter, obsGroup);
 		addAbdominalSystemExam(encounter, obsGroup);
 		addGenitoUrinarySystemExam(encounter, obsGroup);
+		addSkinExam(encounter, obsGroup);
 
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
@@ -1936,6 +1946,19 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptGuPalpation, this.guPalpation);
 		}
 	}
+
+	private void addSkinExam(Encounter encounter, Obs obsGroup) {
+		//SkinInspection
+		Concept conceptSkinInspection = Context.getConceptService().getConceptByUuid("6500a240-8f2a-4b2c-a477-0fa45caa26ad");
+		if (conceptSkinInspection == null) {
+			throw new NullPointerException("SkinInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.skinInspection)) {
+			this.addValueText(encounter, obsGroup, conceptSkinInspection, this.skinInspection);
+		}
+
+	}
+
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{

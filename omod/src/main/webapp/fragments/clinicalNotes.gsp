@@ -859,9 +859,9 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Skin Exam Findings</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="skinInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.skinInspection" id="skinInspection" name="skinInspection" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />

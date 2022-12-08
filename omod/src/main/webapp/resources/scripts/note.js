@@ -102,6 +102,7 @@ function Note(noteObj) {
 	self.asAuscultation = noteObj.asAuscultation;
 	self.guInspection = noteObj.guInspection;
 	self.guPalpation = noteObj.guPalpation;
+	self.skinInspection = noteObj.skinInspection;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
 	self.specify = noteObj.specify;
