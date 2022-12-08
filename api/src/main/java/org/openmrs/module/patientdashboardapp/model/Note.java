@@ -1072,6 +1072,8 @@ public class Note {
 		addRespiratorySystemExam(encounter, obsGroup);
 		addBreastExam(encounter, obsGroup);
 		addCardiovascularSystemExam(encounter, obsGroup);
+		addAbdominalSystemExam(encounter, obsGroup);
+
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -1864,7 +1866,7 @@ public class Note {
 
 	private void addAbdominalSystemExam(Encounter encounter, Obs obsGroup) {
 		//AsInspection
-		Concept conceptAsInspection = Context.getConceptService().getConceptByUuid("5454529b-490e-4e4b-8e89-74b965356fbf");
+		Concept conceptAsInspection = Context.getConceptService().getConceptByUuid("35adb502-0751-4272-9fe5-717f81decd4b");
 		if (conceptAsInspection == null) {
 			throw new NullPointerException("AsInspection concept is not defined");
 		}
@@ -1872,7 +1874,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptAsInspection, this.asInspection);
 		}
 		//AsPalpation
-		Concept conceptAsPalpation = Context.getConceptService().getConceptByUuid("d6879155-d79e-499f-8c16-c1d104133360");
+		Concept conceptAsPalpation = Context.getConceptService().getConceptByUuid("018ddfcb-3bcf-43b5-a417-8cd4dc923896");
 		if (conceptAsPalpation == null) {
 			throw new NullPointerException("AsPalpation concept is not defined");
 		}
@@ -1880,7 +1882,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptAsPalpation, this.asPalpation);
 		}
 		//AsPercussion
-		Concept conceptAsPercussion = Context.getConceptService().getConceptByUuid("b229aa3e-969e-49b8-a130-8d16d3bbab80");
+		Concept conceptAsPercussion = Context.getConceptService().getConceptByUuid("bf084cec-0faa-443a-b8e3-f796fd5e3163");
 		if (conceptAsPercussion == null) {
 			throw new NullPointerException("AsPercussion concept is not defined");
 		}
@@ -1888,7 +1890,7 @@ public class Note {
 			this.addValueText(encounter, obsGroup, conceptAsPercussion, this.asPercussion);
 		}
 		//AsAuscultation
-		Concept conceptAsAuscultation = Context.getConceptService().getConceptByUuid("826a1a15-b71f-449e-9173-cd9544a106cc");
+		Concept conceptAsAuscultation = Context.getConceptService().getConceptByUuid("8979ce18-6e8d-4eb7-847d-312c80740ef7");
 		if (conceptAsAuscultation == null) {
 			throw new NullPointerException("AsAuscultation concept is not defined");
 		}
