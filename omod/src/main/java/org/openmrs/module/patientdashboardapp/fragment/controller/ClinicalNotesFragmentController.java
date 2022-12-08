@@ -128,6 +128,19 @@ public class ClinicalNotesFragmentController {
         return formulationsList;
     }
 
+    public List<SimpleObject> getDrugRoutes(UiUtils ui)
+    {
+        InventoryCommonService inventoryCommonService = Context.getService(InventoryCommonService.class);
+        List<Concept> drugRoute = inventoryCommonService.getDrugRoute();
+        List<SimpleObject> routesList = new ArrayList<SimpleObject>();
+
+        if(drugRoute != null && drugRoute.size() > 0 ){
+            routesList = SimpleObject.fromCollection(drugRoute, ui, "id", "name", "uuid");
+        }
+
+        return routesList;
+    }
+
     public List<SimpleObject> getFrequencies(UiUtils uiUtils){
         InventoryCommonService inventoryCommonService = Context
                 .getService(InventoryCommonService.class);
