@@ -128,17 +128,14 @@ public class ClinicalNotesFragmentController {
         return formulationsList;
     }
 
-    public List<SimpleObject> getRoutesByDrugName(@RequestParam(value="drugName") String drugName,UiUtils ui)
+    public List<SimpleObject> getDrugRoutes(UiUtils ui)
     {
-
         InventoryCommonService inventoryCommonService = Context.getService(InventoryCommonService.class);
-        InventoryDrug drug = inventoryCommonService.getDrugByName(drugName);
-
+        List<Concept> drugRoute = inventoryCommonService.getDrugRoute();
         List<SimpleObject> routesList = new ArrayList<SimpleObject>();
 
-        if(drug != null){
-//            List<InventoryDrugRoute> formulations = new ArrayList<InventoryDrugFormulation>(drug.getRoutes());
-//            routesList = SimpleObject.fromCollection(formulations, ui, "id", "name","dozage");
+        if(drugRoute != null && drugRoute.size() > 0 ){
+            routesList = SimpleObject.fromCollection(drugRoute, ui, "id", "name", "uuid");
         }
 
         return routesList;
