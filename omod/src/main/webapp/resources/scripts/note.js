@@ -103,6 +103,12 @@ function Note(noteObj) {
 	self.guInspection = noteObj.guInspection;
 	self.guPalpation = noteObj.guPalpation;
 	self.skinInspection = noteObj.skinInspection;
+	self.nHigherFunctions = noteObj.nHigherFunctions;
+	self.nCranialNerves = noteObj.nCranialNerves;
+	self.nHead = noteObj.nHead;
+	self.nNeck = noteObj.nNeck;
+	self.nSensoryLevel = noteObj.nSensoryLevel;
+	self.nMusculoskeletal = noteObj.nMusculoskeletal;
 	self.facility = noteObj.facility;
 	self.dosage = noteObj.dosage;
 	self.specify = noteObj.specify;

@@ -201,7 +201,61 @@ public class Note {
 	private String guInspection;
 	private String guPalpation;
 	private String skinInspection;
+	private String nHigherFunctions; 
+	private String nCranialNerves; 
+	private String nHead; 
+	private String nNeck; 
+	private String nSensoryLevel; 
+	private String nMusculoskeletal;
 
+
+	public String getnHigherFunctions() {
+		return nHigherFunctions;
+	}
+
+	public void setnHigherFunctions(String nHigherFunctions) {
+		this.nHigherFunctions = nHigherFunctions;
+	}
+
+	public String getnCranialNerves() {
+		return nCranialNerves;
+	}
+
+	public void setnCranialNerves(String nCranialNerves) {
+		this.nCranialNerves = nCranialNerves;
+	}
+
+	public String getnHead() {
+		return nHead;
+	}
+
+	public void setnHead(String nHead) {
+		this.nHead = nHead;
+	}
+
+	public String getnNeck() {
+		return nNeck;
+	}
+
+	public void setnNeck(String nNeck) {
+		this.nNeck = nNeck;
+	}
+
+	public String getnSensoryLevel() {
+		return nSensoryLevel;
+	}
+
+	public void setnSensoryLevel(String nSensoryLevel) {
+		this.nSensoryLevel = nSensoryLevel;
+	}
+
+	public String getnMusculoskeletal() {
+		return nMusculoskeletal;
+	}
+
+	public void setnMusculoskeletal(String nMusculoskeletal) {
+		this.nMusculoskeletal = nMusculoskeletal;
+	}
 
 	public String getSkinInspection() {
 		return skinInspection;
@@ -1102,6 +1156,7 @@ public class Note {
 		addAbdominalSystemExam(encounter, obsGroup);
 		addGenitoUrinarySystemExam(encounter, obsGroup);
 		addSkinExam(encounter, obsGroup);
+		addNeurologicExam(encounter, obsGroup);
 
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
@@ -1959,6 +2014,61 @@ public class Note {
 
 	}
 
+	private void addNeurologicExam(Encounter encounter, Obs obsGroup) {
+		//NHigherFunctions
+		Concept conceptNHigherFunctions = Context.getConceptService().getConceptByUuid("9f6e2fa6-e241-47de-a808-27dc04fb1908");
+		if (conceptNHigherFunctions == null) {
+			throw new NullPointerException("Neurologic HigherFunctions Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nHigherFunctions)) {
+			this.addValueText(encounter, obsGroup, conceptNHigherFunctions, this.nHigherFunctions);
+		}
+
+		//NCranialNerves
+		Concept conceptNCranialNerves = Context.getConceptService().getConceptByUuid("53bc17d3-df75-438c-97e9-65dd5ab266c1");
+		if (conceptNCranialNerves == null) {
+			throw new NullPointerException("Neurologic CranialNerves Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nCranialNerves)) {
+			this.addValueText(encounter, obsGroup, conceptNCranialNerves, this.nCranialNerves);
+		}
+
+		//NHead
+		Concept conceptNHead = Context.getConceptService().getConceptByUuid("39ca848d-bbc2-4133-a4fe-2bd1eb396a50");
+		if (conceptNHead == null) {
+			throw new NullPointerException("Neurologic Head Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nHead)) {
+			this.addValueText(encounter, obsGroup, conceptNHead, this.nHead);
+		}
+
+		//NNeck
+		Concept conceptNNeck = Context.getConceptService().getConceptByUuid("77bc9fc5-9711-4f98-b988-47f35bd555a0");
+		if (conceptNNeck == null) {
+			throw new NullPointerException("Neurologic Neck Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nNeck)) {
+			this.addValueText(encounter, obsGroup, conceptNNeck, this.nNeck);
+		}
+
+		//NSensoryLevel
+		Concept conceptNSensoryLevel = Context.getConceptService().getConceptByUuid("921e601f-0445-4d7b-931f-423cb14c36df");
+		if (conceptNSensoryLevel == null) {
+			throw new NullPointerException("Neurologic SensoryLevel Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nSensoryLevel)) {
+			this.addValueText(encounter, obsGroup, conceptNSensoryLevel, this.nSensoryLevel);
+		}
+
+		//NMusculoskeletal
+		Concept conceptNMusculoskeletal = Context.getConceptService().getConceptByUuid("9e2958fb-25b5-4d5c-b78a-ff51d26ce633");
+		if (conceptNMusculoskeletal == null) {
+			throw new NullPointerException("Neurologic Musculoskeletal Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nMusculoskeletal)) {
+			this.addValueText(encounter, obsGroup, conceptNMusculoskeletal, this.nMusculoskeletal);
+		}
+	}
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{

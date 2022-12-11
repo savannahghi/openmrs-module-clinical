@@ -870,34 +870,34 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Neurologic</legend>
 				<div class="col11">
-					<label for="types-of-screening">Higher Functions:<span style="color: #f00 !important;
+					<label for="nHigherFunctions">Higher Functions:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nHigherFunctions" id="nHigherFunctions" name="nHigherFunctions" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Cranial Nerves:<span style="color: #f00 !important;
+					<label for="nCranialNerves">Cranial Nerves:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nCranialNerves" id="nCranialNerves" name="nCranialNerves" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Head(Inspect, Palpate):<span style="color: #f00 !important;
+					<label for="nHead">Head(Inspect, Palpate):<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nHead" id="nHead" name="nHead" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Neck:<span style="color: #f00 !important;
+					<label for="nNeck">Neck:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nNeck" id="nNeck" name="nNeck" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Sensory Level:<span style="color: #f00 !important;
+					<label for="nSensoryLevel">Sensory Level:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nSensoryLevel" id="nSensoryLevel" name="nSensoryLevel" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Musculoskeletal:<span style="color: #f00 !important;
+					<label for="nMusculoskeletal">Musculoskeletal:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nMusculoskeletal" id="nMusculoskeletal" name="nMusculoskeletal" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
