@@ -1347,7 +1347,7 @@ public class Note {
 		}
 
 		//breast cancer screening status
-		Concept conceptBreastCancerScreening= Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
+		Concept conceptBreastCancerScreening= Context.getConceptService().getConceptByUuid("57053d0a-8372-4d3a-9103-1c61ec751f05");
 		if (conceptBreastCancerScreening == null) {
 			throw new NullPointerException("Breast cancer screening status concept is not defined");
 		}
@@ -1443,7 +1443,7 @@ public class Note {
 
 	private void addRiskFactors(Encounter encounter, Obs obsGroup) {
 		//cigarette usage state
-		Concept conceptCigaretteUsage= Context.getConceptService().getConceptByUuid("6d40cfcc-be08-4f5a-a657-1ffeaa1a6e3c");
+		Concept conceptCigaretteUsage= Context.getConceptService().getConceptByUuid("9e0aa689-7ab3-471e-b393-a7f321458b5c");
 		if (conceptCigaretteUsage == null) {
 			throw new NullPointerException("Cigarette usage status concept is not defined");
 		}
@@ -1506,7 +1506,7 @@ public class Note {
 		}
 
 		//physical activity state
-		Concept conceptRadiotherapyExposure = Context.getConceptService().getConceptByUuid("c805a0f3-5244-4f20-ae56-57b605f7aeeb");
+		Concept conceptRadiotherapyExposure = Context.getConceptService().getConceptByUuid("5e95e6ff-8ef4-46b1-80d3-f8389514c93a");
 		if (conceptRadiotherapyExposure == null) {
 			throw new NullPointerException("Previous radiotherapy exposure status concept is not defined");
 		}
@@ -1700,7 +1700,7 @@ public class Note {
 		}
 
 		//CervicalExaminationAnswer
-		Concept conceptCervicalExaminationAnswer = Context.getConceptService().getConceptByUuid("d4e9a56b-b980-4ada-9f33-7018e7398281");
+		Concept conceptCervicalExaminationAnswer = Context.getConceptService().getConceptByUuid("3e0ac5b1-4cbe-4f5a-ac7d-3e30a55dc4fa");
 		if (conceptCervicalExaminationAnswer == null) {
 			throw new NullPointerException("CervicalExaminationAnswer status concept is not defined");
 		}
@@ -1718,7 +1718,7 @@ public class Note {
 		}
 
 		//AxillaryExaminationAnswer
-		Concept conceptAxillaryExaminationAnswer = Context.getConceptService().getConceptByUuid("6d813dae-6389-4dc5-bc04-3d48f4658c5f");
+		Concept conceptAxillaryExaminationAnswer = Context.getConceptService().getConceptByUuid("b46aa003-ab6a-4465-b911-9e92e4a5a54f");
 		if (conceptAxillaryExaminationAnswer == null) {
 			throw new NullPointerException("AxillaryExaminationAnswer status concept is not defined");
 		}
@@ -1736,7 +1736,7 @@ public class Note {
 		}
 
 		//InguinalExaminationAnswer
-		Concept conceptInguinalExaminationAnswer = Context.getConceptService().getConceptByUuid("0c1db25e-ca62-43fa-9477-4196451d01bb");
+		Concept conceptInguinalExaminationAnswer = Context.getConceptService().getConceptByUuid("2d98fb30-18c2-4b42-90db-527ac64e01be");
 		if (conceptInguinalExaminationAnswer == null) {
 			throw new NullPointerException("InguinalExaminationAnswer status concept is not defined");
 		}
@@ -1754,7 +1754,7 @@ public class Note {
 		}
 
 		//GeneralizedLymadenopathyExaminationAnswer
-		Concept conceptGeneralizedLymadenopathyExaminationAnswer = Context.getConceptService().getConceptByUuid("8dc6f3f7-2f69-498a-b2e2-d87475f4bd32");
+		Concept conceptGeneralizedLymadenopathyExaminationAnswer = Context.getConceptService().getConceptByUuid("7dfa3630-a420-4704-aae9-be3196f803ad");
 		if (conceptGeneralizedLymadenopathyExaminationAnswer == null) {
 			throw new NullPointerException("GeneralizedLymadenopathyExaminationAnswer status concept is not defined");
 		}

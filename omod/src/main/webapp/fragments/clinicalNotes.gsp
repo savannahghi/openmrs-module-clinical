@@ -207,9 +207,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 							padding-left: 5px;"></span></label>
 							<select id="type-of-cervical-cancer-screening" name="type-of-cervical-cancer-screening" autocomplete="on" data-bind="value: \$root.cervicalCancerScreeningType">
 								<option value="">-- Select Relation --</option> 
-								<% cervicalCancerScreeningTypesAnswers.each { answer -> %>
-									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
-								<% } %>
+								
 							</select>
 						</div>
 						<div class="col5 inner-date">
@@ -236,9 +234,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 							padding-left: 5px;"></span></label>
 							<select id="types-screened-for-breastcancer" name="types-screened-for-breastcancer" autocomplete="on" data-bind="value: \$root.breastCancerScreeningType">
 								<option value="">-- Select Relation --</option> 
-								<% breastCancerScreeningTypesAnswers.each { answer -> %>
-									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
-								<% } %>
+								
 							</select>
 						</div>
 						<div class="col5 inner-date">
@@ -265,9 +261,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 							padding-left: 5px;"></span></label>
 							<select id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" autocomplete="on" data-bind="value: \$root.colorectalCancerScreeningType">
 								<option value="">-- Select Relation --</option> 
-								<% breastCancerScreeningTypesAnswers.each { answer -> %>
-									<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
-								<% } %>
+								
 							</select>
 						</div>
 						<div class="col5 inner-date">
@@ -302,9 +296,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						padding-left: 5px;"></span></label>
 						<select id="types-screened-prostratecancer" name="types-screened-prostratecancer" autocomplete="on" data-bind="value: \$root.prostrateCancerScreeningType">
 							<option value="">-- Select Relation --</option> 
-							<% prostrateCancerScreeningTypesAnswers.each { answer -> %>
-								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
-							<% } %>
+							
 						</select>
 					</div>
 					<div class="col5 inner-date">
@@ -331,9 +323,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						padding-left: 5px;"></span></label>
 						<select id="types-female-screened-colorectalcancer" name="types-female-screened-colorectalcancer" autocomplete="on" data-bind="value: \$root.colorectalCancerScreeningType">
 							<option value="">-- Select Relation --</option> 
-							<% breastCancerScreeningTypesAnswers.each { answer -> %>
-								<option value="${answer.answerConcept.id}">${answer.answerConcept.getName()}</option>
-							<% } %>
+							
 						</select>
 					</div>
 					<div class="col5 inner-date">
