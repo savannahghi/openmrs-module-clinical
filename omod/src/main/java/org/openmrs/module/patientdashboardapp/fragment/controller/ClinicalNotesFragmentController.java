@@ -51,7 +51,7 @@ public class ClinicalNotesFragmentController {
 			opdLogId = Integer.parseInt(config.get("opdLogId").toString());
 		}
 
-        Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
+        Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("09e2cfb7-d6cb-4275-a102-7c8b5ba52a03");
         Collection<ConceptAnswer> familyHistoryAnswers = conceptFamilyHistory.getAnswers();
         Concept conceptFamilyMember = Context.getConceptService().getConceptByUuid("1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> familyMemberAnswers = conceptFamilyMember.getAnswers();
@@ -63,21 +63,21 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> cervicalCancerScreeningAnswers = conceptCervicalCancerScreening.getAnswers();
         Concept conceptCervicalCancerScreeningTypes = Context.getConceptService().getConceptByUuid("163589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> cervicalCancerScreeningTypesAnswers = conceptCervicalCancerScreeningTypes.getAnswers();
-        Concept conceptBreastCancerScreening = Context.getConceptService().getConceptByUuid("e277ff6a-c014-4ce2-8c64-16aa0af3376f");
+        Concept conceptBreastCancerScreening = Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
         Collection<ConceptAnswer> breastCancerScreeningAnswers = conceptBreastCancerScreening.getAnswers();
-        Concept conceptBreastCancerScreeningTypes = Context.getConceptService().getConceptByUuid("5b2c1d27-59df-4361-a16c-ed60e4a2125c");
+        Concept conceptBreastCancerScreeningTypes = Context.getConceptService().getConceptByUuid("d20fe393-88ca-4a71-b530-e495cba41fa0");
         Collection<ConceptAnswer> breastCancerScreeningTypesAnswers = conceptBreastCancerScreeningTypes.getAnswers();
-        Concept conceptColorectalCancerScreening = Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
+        Concept conceptColorectalCancerScreening = Context.getConceptService().getConceptByUuid("83e84962-68d2-4605-968d-0047e80b107e");
         Collection<ConceptAnswer> colorectalCancerScreeningAnswers = conceptColorectalCancerScreening.getAnswers();
-        Concept conceptColorectalCancerScreeningTypes = Context.getConceptService().getConceptByUuid("ae19ee8c-d8fc-4d94-84a1-32f84a7e0fff");
+        Concept conceptColorectalCancerScreeningTypes = Context.getConceptService().getConceptByUuid("e277ff6a-c014-4ce2-8c64-16aa0af3376f");
         Collection<ConceptAnswer> colorectalCancerScreeningTypesAnswers = conceptColorectalCancerScreeningTypes.getAnswers();
-        Concept conceptProstrateCancerScreening = Context.getConceptService().getConceptByUuid("6d40cfcc-be08-4f5a-a657-1ffeaa1a6e3c");
+        Concept conceptProstrateCancerScreening = Context.getConceptService().getConceptByUuid("ed6b0f9e-e966-4395-a727-cf1097b815c6");
         Collection<ConceptAnswer> prostrateCancerScreeningAnswers = conceptProstrateCancerScreening.getAnswers();
-        Concept conceptProstrateCancerScreeningTypes = Context.getConceptService().getConceptByUuid("c805a0f3-5244-4f20-ae56-57b605f7aeeb");
+        Concept conceptProstrateCancerScreeningTypes = Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
         Collection<ConceptAnswer> prostrateCancerScreeningTypesAnswers = conceptProstrateCancerScreeningTypes.getAnswers();
-        Concept conceptRetinoblastomaSigns = Context.getConceptService().getConceptByUuid("8337f818-79eb-4360-8b3e-8f90927ddbd3");
+        Concept conceptRetinoblastomaSigns = Context.getConceptService().getConceptByUuid("f527f815-987c-4aaf-8a33-2ea1b36b338c");
         Collection<ConceptAnswer> retinoblastomaSigns = conceptRetinoblastomaSigns.getAnswers();
-        Concept conceptCigaretteUsage = Context.getConceptService().getConceptByUuid("548e14dc-2128-434e-b365-becd398b86e4");
+        Concept conceptCigaretteUsage = Context.getConceptService().getConceptByUuid("6d40cfcc-be08-4f5a-a657-1ffeaa1a6e3c");
         Collection<ConceptAnswer> cigaretteUsage = conceptCigaretteUsage.getAnswers();
         Concept conceptTobaccoUsage = Context.getConceptService().getConceptByUuid("163731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> tobaccoUsage = conceptTobaccoUsage.getAnswers();
@@ -85,23 +85,23 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> alcoholUsage = conceptAlcoholUsage.getAnswers();
         Concept conceptPhysicalActivity = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> physicalActivity = conceptPhysicalActivity.getAnswers();
-        Concept conceptPreviousRadioTherapyExposure = Context.getConceptService().getConceptByUuid("0693aab4-9756-454e-b693-6d4454c55043");
+        Concept conceptPreviousRadioTherapyExposure = Context.getConceptService().getConceptByUuid("c805a0f3-5244-4f20-ae56-57b605f7aeeb");
         Collection<ConceptAnswer> radiotherapyExposure= conceptPreviousRadioTherapyExposure.getAnswers();
-        Concept conceptPalpablility = Context.getConceptService().getConceptByUuid("d4e9a56b-b980-4ada-9f33-7018e7398281");
+        Concept conceptPalpablility = Context.getConceptService().getConceptByUuid("81365bc6-536b-4486-bcf5-a71af5c7c2b5");
         Collection<ConceptAnswer> palpability = conceptPalpablility.getAnswers();
-        Concept conceptSubmandibularExamination = Context.getConceptService().getConceptByUuid("b2a84e52-34da-49f4-9c14-60b86e88eecd");
+        Concept conceptSubmandibularExamination = Context.getConceptService().getConceptByUuid("403a5548-2d26-45b1-b3c1-3f6b0b093ed2");
         Collection<ConceptAnswer> submandibularExamination = conceptSubmandibularExamination.getAnswers();
-        Concept conceptSupraciavicularExamination = Context.getConceptService().getConceptByUuid("6d813dae-6389-4dc5-bc04-3d48f4658c5f");
+        Concept conceptSupraciavicularExamination = Context.getConceptService().getConceptByUuid("1315b836-a3c9-403c-9371-6ab85eb5315b");
         Collection<ConceptAnswer> supraciavicularExamination = conceptSupraciavicularExamination.getAnswers();
-        Concept conceptCervicalExamination = Context.getConceptService().getConceptByUuid("2bdab135-118a-4659-aa9b-0793de7c54e8");
+        Concept conceptCervicalExamination = Context.getConceptService().getConceptByUuid("d4e9a56b-b980-4ada-9f33-7018e7398281");
         Collection<ConceptAnswer> cervicalExamination = conceptCervicalExamination.getAnswers();
-        Concept conceptAxillaryExamination = Context.getConceptService().getConceptByUuid("0c1db25e-ca62-43fa-9477-4196451d01bb");
+        Concept conceptAxillaryExamination = Context.getConceptService().getConceptByUuid("6d813dae-6389-4dc5-bc04-3d48f4658c5f");
         Collection<ConceptAnswer> axillaryExamination = conceptAxillaryExamination.getAnswers();
-        Concept conceptInguinalExamination = Context.getConceptService().getConceptByUuid("5b898de3-8151-4456-b3c0-12b42b1c7f22");
+        Concept conceptInguinalExamination = Context.getConceptService().getConceptByUuid("0c1db25e-ca62-43fa-9477-4196451d01bb");
         Collection<ConceptAnswer> inguinalExamination = conceptInguinalExamination.getAnswers();
         Concept conceptGeneralizedLymadenopathyExamination = Context.getConceptService().getConceptByUuid("8dc6f3f7-2f69-498a-b2e2-d87475f4bd32");
         Collection<ConceptAnswer> generalizedLymadenopathyExamination = conceptGeneralizedLymadenopathyExamination.getAnswers();
-        Concept conceptOtherLymphNodeExamination = Context.getConceptService().getConceptByUuid("61d118c2-fd66-4f18-b9a0-e23eb71a4bcc");
+        Concept conceptOtherLymphNodeExamination = Context.getConceptService().getConceptByUuid("c725329d-0ebd-42ca-9f19-6b407e551aef");
         Collection<ConceptAnswer> otherLymphNodeExamination = conceptOtherLymphNodeExamination.getAnswers();
         
 
