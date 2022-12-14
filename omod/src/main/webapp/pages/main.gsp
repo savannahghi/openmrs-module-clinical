@@ -291,7 +291,6 @@
 			<li id="ti"><a href="#triage-info">Triage Information</a></li>
 			<li id="lr"><a href="#investigations">Lab Reports</a></li>
             <li id="rr"><a href="#radiology">Radiology Reports</a></li>
-			<li id="pc"><a href="#patient-consent">Patients Consent</a></li>
 		</ul>
 
         <div id="summary">
@@ -312,9 +311,7 @@
 		<div id="radiology">
 			${ ui.includeFragment("patientdashboardapp", "radiology", [patientId: patientId]) }
 		</div>
-		<div id="patient-consent">
-			${ ui.includeFragment("patientdashboardapp", "consentForms", [patientId: patientId, opdId: opdId, queueId: queueId, opdLogId: opdLogId]) }
-		</div>
+
 	</div>
 </div>
 

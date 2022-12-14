@@ -136,10 +136,606 @@ public class Note {
 	private String prostrateCancerScreeningDate;
 	private String lastLmp;
 	private String parity;
+	private String retinoblastomaState;
 	private String relationshipToPatient;
 	private String ageAtDiagnosis;
 	private String cancerType;
 	private String physicalExamination;
+	private String cigaretteUsageAnswer;
+	private String cigarettesPerDay;
+	private String yearsSmokedCigarette;
+	private String tobaccoUsageAnswer;
+	private String alcoholUsageAnswer;
+	private String alcoholIntakeFrequency;
+	private String physicalActivityAnswer;
+	private String radiotherapyExposureAnswer;
+	private String presentingComplains; 
+	private String historyOfPresentIllness;
+	private String pastMedicalSurgicalHistory;
+	private String cns;
+	private String cvs;
+	private String rs;
+	private String gus;
+	private String mss;
+	private String generalExamination;
+	private String jaundiceExamination;
+	private String anaemiaExamination;
+	private String cyanosisExamination;
+	private String clubbingExamination;
+	private String oedemaExamination;
+	private String dehydrationExamination;
+	private String palpabilityAnswer;
+	private String submandibularAnswer;
+	private String submandibularComment;
+	private String supraciavicularAnswer;
+	private String supraciavicularComment;
+	private String cervicalExaminationAnswer;
+	private String cervicalExaminationComment;
+	private String axillaryExaminationAnswer;
+	private String axillaryExaminationComment;
+	private String inguinalExaminationAnswer;
+	private String inguinalExaminationComment;
+	private String generalizedLymadenopathyExaminationAnswer;
+	private String generalizedLymadenopathyExaminationComment;
+	private String otherLymphNodeExaminationAnswer;
+	private String otherLymphNodeExaminationComment;
+	private String eyeExam; 
+	private String neckExam; 
+	private String mouthExam; 
+	private String earExam; 
+	private String noseExam;
+	private String throatExam;
+	private String rsInspection;
+	private String rsPalpation;
+	private String rsPercussion;
+	private String rsAuscultation;
+	private String breastExaminationComment;
+	private String csInspection;
+	private String csPalpation;
+	private String csPercussion;
+	private String csAuscultation;
+	private String asInspection;
+	private String asPalpation;
+	private String asPercussion;
+	private String asAuscultation;
+	private String guInspection;
+	private String guPalpation;
+	private String skinInspection;
+	private String nHigherFunctions; 
+	private String nCranialNerves; 
+	private String nHead; 
+	private String nNeck; 
+	private String nSensoryLevel; 
+	private String nMusculoskeletal;
+
+
+	public String getnHigherFunctions() {
+		return nHigherFunctions;
+	}
+
+	public void setnHigherFunctions(String nHigherFunctions) {
+		this.nHigherFunctions = nHigherFunctions;
+	}
+
+	public String getnCranialNerves() {
+		return nCranialNerves;
+	}
+
+	public void setnCranialNerves(String nCranialNerves) {
+		this.nCranialNerves = nCranialNerves;
+	}
+
+	public String getnHead() {
+		return nHead;
+	}
+
+	public void setnHead(String nHead) {
+		this.nHead = nHead;
+	}
+
+	public String getnNeck() {
+		return nNeck;
+	}
+
+	public void setnNeck(String nNeck) {
+		this.nNeck = nNeck;
+	}
+
+	public String getnSensoryLevel() {
+		return nSensoryLevel;
+	}
+
+	public void setnSensoryLevel(String nSensoryLevel) {
+		this.nSensoryLevel = nSensoryLevel;
+	}
+
+	public String getnMusculoskeletal() {
+		return nMusculoskeletal;
+	}
+
+	public void setnMusculoskeletal(String nMusculoskeletal) {
+		this.nMusculoskeletal = nMusculoskeletal;
+	}
+
+	public String getSkinInspection() {
+		return skinInspection;
+	}
+
+	public void setSkinInspection(String skinInspection) {
+		this.skinInspection = skinInspection;
+	}
+
+	public String getGuInspection() {
+		return guInspection;
+	}
+
+	public void setGuInspection(String guInspection) {
+		this.guInspection = guInspection;
+	}
+
+	public String getGuPalpation() {
+		return guPalpation;
+	}
+
+	public void setGuPalpation(String guPalpation) {
+		this.guPalpation = guPalpation;
+	}
+
+	public String getAsInspection() {
+		return asInspection;
+	}
+
+	public void setAsInspection(String asInspection) {
+		this.asInspection = asInspection;
+	}
+
+	public String getAsPalpation() {
+		return asPalpation;
+	}
+
+	public void setAsPalpation(String asPalpation) {
+		this.asPalpation = asPalpation;
+	}
+
+	public String getAsPercussion() {
+		return asPercussion;
+	}
+
+	public void setAsPercussion(String asPercussion) {
+		this.asPercussion = asPercussion;
+	}
+
+	public String getAsAuscultation() {
+		return asAuscultation;
+	}
+
+	public void setAsAuscultation(String asAuscultation) {
+		this.asAuscultation = asAuscultation;
+	}
+
+	public String getCsInspection() {
+		return csInspection;
+	}
+
+	public void setCsInspection(String csInspection) {
+		this.csInspection = csInspection;
+	}
+
+	public String getCsPalpation() {
+		return csPalpation;
+	}
+
+	public void setCsPalpation(String csPalpation) {
+		this.csPalpation = csPalpation;
+	}
+
+	public String getCsPercussion() {
+		return csPercussion;
+	}
+
+	public void setCsPercussion(String csPercussion) {
+		this.csPercussion = csPercussion;
+	}
+
+	public String getCsAuscultation() {
+		return csAuscultation;
+	}
+
+	public void setCsAuscultation(String csAuscultation) {
+		this.csAuscultation = csAuscultation;
+	}
+
+	public String getBreastExaminationComment() {
+		return breastExaminationComment;
+	}
+
+	public void setBreastExaminationComment(String breastExaminationComment) {
+		this.breastExaminationComment = breastExaminationComment;
+	}
+
+	public String getRsInspection() {
+		return rsInspection;
+	}
+
+	public void setRsInspection(String rsInspection) {
+		this.rsInspection = rsInspection;
+	}
+
+	public String getRsPalpation() {
+		return rsPalpation;
+	}
+
+	public void setRsPalpation(String rsPalpation) {
+		this.rsPalpation = rsPalpation;
+	}
+
+	public String getRsPercussion() {
+		return rsPercussion;
+	}
+
+	public void setRsPercussion(String rsPercussion) {
+		this.rsPercussion = rsPercussion;
+	}
+
+	public String getRsAuscultation() {
+		return rsAuscultation;
+	}
+
+	public void setRsAuscultation(String rsAuscultation) {
+		this.rsAuscultation = rsAuscultation;
+	}
+
+	public String getEyeExam() {
+		return eyeExam;
+	}
+
+	public void setEyeExam(String eyeExam) {
+		this.eyeExam = eyeExam;
+	}
+
+	public String getNeckExam() {
+		return neckExam;
+	}
+
+	public void setNeckExam(String neckExam) {
+		this.neckExam = neckExam;
+	}
+
+	public String getMouthExam() {
+		return mouthExam;
+	}
+
+	public void setMouthExam(String mouthExam) {
+		this.mouthExam = mouthExam;
+	}
+
+	public String getEarExam() {
+		return earExam;
+	}
+
+	public void setEarExam(String earExam) {
+		this.earExam = earExam;
+	}
+
+	public String getNoseExam() {
+		return noseExam;
+	}
+
+	public void setNoseExam(String noseExam) {
+		this.noseExam = noseExam;
+	}
+
+	public String getThroatExam() {
+		return throatExam;
+	}
+
+	public void setThroatExam(String throatExam) {
+		this.throatExam = throatExam;
+	}
+
+	public String getPalpabilityAnswer() {
+		return palpabilityAnswer;
+	}
+
+	public void setPalpabilityAnswer(String palpabilityAnswer) {
+		this.palpabilityAnswer = palpabilityAnswer;
+	}
+
+	public String getSubmandibularAnswer() {
+		return submandibularAnswer;
+	}
+
+	public void setSubmandibularAnswer(String submandibularAnswer) {
+		this.submandibularAnswer = submandibularAnswer;
+	}
+
+	public String getSubmandibularComment() {
+		return submandibularComment;
+	}
+
+	public void setSubmandibularComment(String submandibularComment) {
+		this.submandibularComment = submandibularComment;
+	}
+
+	public String getSupraciavicularAnswer() {
+		return supraciavicularAnswer;
+	}
+
+	public void setSupraciavicularAnswer(String supraciavicularAnswer) {
+		this.supraciavicularAnswer = supraciavicularAnswer;
+	}
+
+	public String getSupraciavicularComment() {
+		return supraciavicularComment;
+	}
+
+	public void setSupraciavicularComment(String supraciavicularComment) {
+		this.supraciavicularComment = supraciavicularComment;
+	}
+
+	public String getCervicalExaminationAnswer() {
+		return cervicalExaminationAnswer;
+	}
+
+	public void setCervicalExaminationAnswer(String cervicalExaminationAnswer) {
+		this.cervicalExaminationAnswer = cervicalExaminationAnswer;
+	}
+
+	public String getCervicalExaminationComment() {
+		return cervicalExaminationComment;
+	}
+
+	public void setCervicalExaminationComment(String cervicalExaminationComment) {
+		this.cervicalExaminationComment = cervicalExaminationComment;
+	}
+
+	public String getAxillaryExaminationAnswer() {
+		return axillaryExaminationAnswer;
+	}
+
+	public void setAxillaryExaminationAnswer(String axillaryExaminationAnswer) {
+		this.axillaryExaminationAnswer = axillaryExaminationAnswer;
+	}
+
+	public String getAxillaryExaminationComment() {
+		return axillaryExaminationComment;
+	}
+
+	public void setAxillaryExaminationComment(String axillaryExaminationComment) {
+		this.axillaryExaminationComment = axillaryExaminationComment;
+	}
+
+	public String getInguinalExaminationAnswer() {
+		return inguinalExaminationAnswer;
+	}
+
+	public void setInguinalExaminationAnswer(String inguinalExaminationAnswer) {
+		this.inguinalExaminationAnswer = inguinalExaminationAnswer;
+	}
+
+	public String getInguinalExaminationComment() {
+		return inguinalExaminationComment;
+	}
+
+	public void setInguinalExaminationComment(String inguinalExaminationComment) {
+		this.inguinalExaminationComment = inguinalExaminationComment;
+	}
+
+	public String getGeneralizedLymadenopathyExaminationAnswer() {
+		return generalizedLymadenopathyExaminationAnswer;
+	}
+
+	public void setGeneralizedLymadenopathyExaminationAnswer(String generalizedLymadenopathyExaminationAnswer) {
+		this.generalizedLymadenopathyExaminationAnswer = generalizedLymadenopathyExaminationAnswer;
+	}
+
+	public String getGeneralizedLymadenopathyExaminationComment() {
+		return generalizedLymadenopathyExaminationComment;
+	}
+
+	public void setGeneralizedLymadenopathyExaminationComment(String generalizedLymadenopathyExaminationComment) {
+		this.generalizedLymadenopathyExaminationComment = generalizedLymadenopathyExaminationComment;
+	}
+
+	public String getOtherLymphNodeExaminationAnswer() {
+		return otherLymphNodeExaminationAnswer;
+	}
+
+	public void setOtherLymphNodeExaminationAnswer(String otherLymphNodeExaminationAnswer) {
+		this.otherLymphNodeExaminationAnswer = otherLymphNodeExaminationAnswer;
+	}
+
+	public String getOtherLymphNodeExaminationComment() {
+		return otherLymphNodeExaminationComment;
+	}
+
+	public void setOtherLymphNodeExaminationComment(String otherLymphNodeExaminationComment) {
+		this.otherLymphNodeExaminationComment = otherLymphNodeExaminationComment;
+	}
+
+	public String getGeneralExamination() {
+		return generalExamination;
+	}
+
+	public void setGeneralExamination(String generalExamination) {
+		this.generalExamination = generalExamination;
+	}
+
+	public String getJaundiceExamination() {
+		return jaundiceExamination;
+	}
+
+	public void setJaundiceExamination(String jaundiceExamination) {
+		this.jaundiceExamination = jaundiceExamination;
+	}
+
+	public String getAnaemiaExamination() {
+		return anaemiaExamination;
+	}
+
+	public void setAnaemiaExamination(String anaemiaExamination) {
+		this.anaemiaExamination = anaemiaExamination;
+	}
+
+	public String getCyanosisExamination() {
+		return cyanosisExamination;
+	}
+
+	public void setCyanosisExamination(String cyanosisExamination) {
+		this.cyanosisExamination = cyanosisExamination;
+	}
+
+	public String getClubbingExamination() {
+		return clubbingExamination;
+	}
+
+	public void setClubbingExamination(String clubbingExamination) {
+		this.clubbingExamination = clubbingExamination;
+	}
+
+	public String getOedemaExamination() {
+		return oedemaExamination;
+	}
+
+	public void setOedemaExamination(String oedemaExamination) {
+		this.oedemaExamination = oedemaExamination;
+	}
+
+	public String getDehydrationExamination() {
+		return dehydrationExamination;
+	}
+
+	public void setDehydrationExamination(String dehydrationExamination) {
+		this.dehydrationExamination = dehydrationExamination;
+	}
+
+	public String getPresentingComplains() {
+		return presentingComplains;
+	}
+
+	public void setPresentingComplains(String presentingComplains) {
+		this.presentingComplains = presentingComplains;
+	}
+
+	public String getHistoryOfPresentIllness() {
+		return historyOfPresentIllness;
+	}
+
+	public void setHistoryOfPresentIllness(String historyOfPresentIllness) {
+		this.historyOfPresentIllness = historyOfPresentIllness;
+	}
+
+	public String getPastMedicalSurgicalHistory() {
+		return pastMedicalSurgicalHistory;
+	}
+
+	public void setPastMedicalSurgicalHistory(String pastMedicalSurgicalHistory) {
+		this.pastMedicalSurgicalHistory = pastMedicalSurgicalHistory;
+	}
+
+	public String getCns() {
+		return cns;
+	}
+
+	public void setCns(String cns) {
+		this.cns = cns;
+	}
+
+	public String getCvs() {
+		return cvs;
+	}
+
+	public void setCvs(String cvs) {
+		this.cvs = cvs;
+	}
+
+	public String getRs() {
+		return rs;
+	}
+
+	public void setRs(String rs) {
+		this.rs = rs;
+	}
+
+	public String getGus() {
+		return gus;
+	}
+
+	public void setGus(String gus) {
+		this.gus = gus;
+	}
+
+	public String getMss() {
+		return mss;
+	}
+
+	public void setMss(String mss) {
+		this.mss = mss;
+	}
+
+	public String getCigarettesPerDay() {
+		return cigarettesPerDay;
+	}
+
+	public void setCigarettesPerDay(String cigarettesPerDay) {
+		this.cigarettesPerDay = cigarettesPerDay;
+	}
+
+	public String getYearsSmokedCigarette() {
+		return yearsSmokedCigarette;
+	}
+
+	public void setYearsSmokedCigarette(String yearsSmokedCigarette) {
+		this.yearsSmokedCigarette = yearsSmokedCigarette;
+	}
+
+	public String getTobaccoUsageAnswer() {
+		return tobaccoUsageAnswer;
+	}
+
+	public void setTobaccoUsageAnswer(String tobaccoUsageAnswer) {
+		this.tobaccoUsageAnswer = tobaccoUsageAnswer;
+	}
+
+	public String getAlcoholUsageAnswer() {
+		return alcoholUsageAnswer;
+	}
+
+	public void setAlcoholUsageAnswer(String alcoholUsageAnswer) {
+		this.alcoholUsageAnswer = alcoholUsageAnswer;
+	}
+
+	public String getAlcoholIntakeFrequency() {
+		return alcoholIntakeFrequency;
+	}
+
+	public void setAlcoholIntakeFrequency(String alcoholIntakeFrequency) {
+		this.alcoholIntakeFrequency = alcoholIntakeFrequency;
+	}
+
+	public String getPhysicalActivityAnswer() {
+		return physicalActivityAnswer;
+	}
+
+	public void setPhysicalActivityAnswer(String physicalActivityAnswer) {
+		this.physicalActivityAnswer = physicalActivityAnswer;
+	}
+
+	public String getRadiotherapyExposureAnswer() {
+		return radiotherapyExposureAnswer;
+	}
+
+	public void setRadiotherapyExposureAnswer(String radiotherapyExposureAnswer) {
+		this.radiotherapyExposureAnswer = radiotherapyExposureAnswer;
+	}
+
+	public String getCigaretteUsageAnswer() {
+		return cigaretteUsageAnswer;
+	}
+
+	public void setCigaretteUsageAnswer(String cigaretteUsageAnswer) {
+		this.cigaretteUsageAnswer = cigaretteUsageAnswer;
+	}
 
 	public String getOnSetDate() {
 		return onSetDate;
@@ -343,6 +939,14 @@ public class Note {
 		this.colorectalCancerScreeningAnswer= colorectalCancerScreeningAnswer;
 	}
 
+	public String getRetinoblastomaState() {
+		return retinoblastomaState;
+	}
+
+	public void setRetinoblastomaState(String retinoblastomaState) {
+		this.retinoblastomaState= retinoblastomaState;
+	}
+
 	public String getProstrateCancerScreeningAnswer() {
 		return prostrateCancerScreeningAnswer;
 	}
@@ -541,6 +1145,19 @@ public class Note {
 			addChildHistory(encounter, obsGroup);
 		}
 
+		addRiskFactors(encounter, obsGroup);
+		addClinicals(encounter, obsGroup);
+		addPerformanceStatus(encounter, obsGroup);
+		addLymphNodeExam(encounter, obsGroup);
+		addHeentExam(encounter, obsGroup);
+		addRespiratorySystemExam(encounter, obsGroup);
+		addBreastExam(encounter, obsGroup);
+		addCardiovascularSystemExam(encounter, obsGroup);
+		addAbdominalSystemExam(encounter, obsGroup);
+		addGenitoUrinarySystemExam(encounter, obsGroup);
+		addSkinExam(encounter, obsGroup);
+		addNeurologicExam(encounter, obsGroup);
+
 		if (StringUtils.isNotBlank(this.facility)) {
 			addFacility(encounter, obsGroup);
 		}
@@ -650,13 +1267,13 @@ public class Note {
 	}
 
 	private void addFamilyHistory(Encounter encounter, Obs obsGroup) {
-		Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
+		Concept conceptFamilyHistory = Context.getConceptService().getConceptByUuid("09e2cfb7-d6cb-4275-a102-7c8b5ba52a03");
 		if (conceptFamilyHistory == null) {
 			throw new NullPointerException("Any family members with cancer concept is not defined");
 		}
 		addValueCoded(encounter, obsGroup, conceptFamilyHistory, this.familyHistoryAnswer);
 		if(this.familyHistoryAnswer.equals(YES)){
-			Concept conceptDetailsFamilyCancer = Context.getConceptService().getConceptByUuid("d20fe393-88ca-4a71-b530-e495cba41fa0");
+			Concept conceptDetailsFamilyCancer = Context.getConceptService().getConceptByUuid("002b0606-436f-4dfc-8a2c-33e943f7aa04");
 			if (conceptDetailsFamilyCancer == null) {
 				throw new NullPointerException("Details of Family Members With Cancer concept is not defined");
 			}
@@ -730,7 +1347,7 @@ public class Note {
 		}
 
 		//breast cancer screening status
-		Concept conceptBreastCancerScreening= Context.getConceptService().getConceptByUuid("e277ff6a-c014-4ce2-8c64-16aa0af3376f");
+		Concept conceptBreastCancerScreening= Context.getConceptService().getConceptByUuid("b576d9e5-391a-4663-a5e2-0f6e4a314af2");
 		if (conceptBreastCancerScreening == null) {
 			throw new NullPointerException("Breast cancer screening status concept is not defined");
 		}
@@ -739,7 +1356,7 @@ public class Note {
 		}
 
 		//breast cancer screening type
-		Concept conceptBreastCancerScreeningType= Context.getConceptService().getConceptByUuid("5b2c1d27-59df-4361-a16c-ed60e4a2125c");
+		Concept conceptBreastCancerScreeningType= Context.getConceptService().getConceptByUuid("d20fe393-88ca-4a71-b530-e495cba41fa0");
 		if (conceptBreastCancerScreeningType == null) {
 			throw new NullPointerException("Breast cancer screening type concept is not defined");
 		}
@@ -748,7 +1365,7 @@ public class Note {
 		}
 
 		//breast cancer screening date
-		Concept conceptBreastCancerScreeningDate= Context.getConceptService().getConceptByUuid("bedd5dbb-ebd8-4fab-a901-4c2c57f43422");
+		Concept conceptBreastCancerScreeningDate= Context.getConceptService().getConceptByUuid("dfb7d649-6e18-4f64-9a21-8758eeeafb3c");
 		if (conceptBreastCancerScreeningDate == null) {
 			throw new NullPointerException("Breast cancer screening date concept is not defined");
 		}
@@ -757,7 +1374,7 @@ public class Note {
 		}
 
 		//colorectal cancer screening status
-		Concept conceptColorectalCancerScreening= Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
+		Concept conceptColorectalCancerScreening= Context.getConceptService().getConceptByUuid("83e84962-68d2-4605-968d-0047e80b107e");
 		if (conceptColorectalCancerScreening == null) {
 			throw new NullPointerException("Colorectal cancer screening status concept is not defined");
 		}
@@ -766,7 +1383,7 @@ public class Note {
 		}
 
 		//colorectal cancer screening type
-		Concept conceptColorectalCancerScreeningType= Context.getConceptService().getConceptByUuid("ae19ee8c-d8fc-4d94-84a1-32f84a7e0fff");
+		Concept conceptColorectalCancerScreeningType= Context.getConceptService().getConceptByUuid("e277ff6a-c014-4ce2-8c64-16aa0af3376f");
 		if (conceptColorectalCancerScreeningType == null) {
 			throw new NullPointerException("Colorectal cancer screening type concept is not defined");
 		}
@@ -775,7 +1392,7 @@ public class Note {
 		}
 
 		//colorectal cancer screening date
-		Concept conceptColorectalCancerScreeningDate= Context.getConceptService().getConceptByUuid("8a3c493a-5fdf-4e51-ba73-706d72d5bb41");
+		Concept conceptColorectalCancerScreeningDate= Context.getConceptService().getConceptByUuid("5b2c1d27-59df-4361-a16c-ed60e4a2125c");
 		if (conceptColorectalCancerScreeningDate == null) {
 			throw new NullPointerException("Colorectal cancer screening date concept is not defined");
 		}
@@ -786,7 +1403,7 @@ public class Note {
 
 	private void addMaleHistory(Encounter encounter, Obs obsGroup) {
 		//prostrate cancer screening status
-		Concept conceptProstrateCancerScreening= Context.getConceptService().getConceptByUuid("6d40cfcc-be08-4f5a-a657-1ffeaa1a6e3c");
+		Concept conceptProstrateCancerScreening= Context.getConceptService().getConceptByUuid("ed6b0f9e-e966-4395-a727-cf1097b815c6");
 		if (conceptProstrateCancerScreening == null) {
 			throw new NullPointerException("Prostrate cancer screening status concept is not defined");
 		}
@@ -795,7 +1412,7 @@ public class Note {
 		}
 
 		//prostrate cancer screening type
-		Concept conceptProstrateCancerScreeningType= Context.getConceptService().getConceptByUuid("c805a0f3-5244-4f20-ae56-57b605f7aeeb");
+		Concept conceptProstrateCancerScreeningType= Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
 		if (conceptProstrateCancerScreeningType == null) {
 			throw new NullPointerException("Prostrate cancer screening type concept is not defined");
 		}
@@ -804,43 +1421,627 @@ public class Note {
 		}
 
 		//prostrate cancer screening date
-		Concept conceptProstrateCancerScreeningDate= Context.getConceptService().getConceptByUuid("e271da5c-c193-4bd5-96a4-2b5e4065c30e");
+		Concept conceptProstrateCancerScreeningDate= Context.getConceptService().getConceptByUuid("ae19ee8c-d8fc-4d94-84a1-32f84a7e0fff");
 		if (conceptProstrateCancerScreeningDate == null) {
 			throw new NullPointerException("Prostrate cancer screening date concept is not defined");
 		}
 		if (StringUtils.isNotBlank(this.prostrateCancerScreeningDate)) {
 			this.addValueDate(encounter, obsGroup, conceptProstrateCancerScreeningDate, this.prostrateCancerScreeningDate);
 		}
+	}
 
-		//colorectal cancer screening status
-		Concept conceptColorectalCancerScreening= Context.getConceptService().getConceptByUuid("d5226e81-34b3-4216-b8dd-624834005c87");
-		if (conceptColorectalCancerScreening == null) {
-			throw new NullPointerException("Colorectal cancer screening status concept is not defined");
+	private void addChildHistory(Encounter encounter, Obs obsGroup) {
+		//retinoblatoma state
+		Concept conceptRetinoBlastomaState= Context.getConceptService().getConceptByUuid("f527f815-987c-4aaf-8a33-2ea1b36b338c");
+		if (conceptRetinoBlastomaState == null) {
+			throw new NullPointerException("Retinoblastoma status concept is not defined");
 		}
-		if (StringUtils.isNotBlank(this.colorectalCancerScreeningAnswer)) {
-			this.addValueCoded(encounter, obsGroup, conceptColorectalCancerScreening, this.colorectalCancerScreeningAnswer);
-		}
-
-		//colorectal cancer screening type
-		Concept conceptColorectalCancerScreeningType= Context.getConceptService().getConceptByUuid("ae19ee8c-d8fc-4d94-84a1-32f84a7e0fff");
-		if (conceptColorectalCancerScreeningType == null) {
-			throw new NullPointerException("Colorectal cancer screening type concept is not defined");
-		}
-		if (StringUtils.isNotBlank(this.colorectalCancerScreeningType)) {
-			this.addValueCoded(encounter, obsGroup, conceptColorectalCancerScreeningType, this.colorectalCancerScreeningType);
-		}
-
-		//colorectal cancer screening date
-		Concept conceptColorectalCancerScreeningDate= Context.getConceptService().getConceptByUuid("8a3c493a-5fdf-4e51-ba73-706d72d5bb41");
-		if (conceptColorectalCancerScreeningDate == null) {
-			throw new NullPointerException("Colorectal cancer screening date concept is not defined");
-		}
-		if (StringUtils.isNotBlank(this.colorectalCancerScreeningDate)) {
-			this.addValueDate(encounter, obsGroup, conceptColorectalCancerScreeningDate, this.colorectalCancerScreeningDate);
+		if (StringUtils.isNotBlank(this.retinoblastomaState)) {
+			this.addValueCoded(encounter, obsGroup, conceptRetinoBlastomaState, this.retinoblastomaState);
 		}
 	}
 
-	private void addChildHistory(Encounter encounter, Obs obsGroup) {}
+	private void addRiskFactors(Encounter encounter, Obs obsGroup) {
+		//cigarette usage state
+		Concept conceptCigaretteUsage= Context.getConceptService().getConceptByUuid("6d40cfcc-be08-4f5a-a657-1ffeaa1a6e3c");
+		if (conceptCigaretteUsage == null) {
+			throw new NullPointerException("Cigarette usage status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cigaretteUsageAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptCigaretteUsage, this.cigaretteUsageAnswer);
+		}
+
+		//number of cigaretts per day
+		Concept conceptCigarettesPerDay= Context.getConceptService().getConceptByUuid("165595AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptCigarettesPerDay == null) {
+			throw new NullPointerException("Number of cigarettes smoked per day concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cigarettesPerDay)) {
+			this.addValueNumeric(encounter, obsGroup, conceptCigarettesPerDay, this.cigarettesPerDay);
+		}
+
+		//number of years smoked cigarette
+		Concept conceptYearsSmoked= Context.getConceptService().getConceptByUuid("443b4338-16cd-43e8-910d-d1d9b22860c4");
+		if (conceptYearsSmoked == null) {
+			throw new NullPointerException("Number of years smoked concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.yearsSmokedCigarette)) {
+			this.addValueNumeric(encounter, obsGroup, conceptYearsSmoked, this.yearsSmokedCigarette);
+		}
+
+		//tobacco usage state
+		Concept conceptTobaccoUsage= Context.getConceptService().getConceptByUuid("163731AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptTobaccoUsage == null) {
+			throw new NullPointerException("Tobacco usage status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.tobaccoUsageAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptTobaccoUsage, this.tobaccoUsageAnswer);
+		}
+
+		//alcohol usage state
+		Concept conceptAlcoholUsage= Context.getConceptService().getConceptByUuid("159449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptAlcoholUsage == null) {
+			throw new NullPointerException("Alcohol usage status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.alcoholUsageAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptAlcoholUsage, this.alcoholUsageAnswer);
+		}
+
+		//number of botlles per day
+		Concept conceptAlcoholIntake= Context.getConceptService().getConceptByUuid("166678AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptAlcoholIntake== null) {
+			throw new NullPointerException("Number of alcohol bottles per day concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.alcoholIntakeFrequency)) {
+			this.addValueNumeric(encounter, obsGroup, conceptAlcoholIntake, this.alcoholIntakeFrequency);
+		}
+
+		//physical activity state
+		Concept conceptPhysicalActivity = Context.getConceptService().getConceptByUuid("159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptPhysicalActivity == null) {
+			throw new NullPointerException("Physical activity status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.physicalActivityAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptPhysicalActivity, this.physicalActivityAnswer);
+		}
+
+		//physical activity state
+		Concept conceptRadiotherapyExposure = Context.getConceptService().getConceptByUuid("c805a0f3-5244-4f20-ae56-57b605f7aeeb");
+		if (conceptRadiotherapyExposure == null) {
+			throw new NullPointerException("Previous radiotherapy exposure status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.radiotherapyExposureAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptRadiotherapyExposure, this.radiotherapyExposureAnswer);
+		}
+	}
+
+	private void addClinicals(Encounter encounter, Obs obsGroup) {
+		//PresentingComplains
+		Concept conceptPresentingComplains = Context.getConceptService().getConceptByUuid("160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptPresentingComplains== null) {
+			throw new NullPointerException("PresentingComplains concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.presentingComplains)) {
+			this.addValueText(encounter, obsGroup, conceptPresentingComplains, this.presentingComplains);
+		}
+
+		//HistoryOfPresentIllness
+		Concept conceptHistoryOfPresentIllness= Context.getConceptService().getConceptByUuid("1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptHistoryOfPresentIllness== null) {
+			throw new NullPointerException("HistoryOfPresentIllness concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.historyOfPresentIllness)) {
+			this.addValueText(encounter, obsGroup, conceptHistoryOfPresentIllness, this.historyOfPresentIllness);
+		}
+
+		//PastMedicalSurgicalHistory
+		Concept conceptPastMedicalSurgicalHistory= Context.getConceptService().getConceptByUuid("160221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptPastMedicalSurgicalHistory== null) {
+			throw new NullPointerException("PastMedicalSurgicalHistory concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.pastMedicalSurgicalHistory)) {
+			this.addValueText(encounter, obsGroup, conceptPastMedicalSurgicalHistory, this.pastMedicalSurgicalHistory);
+		}
+
+		//Cns
+		Concept conceptCns= Context.getConceptService().getConceptByUuid("8337f818-79eb-4360-8b3e-8f90927ddbd3");
+		if (conceptCns== null) {
+			throw new NullPointerException("Cns concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cns)) {
+			this.addValueText(encounter, obsGroup, conceptCns, this.cns);
+		}
+
+		//Cvs
+		Concept conceptCvs= Context.getConceptService().getConceptByUuid("7ef86399-9afe-4977-b320-3ca9763b39fa");
+		if (conceptCvs== null) {
+			throw new NullPointerException("Cvs concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cvs)) {
+			this.addValueText(encounter, obsGroup, conceptCvs, this.cvs);
+		}
+
+		//Cns
+		Concept conceptRs= Context.getConceptService().getConceptByUuid("548e14dc-2128-434e-b365-becd398b86e4");
+		if (conceptRs== null) {
+			throw new NullPointerException("Rs concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rs)) {
+			this.addValueText(encounter, obsGroup, conceptRs, this.rs);
+		}
+
+		//Gus
+		Concept conceptGus= Context.getConceptService().getConceptByUuid("2389453e-e4bd-4ec9-9764-620daeb52dbb");
+		if (conceptGus== null) {
+			throw new NullPointerException("Gus concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.gus)) {
+			this.addValueText(encounter, obsGroup, conceptGus, this.gus);
+		}
+
+		//Mss
+		Concept conceptMss= Context.getConceptService().getConceptByUuid("0693aab4-9756-454e-b693-6d4454c55043");
+		if (conceptMss== null) {
+			throw new NullPointerException("Mss concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.mss)) {
+			this.addValueText(encounter, obsGroup, conceptMss, this.mss);
+		}
+	}
+
+	private void addPerformanceStatus(Encounter encounter, Obs obsGroup) {
+		//GeneralExamination
+		Concept conceptGeneralExamination= Context.getConceptService().getConceptByUuid("163042AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptGeneralExamination== null) {
+			throw new NullPointerException("GeneralExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.generalExamination)) {
+			this.addValueText(encounter, obsGroup, conceptGeneralExamination, this.generalExamination);
+		}
+		//JaundiceExamination
+		Concept conceptJaundiceExamination= Context.getConceptService().getConceptByUuid("1c1b7c40-1c74-41d7-aa61-b823ddec7880");
+		if (conceptJaundiceExamination== null) {
+			throw new NullPointerException("JaundiceExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.jaundiceExamination)) {
+			this.addValueText(encounter, obsGroup, conceptJaundiceExamination, this.jaundiceExamination);
+		}
+
+		//AnaemiaExamination
+		Concept conceptAnaemiaExamination= Context.getConceptService().getConceptByUuid("865a5ce7-4206-4939-99a6-f27fb74818fc");
+		if (conceptAnaemiaExamination== null) {
+			throw new NullPointerException("AnaemiaExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.anaemiaExamination)) {
+			this.addValueText(encounter, obsGroup, conceptAnaemiaExamination, this.anaemiaExamination);
+		}
+
+		//CyanosisExamination
+		Concept conceptCyanosisExamination= Context.getConceptService().getConceptByUuid("71a508f9-866c-41fb-8da7-efa84df6c29e");
+		if (conceptCyanosisExamination== null) {
+			throw new NullPointerException("CyanosisExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cyanosisExamination)) {
+			this.addValueText(encounter, obsGroup, conceptCyanosisExamination, this.cyanosisExamination);
+		}
+
+		//ClubbingExamination
+		Concept conceptClubbingExamination= Context.getConceptService().getConceptByUuid("eda93f9b-7f98-432f-b9d7-bd56343def46");
+		if (conceptClubbingExamination== null) {
+			throw new NullPointerException("ClubbingExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.clubbingExamination)) {
+			this.addValueText(encounter, obsGroup, conceptClubbingExamination, this.clubbingExamination);
+		}
+
+		//OedemaExamination
+		Concept conceptOedemaExamination= Context.getConceptService().getConceptByUuid("872ab30f-1924-4b2d-bba6-e7af9e1b711a");
+		if (conceptOedemaExamination== null) {
+			throw new NullPointerException("OedemaExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.oedemaExamination)) {
+			this.addValueText(encounter, obsGroup, conceptOedemaExamination, this.oedemaExamination);
+		}
+
+		//DehydrationExamination
+		Concept conceptDehydrationExamination= Context.getConceptService().getConceptByUuid("a26a4f11-0169-42d3-9501-1e1835f319c0");
+		if (conceptDehydrationExamination== null) {
+			throw new NullPointerException("DehydrationExamination concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.dehydrationExamination)) {
+			this.addValueText(encounter, obsGroup, conceptDehydrationExamination, this.dehydrationExamination);
+		}
+	}
+
+	private void addLymphNodeExam(Encounter encounter, Obs obsGroup) {
+		//PalpabilityAnswer
+		Concept conceptPalpabilityAnswer = Context.getConceptService().getConceptByUuid("81365bc6-536b-4486-bcf5-a71af5c7c2b5");
+		if (conceptPalpabilityAnswer == null) {
+			throw new NullPointerException("PalpabilityAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.palpabilityAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptPalpabilityAnswer, this.palpabilityAnswer);
+		}
+
+		//SubmandibularAnswer
+		Concept conceptSubmandibularAnswer = Context.getConceptService().getConceptByUuid("403a5548-2d26-45b1-b3c1-3f6b0b093ed2");
+		if (conceptSubmandibularAnswer == null) {
+			throw new NullPointerException("SubmandibularAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.submandibularAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptSubmandibularAnswer, this.submandibularAnswer);
+		}
+
+		//SubmandibularComment
+		Concept conceptSubmandibularComment = Context.getConceptService().getConceptByUuid("d18a67ce-648f-4aa3-9ff1-107b028aa054");
+		if (conceptSubmandibularComment == null) {
+			throw new NullPointerException("SubmandibularComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.submandibularComment)) {
+			this.addValueText(encounter, obsGroup, conceptSubmandibularComment, this.submandibularComment);
+		}
+
+		//SupraciavicularAnswer
+		Concept conceptSupraciavicularAnswer = Context.getConceptService().getConceptByUuid("1315b836-a3c9-403c-9371-6ab85eb5315b");
+		if (conceptSupraciavicularAnswer == null) {
+			throw new NullPointerException("SupraciavicularAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.supraciavicularAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptSupraciavicularAnswer, this.supraciavicularAnswer);
+		}
+
+		//SupraciavicularComment
+		Concept conceptSupraciavicularComment= Context.getConceptService().getConceptByUuid("df3fba00-680c-4380-90b5-72420dc5edd1");
+		if (conceptSupraciavicularComment== null) {
+			throw new NullPointerException("SupraciavicularComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.supraciavicularComment)) {
+			this.addValueText(encounter, obsGroup, conceptSupraciavicularComment, this.supraciavicularComment);
+		}
+
+		//CervicalExaminationAnswer
+		Concept conceptCervicalExaminationAnswer = Context.getConceptService().getConceptByUuid("d4e9a56b-b980-4ada-9f33-7018e7398281");
+		if (conceptCervicalExaminationAnswer == null) {
+			throw new NullPointerException("CervicalExaminationAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cervicalExaminationAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptCervicalExaminationAnswer, this.cervicalExaminationAnswer);
+		}
+
+		//CervicalExaminationComment
+		Concept conceptCervicalExaminationComment = Context.getConceptService().getConceptByUuid("b2a84e52-34da-49f4-9c14-60b86e88eecd");
+		if (conceptCervicalExaminationComment == null) {
+			throw new NullPointerException("CervicalExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.cervicalExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptCervicalExaminationComment, this.cervicalExaminationComment);
+		}
+
+		//AxillaryExaminationAnswer
+		Concept conceptAxillaryExaminationAnswer = Context.getConceptService().getConceptByUuid("6d813dae-6389-4dc5-bc04-3d48f4658c5f");
+		if (conceptAxillaryExaminationAnswer == null) {
+			throw new NullPointerException("AxillaryExaminationAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.axillaryExaminationAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptAxillaryExaminationAnswer, this.axillaryExaminationAnswer);
+		}
+
+		//AxillaryExaminationComment
+		Concept conceptAxillaryExaminationComment = Context.getConceptService().getConceptByUuid("2bdab135-118a-4659-aa9b-0793de7c54e8");
+		if (conceptAxillaryExaminationComment == null) {
+			throw new NullPointerException("AxillaryExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.axillaryExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptAxillaryExaminationComment, this.axillaryExaminationComment);
+		}
+
+		//InguinalExaminationAnswer
+		Concept conceptInguinalExaminationAnswer = Context.getConceptService().getConceptByUuid("0c1db25e-ca62-43fa-9477-4196451d01bb");
+		if (conceptInguinalExaminationAnswer == null) {
+			throw new NullPointerException("InguinalExaminationAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.inguinalExaminationAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptInguinalExaminationAnswer, this.inguinalExaminationAnswer);
+		}
+
+		//InguinalExaminationComment
+		Concept conceptInguinalExaminationComment = Context.getConceptService().getConceptByUuid("5b898de3-8151-4456-b3c0-12b42b1c7f22");
+		if (conceptInguinalExaminationComment == null) {
+			throw new NullPointerException("InguinalExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.inguinalExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptInguinalExaminationComment, this.inguinalExaminationComment);
+		}
+
+		//GeneralizedLymadenopathyExaminationAnswer
+		Concept conceptGeneralizedLymadenopathyExaminationAnswer = Context.getConceptService().getConceptByUuid("8dc6f3f7-2f69-498a-b2e2-d87475f4bd32");
+		if (conceptGeneralizedLymadenopathyExaminationAnswer == null) {
+			throw new NullPointerException("GeneralizedLymadenopathyExaminationAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.generalizedLymadenopathyExaminationAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptGeneralizedLymadenopathyExaminationAnswer, this.generalizedLymadenopathyExaminationAnswer);
+		}
+
+		//GeneralizedLymadenopathyExaminationComment
+		Concept conceptGeneralizedLymadenopathyExaminationComment = Context.getConceptService().getConceptByUuid("61d118c2-fd66-4f18-b9a0-e23eb71a4bcc");
+		if (conceptGeneralizedLymadenopathyExaminationComment == null) {
+			throw new NullPointerException("GeneralizedLymadenopathyExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.generalizedLymadenopathyExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptGeneralizedLymadenopathyExaminationComment, this.generalizedLymadenopathyExaminationComment);
+		}
+
+		//OtherLymphNodeExaminationAnswer
+		Concept conceptOtherLymphNodeExaminationAnswer = Context.getConceptService().getConceptByUuid("c725329d-0ebd-42ca-9f19-6b407e551aef");
+		if (conceptOtherLymphNodeExaminationAnswer == null) {
+			throw new NullPointerException("OtherLymphNodeExaminationAnswer status concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.otherLymphNodeExaminationAnswer)) {
+			this.addValueCoded(encounter, obsGroup, conceptOtherLymphNodeExaminationAnswer, this.otherLymphNodeExaminationAnswer);
+		}
+
+		//OtherLymphNodeExaminationComment
+		Concept conceptOtherLymphNodeExaminationComment = Context.getConceptService().getConceptByUuid("183f9497-b72e-4ebe-ae17-5dcf110ff3b6");
+		if (conceptOtherLymphNodeExaminationComment == null) {
+			throw new NullPointerException("OtherLymphNodeExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.otherLymphNodeExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptOtherLymphNodeExaminationComment, this.otherLymphNodeExaminationComment);
+		}
+	}
+	private void addHeentExam(Encounter encounter, Obs obsGroup) {
+		//EyeExam
+		Concept conceptEyeExam = Context.getConceptService().getConceptByUuid("166441AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptEyeExam == null) {
+			throw new NullPointerException("EyeExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.eyeExam)) {
+			this.addValueText(encounter, obsGroup, conceptEyeExam, this.eyeExam);
+		}
+		//NeckExam
+		Concept conceptNeckExam = Context.getConceptService().getConceptByUuid("165983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptNeckExam == null) {
+			throw new NullPointerException("NeckExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.neckExam)) {
+			this.addValueText(encounter, obsGroup, conceptNeckExam, this.neckExam);
+		}
+		//MouthExam
+		Concept conceptMouthExam = Context.getConceptService().getConceptByUuid("ea536fb3-cfd0-4928-8cbd-8210559d2a35");
+		if (conceptMouthExam == null) {
+			throw new NullPointerException("MouthExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.mouthExam)) {
+			this.addValueText(encounter, obsGroup, conceptMouthExam, this.mouthExam);
+		}
+		//EarExam
+		Concept conceptEarExam = Context.getConceptService().getConceptByUuid("7523ddac-705a-4da0-91c6-96c6256b6cae");
+		if (conceptEarExam == null) {
+			throw new NullPointerException("EarExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.earExam)) {
+			this.addValueText(encounter, obsGroup, conceptEarExam, this.earExam);
+		}
+		//NoseExam
+		Concept conceptNoseExam = Context.getConceptService().getConceptByUuid("372f2e6b-b8a1-4260-bd83-f14ae09e5fe3");
+		if (conceptNoseExam == null) {
+			throw new NullPointerException("NoseExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.noseExam)) {
+			this.addValueText(encounter, obsGroup, conceptNoseExam, this.noseExam);
+		}
+		//ThroatExam
+		Concept conceptThroatExam = Context.getConceptService().getConceptByUuid("5c931ad2-28e8-41f3-9291-ee9f66d3c46e");
+		if (conceptThroatExam == null) {
+			throw new NullPointerException("ThroatExam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.throatExam)) {
+			this.addValueText(encounter, obsGroup, conceptThroatExam, this.throatExam);
+		}
+	}
+
+	private void addRespiratorySystemExam(Encounter encounter, Obs obsGroup) {
+		//RsInspection
+		Concept conceptRsInspection = Context.getConceptService().getConceptByUuid("32882ce7-19ca-4b2c-8175-a5f188618391");
+		if (conceptRsInspection == null) {
+			throw new NullPointerException("RsInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsInspection)) {
+			this.addValueText(encounter, obsGroup, conceptRsInspection, this.rsInspection);
+		}
+		//RsPalpation
+		Concept conceptRsPalpation = Context.getConceptService().getConceptByUuid("e65bb895-b31e-4eb7-ada6-2ffa9fff5dfe");
+		if (conceptRsPalpation == null) {
+			throw new NullPointerException("RsPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptRsPalpation, this.rsPalpation);
+		}
+		//RsPercussion
+		Concept conceptRsPercussion = Context.getConceptService().getConceptByUuid("8e06aad9-5180-4054-8c7d-2e83dbcdcc0a");
+		if (conceptRsPercussion == null) {
+			throw new NullPointerException("RsPercussion concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsPercussion)) {
+			this.addValueText(encounter, obsGroup, conceptRsPercussion, this.rsPercussion);
+		}
+		//RsAuscultation
+		Concept conceptRsAuscultation = Context.getConceptService().getConceptByUuid("77116c15-8dde-446a-adca-e489f5c47199");
+		if (conceptRsAuscultation == null) {
+			throw new NullPointerException("RsAuscultation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.rsAuscultation)) {
+			this.addValueText(encounter, obsGroup, conceptRsAuscultation, this.rsAuscultation);
+		}
+	}
+
+	private void addBreastExam(Encounter encounter, Obs obsGroup) {
+		//BreastExaminationComment
+		Concept conceptBreastExaminationComment = Context.getConceptService().getConceptByUuid("162825AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptBreastExaminationComment == null) {
+			throw new NullPointerException("BreastExaminationComment concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.breastExaminationComment)) {
+			this.addValueText(encounter, obsGroup, conceptBreastExaminationComment, this.breastExaminationComment);
+		}
+	}
+
+	private void addCardiovascularSystemExam(Encounter encounter, Obs obsGroup) {
+		//CsInspection
+		Concept conceptCsInspection = Context.getConceptService().getConceptByUuid("086d1dcf-7d0d-4197-a917-de9819da8689");
+		if (conceptCsInspection == null) {
+			throw new NullPointerException("CsInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csInspection)) {
+			this.addValueText(encounter, obsGroup, conceptCsInspection, this.csInspection);
+		}
+		//CsPalpation
+		Concept conceptCsPalpation = Context.getConceptService().getConceptByUuid("c5d196c2-bd78-4539-a686-f66cef7176dd");
+		if (conceptCsPalpation == null) {
+			throw new NullPointerException("CsPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptCsPalpation, this.csPalpation);
+		}
+		//CsPercussion
+		Concept conceptCsPercussion = Context.getConceptService().getConceptByUuid("29185559-4336-4383-8681-f74e11d7756e");
+		if (conceptCsPercussion == null) {
+			throw new NullPointerException("CsPercussion concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csPercussion)) {
+			this.addValueText(encounter, obsGroup, conceptCsPercussion, this.csPercussion);
+		}
+		//CsAuscultation
+		Concept conceptCsAuscultation = Context.getConceptService().getConceptByUuid("faa3255f-0f56-44b6-908b-da0002efebf1");
+		if (conceptCsAuscultation == null) {
+			throw new NullPointerException("CsAuscultation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.csAuscultation)) {
+			this.addValueText(encounter, obsGroup, conceptCsAuscultation, this.csAuscultation);
+		}
+	}
+
+	private void addAbdominalSystemExam(Encounter encounter, Obs obsGroup) {
+		//AsInspection
+		Concept conceptAsInspection = Context.getConceptService().getConceptByUuid("02e44cf4-37dd-4f03-90f0-40fff4485218");
+		if (conceptAsInspection == null) {
+			throw new NullPointerException("AsInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asInspection)) {
+			this.addValueText(encounter, obsGroup, conceptAsInspection, this.asInspection);
+		}
+		//AsPalpation
+		Concept conceptAsPalpation = Context.getConceptService().getConceptByUuid("b20b1889-a85b-40ac-92cd-06f03dba052b");
+		if (conceptAsPalpation == null) {
+			throw new NullPointerException("AsPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptAsPalpation, this.asPalpation);
+		}
+		//AsPercussion
+		Concept conceptAsPercussion = Context.getConceptService().getConceptByUuid("e90091ea-2065-4cc9-a42a-e490a2aedd53");
+		if (conceptAsPercussion == null) {
+			throw new NullPointerException("AsPercussion concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asPercussion)) {
+			this.addValueText(encounter, obsGroup, conceptAsPercussion, this.asPercussion);
+		}
+		//AsAuscultation
+		Concept conceptAsAuscultation = Context.getConceptService().getConceptByUuid("2ddd4147-c7df-4510-b9b6-5cce3bef9d3b");
+		if (conceptAsAuscultation == null) {
+			throw new NullPointerException("AsAuscultation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.asAuscultation)) {
+			this.addValueText(encounter, obsGroup, conceptAsAuscultation, this.asAuscultation);
+		}
+	}
+
+	private void addGenitoUrinarySystemExam(Encounter encounter, Obs obsGroup) {
+		//GuInspection
+		Concept conceptGuInspection = Context.getConceptService().getConceptByUuid("72b0296f-e6c4-4eed-a407-1229b76441db");
+		if (conceptGuInspection == null) {
+			throw new NullPointerException("GuInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.guInspection)) {
+			this.addValueText(encounter, obsGroup, conceptGuInspection, this.guInspection);
+		}
+		//GuPalpation
+		Concept conceptGuPalpation = Context.getConceptService().getConceptByUuid("aa5d8054-49a0-4039-85f6-d09b94fd33cb");
+		if (conceptGuPalpation == null) {
+			throw new NullPointerException("GuPalpation concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.guPalpation)) {
+			this.addValueText(encounter, obsGroup, conceptGuPalpation, this.guPalpation);
+		}
+	}
+
+	private void addSkinExam(Encounter encounter, Obs obsGroup) {
+		//SkinInspection
+		Concept conceptSkinInspection = Context.getConceptService().getConceptByUuid("568e6f9c-8349-4dde-b6fb-a2d70a988d59");
+		if (conceptSkinInspection == null) {
+			throw new NullPointerException("SkinInspection concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.skinInspection)) {
+			this.addValueText(encounter, obsGroup, conceptSkinInspection, this.skinInspection);
+		}
+
+	}
+
+	private void addNeurologicExam(Encounter encounter, Obs obsGroup) {
+		//NHigherFunctions
+		Concept conceptNHigherFunctions = Context.getConceptService().getConceptByUuid("86ef4a3e-d861-4444-9205-31426144789a");
+		if (conceptNHigherFunctions == null) {
+			throw new NullPointerException("Neurologic HigherFunctions Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nHigherFunctions)) {
+			this.addValueText(encounter, obsGroup, conceptNHigherFunctions, this.nHigherFunctions);
+		}
+
+		//NCranialNerves
+		Concept conceptNCranialNerves = Context.getConceptService().getConceptByUuid("35adb502-0751-4272-9fe5-717f81decd4b");
+		if (conceptNCranialNerves == null) {
+			throw new NullPointerException("Neurologic CranialNerves Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nCranialNerves)) {
+			this.addValueText(encounter, obsGroup, conceptNCranialNerves, this.nCranialNerves);
+		}
+
+		//NHead
+		Concept conceptNHead = Context.getConceptService().getConceptByUuid("018ddfcb-3bcf-43b5-a417-8cd4dc923896");
+		if (conceptNHead == null) {
+			throw new NullPointerException("Neurologic Head Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nHead)) {
+			this.addValueText(encounter, obsGroup, conceptNHead, this.nHead);
+		}
+
+		//NNeck
+		Concept conceptNNeck = Context.getConceptService().getConceptByUuid("bf084cec-0faa-443a-b8e3-f796fd5e3163");
+		if (conceptNNeck == null) {
+			throw new NullPointerException("Neurologic Neck Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nNeck)) {
+			this.addValueText(encounter, obsGroup, conceptNNeck, this.nNeck);
+		}
+
+		//NSensoryLevel
+		Concept conceptNSensoryLevel = Context.getConceptService().getConceptByUuid("8979ce18-6e8d-4eb7-847d-312c80740ef7");
+		if (conceptNSensoryLevel == null) {
+			throw new NullPointerException("Neurologic SensoryLevel Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nSensoryLevel)) {
+			this.addValueText(encounter, obsGroup, conceptNSensoryLevel, this.nSensoryLevel);
+		}
+
+		//NMusculoskeletal
+		Concept conceptNMusculoskeletal = Context.getConceptService().getConceptByUuid("56b9f55b-5d65-4656-90b1-ebed44c1ed54");
+		if (conceptNMusculoskeletal == null) {
+			throw new NullPointerException("Neurologic Musculoskeletal Exam concept is not defined");
+		}
+		if (StringUtils.isNotBlank(this.nMusculoskeletal)) {
+			this.addValueText(encounter, obsGroup, conceptNMusculoskeletal, this.nMusculoskeletal);
+		}
+	}
 
 	private void addValueCoded(Encounter encounter, Obs obsGroup, Concept concept, String value)
 	{

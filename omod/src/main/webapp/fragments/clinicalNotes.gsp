@@ -377,9 +377,14 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</div>
 				</div>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">						
-						<input type="text" id="signs-of-retinoblasoma" name="signs-of-retinoblasoma" />
-					</div>				
+					<% retinoblastomaSigns.each { answer -> %>
+						<div class="radios col3">
+							<label>
+								<input data-bind="checked: retinoblastomaState" value="${answer.answerConcept.id}" name="retinoblastomaState" type="radio">
+								<label>${answer.answerConcept.getName()}</label>
+							</label>
+						</div>
+					<% } %>			
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -388,45 +393,80 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Risk Factor</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Do you some cigarettes?<span style="color: #f00 !important;
+					<div class="col12">
+						<label for="screened-prostrate-cancer">Do you smoke cigarettes?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% cigaretteUsage.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: cigaretteUsageAnswer" value="${answer.answerConcept.id}" name="cigaretteUsageAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 					<div class="col5">
 						<label for="date-screened-prostratecancer">If yes, how many cigarrets per day?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+						<input type="text" id="cigarettesPerDay" name="cigarettesPerDay" data-bind="value: \$root.cigarettesPerDay" />
 					</div>
 					<div class="col6">
 						<label for="screened-prostrate-cancer">For how many many years?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<input type="text" id="yearsSmokedCigarette" name="yearsSmokedCigarette" data-bind="value: \$root.yearsSmokedCigarette" />
 					</div>
-					<div class="col5">
+					<div class="col12">
 						<label for="date-screened-prostratecancer">Do you use other forms of tobacco?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+						<% tobaccoUsage.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: tobaccoUsageAnswer" value="${answer.answerConcept.id}" name="tobaccoUsageAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col6">
+					<div class="col12">
 						<label for="screened-prostrate-cancer">Do you take alcohol?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% alcoholUsage.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: alcoholUsageAnswer" value="${answer.answerConcept.id}" name="alcoholUsageAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 					<div class="col5">
-						<label for="date-screened-prostratecancer">What is the frequency?<span style="color: #f00 !important;
+						<label for="alcoholIntakeFrequency">What is the frequency(bottles per day)?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
+						<input type="text" id="alcoholIntakeFrequency" name="alcoholIntakeFrequency" data-bind="value: \$root.alcoholIntakeFrequency" />
 					</div>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Are you physically active?<span style="color: #f00 !important;
+					<div class="col12">
+						<label for="physicalActivity">Are you physically active?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
+						<% physicalActivity.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: physicalActivityAnswer" value="${answer.answerConcept.id}" name="physicalActivityAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col11">
+					<div class="col12">
 						<label for="types-of-screening">Previous exposure to radiation (radiotherapy?)<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="types-of-screening" name="types-of-screening" />
+						<% radiotherapyExposure.each { answer -> %>
+							<div class="radios col3">
+								<label>
+									<input data-bind="checked: radiotherapyExposureAnswer" value="${answer.answerConcept.id}" name="radiotherapyExposureAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 				</div>
 				<p>
@@ -437,46 +477,41 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<legend>Clinicals</legend>
 				<p class="input-position-class">
 					<label>Presenting Complains</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.presentingComplains" id="presentingComplains" name="presentingComplains" rows="2" cols="74"></textarea>
 				</p>
 				<p class="input-position-class">
 					<label>History of Present Illness</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.historyOfPresentIllness" id="historyOfPresentIllness" name="historyOfPresentIllness" rows="2" cols="74"></textarea>
 				</p>
 				<p class="input-position-class">
 					<label>Past Medical and Surgical History</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.pastMedicalSurgicalHistory" id="pastMedicalSurgicalHistory" name="pastMedicalSurgicalHistory" rows="2" cols="74"></textarea>
 				</p>
-				<label for="screened-before-answer-div" class="label">Review of Systems</label>
+				<label for="cns" class="label">Review of Systems</label>
 				<div class="col11">
-					<label for="types-of-screening">CNS:<span style="color: #f00 !important;
+					<label for="cns">CNS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.cns" id="cns" name="cns" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">CNS:<span style="color: #f00 !important;
+					<label for="cvs">CVS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.cvs" id="cvs" name="cvs" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">CVS:<span style="color: #f00 !important;
+					<label for="rs">RS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rs" id="rs" name="rs" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">RS:<span style="color: #f00 !important;
+					<label for="gus">GUS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.gus" id="gus" name="gus" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">GUS:<span style="color: #f00 !important;
+					<label for="mss">MSS:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
-				</div>
-				<div class="col11">
-					<label for="types-of-screening">MSS:<span style="color: #f00 !important;
-					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.mss" id="mss" name="mss" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -490,37 +525,37 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<div class="col11">
 					<label for="types-of-screening">General Examination:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.generalExamination" id="generalExamination" name="generalExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Jaundice:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.jaundiceExamination" id="jaundiceExamination" name="jaundiceExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Anaemia:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.anaemiaExamination" id="anaemiaExamination" name="anaemiaExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Cyanosis:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.cyanosisExamination" id="cyanosisExamination" name="cyanosisExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Clubbing:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.clubbingExamination" id="clubbingExamination" name="clubbingExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Oedema:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.oedemaExamination" id="oedemaExamination" name="oedemaExamination" />
 				</div>
 				<div class="col11">
 					<label for="types-of-screening">Dehydration:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.dehydrationExamination" id="dehydrationExamination" name="dehydrationExamination" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -532,92 +567,148 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<div class="col10">
 						<label for="family-members-with-cancer">Palpable or Non-palpable?<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="family-members-with-cancer" name="family-members-with-cancer" />
+						<% palpability.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: palpabilityAnswer" value="${answer.answerConcept.id}" name="palpabilityAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
 				</div>
 				<label for="screened-before-answer-div">If yes, Indicate location and characteristics below:</label>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
-						<label for="degree-of-relation">Submandibular<span style="color: #f00 !important;
+					<div class="col7">
+						<label for="submandibular">Submandibular<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% submandibularExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: submandibularAnswer" value="${answer.answerConcept.id}" name="submandibularAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="submandibularComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.submandibularComment" id="submandibularComment" name="submandibularComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col7">
 						<label for="degree-of-relation">Supraciavicular<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% supraciavicularExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: supraciavicularAnswer" value="${answer.answerConcept.id}" name="supraciavicularAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="supraciavicularComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.supraciavicularComment" id="supraciavicularComment" name="supraciavicularComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col7">
 						<label for="degree-of-relation">Cervical<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% cervicalExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: cervicalExaminationAnswer" value="${answer.answerConcept.id}" name="cervicalExaminationAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="cervicalExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.cervicalExaminationComment" id="cervicalExaminationComment" name="cervicalExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col7">
 						<label for="degree-of-relation">Axillary<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% axillaryExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: axillaryExaminationAnswer" value="${answer.answerConcept.id}" name="axillaryExaminationAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="axillaryExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.axillaryExaminationComment" id="axillaryExaminationComment" name="axillaryExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col7">
 						<label for="degree-of-relation">Inguinal<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% inguinalExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: inguinalExaminationAnswer" value="${answer.answerConcept.id}" name="inguinalExaminationAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="inguinalExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.inguinalExaminationComment" id="inguinalExaminationComment" name="inguinalExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col7">
 						<label for="degree-of-relation">Generalized Lymadenopathy<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% generalizedLymadenopathyExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: generalizedLymadenopathyExaminationAnswer" value="${answer.answerConcept.id}" name="generalizedLymadenopathyExaminationAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="generalizedLymadenopathyExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.generalizedLymadenopathyExaminationComment" id="generalizedLymadenopathyExaminationComment" name="generalizedLymadenopathyExaminationComment" />
 					</div>
 				</div>
 				<div style="padding: 0 4px; padding-bottom:20px;">
-					<div class="col6">
+					<div class="col7">
 						<label for="degree-of-relation">Other<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
+						<% otherLymphNodeExamination.each { answer -> %>
+							<div class="radios col2">
+								<label>
+									<input data-bind="checked: otherLymphNodeExaminationAnswer" value="${answer.answerConcept.id}" name="otherLymphNodeExaminationAnswer" type="radio">
+									<label>${answer.answerConcept.getName()}</label>
+								</label>
+							</div>
+						<% } %>	
 					</div>
-					<div class="col5">
-						<label for="age-of-diagnosis">Comments<span style="color: #f00 !important;
+					<div class="col4">
+						<label for="otherLymphNodeExaminationComment">Comments<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
+						<input type="text" data-bind="value: \$root.otherLymphNodeExaminationComment" id="otherLymphNodeExaminationComment" name="otherLymphNodeExaminationComment" />
 					</div>
 				</div>
 				<p>
@@ -627,34 +718,34 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>HEENT</legend>
 				<div class="col11">
-					<label for="types-of-screening">Eyes:<span style="color: #f00 !important;
+					<label for="eyeExam">Eyes:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.eyeExam" id="eyeExam" name="eyeExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Neck:<span style="color: #f00 !important;
+					<label for="neckExam">Neck:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.neckExam" id="neckExam" name="neckExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Mouth:<span style="color: #f00 !important;
+					<label for="mouthExam">Mouth:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.mouthExam" id="mouthExam" name="mouthExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Ears:<span style="color: #f00 !important;
+					<label for="earExam">Ears:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.earExam" id="earExam" name="earExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Nose:<span style="color: #f00 !important;
+					<label for="noseExam">Nose:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.noseExam" id="noseExam" name="noseExam" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Throat:<span style="color: #f00 !important;
+					<label for="throatExam">Throat:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.throatExam" id="throatExam" name="throatExam" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -663,24 +754,24 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Respiratory System</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="rsInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsInspection"  id="rsInspection" name="rsInspection" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					<label for="rsPalpation">Palpation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsPalpation" id="rsPalpation" name="rsPalpation" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Percussion:<span style="color: #f00 !important;
+					<label for="rsPercussion">Percussion:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsPercussion" id="rsPercussion" name="rsPercussion" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
+					<label for="rsAuscultation">Auscultation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.rsAuscultation" id="rsAuscultation" name="rsAuscultation" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -690,7 +781,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				<legend>Breast Examination</legend>
 				<p class="input-position-class">
 					<label>Comments</label>
-					<textarea data-bind="" id="instructions" name="instructions" rows="2" cols="74"></textarea>
+					<textarea data-bind="value: \$root.breastExaminationComment" id="breastExaminationComment" name="breastExaminationComment" rows="2" cols="74"></textarea>
 				</p>
 				
 				<p>
@@ -700,24 +791,24 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Cardiovascular System</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="csInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.csInspection" id="csInspection" name="csInspection" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					<label for="csPalpation">Palpation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.csPalpation" id="csPalpation" name="csPalpation" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Percussion:<span style="color: #f00 !important;
+					<label for="csPercussion">Percussion:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.csPercussion" id="csPercussion" name="csPercussion" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
+					<label for="csAuscultation">Auscultation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.csAuscultation" id="csAuscultation" name="csAuscultation" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -726,24 +817,24 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Abdominal System</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="asInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.asInspection" id="asInspection" name="asInspection" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					<label for="asPalpation">Palpation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.asPalpation" id="asPalpation" name="asPalpation" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Percussion:<span style="color: #f00 !important;
+					<label for="asPercussion">Percussion:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.asPercussion" id="asPercussion" name="asPercussion" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Auscultation:<span style="color: #f00 !important;
+					<label for="asAuscultation">Auscultation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.asAuscultation" id="asAuscultation" name="asAuscultation" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -752,14 +843,14 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Genitourinary</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="guInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.guInspection" id="guInspection" name="guInspection" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Palpation:<span style="color: #f00 !important;
+					<label for="guPalpation">Palpation:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.guPalpation" id="guPalpation" name="guPalpation" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -768,9 +859,9 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Skin Exam Findings</legend>
 				<div class="col11">
-					<label for="types-of-screening">Inspection:<span style="color: #f00 !important;
+					<label for="skinInspection">Inspection:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.skinInspection" id="skinInspection" name="skinInspection" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -779,34 +870,34 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Neurologic</legend>
 				<div class="col11">
-					<label for="types-of-screening">Higher Functions:<span style="color: #f00 !important;
+					<label for="nHigherFunctions">Higher Functions:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nHigherFunctions" id="nHigherFunctions" name="nHigherFunctions" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Cranial Nerves:<span style="color: #f00 !important;
+					<label for="nCranialNerves">Cranial Nerves:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nCranialNerves" id="nCranialNerves" name="nCranialNerves" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Head(Inspect, Palpate):<span style="color: #f00 !important;
+					<label for="nHead">Head(Inspect, Palpate):<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nHead" id="nHead" name="nHead" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Neck:<span style="color: #f00 !important;
+					<label for="nNeck">Neck:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nNeck" id="nNeck" name="nNeck" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Sensory Level:<span style="color: #f00 !important;
+					<label for="nSensoryLevel">Sensory Level:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nSensoryLevel" id="nSensoryLevel" name="nSensoryLevel" />
 				</div>
 				<div class="col11">
-					<label for="types-of-screening">Musculoskeletal:<span style="color: #f00 !important;
+					<label for="nMusculoskeletal">Musculoskeletal:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
-					<input type="text" id="types-of-screening" name="types-of-screening" />
+					<input type="text" data-bind="value: \$root.nMusculoskeletal" id="nMusculoskeletal" name="nMusculoskeletal" />
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
@@ -1477,6 +1568,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</div>
 			</fieldset>
 		</section>
+		${ ui.includeFragment("patientdashboardapp", "consentForms") }
 		<section>
 			<span class="title">Clinical Notes</span>
 			${ ui.includeFragment("patientdashboardapp", "patientDashboard") }
