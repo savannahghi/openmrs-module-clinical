@@ -210,65 +210,65 @@
 
         <div class = "mdt-row">
             <span>Was patient discussed by MDT:</span>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Yes
+            <label>
+                <input value="Yes"   name="chk-mdt" type="radio" />Yes
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>No
+            <label>
+                <input value="No"   name="chk-mdt" type="radio" />No
             </label>
         </div>
         <div class = "mdt-row">
             <span>If yes, members present:</span>
             <input type="text" id="specify" placeholder="Please Specify" name="specify" />
         </div>
-        <div class = "mdt-col">
-            <span>Clinical Notes:</span>
-            <textarea id="summary_notes" name="summary_notes" rows="4" style="width: 100%;" placeholder = "Enter cycle summary notes here ..."></textarea>
-        </div>
+        <p class="input-position-class">
+            <label>Other Instructions</label>
+            <textarea data-bind="value: \$root.otherInstructions" id="instructions" name="instructions" rows="6" cols="72"></textarea>
+        </p>
 
         <div class = "mdt-row">
-            <span>Cancer Grading:</span>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Grade 1
+            <label>Cancer Grading:</label>
+            <label>
+                <input value="grade-one"   name="chk-grade" type="radio" />Grade 1
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Grade 2
+            <label>
+                <input value="grade_two"   name="chk-grade" type="radio" />Grade 2
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Grade 3
+            <label>
+                <input value="grade-three"   name="chk-grade" type="radio" />Grade 3
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Grade 4
+            <label>
+                <input value="grade_four"   name="chk-grade" type="radio" />Grade 4
             </label>
         </div>
         <div class = "mdt-row">
-            <span>Cancer Staging:</span>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Stage 1
+            <label>Cancer Grading:</label>
+            <label>
+                <input value="stage-one"   name="chk-stage" type="radio" />Stage 1
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Stage 2
+            <label>
+                <input value="stage_two"   name="chk-stage" type="radio" />Stage 2
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Stage 3
+            <label>
+                <input value="stage_three"   name="chk-stage" type="radio" />Stage 3
             </label>
-            <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                <input value="true"   class="chk-provisional" type="radio" style="margin-top: 3px"/>Stage 4
+            <label>
+                <input value="stage_four"   name="chk-stage" type="radio" />Stage 4
             </label>
         </div>
 
 
         <div class = "mdt-col">
-            <span>Treatment Plan(select all that apply):</span>
+            <label>Treatment Plan(select all that apply):</label>
             <div class = "mdt-col">
-                <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                    <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Chemotherapy
+                <label>
+                    <input value="true"   class="chk-provisional" type="checkbox" />Chemotherapy
                 </label>
-                <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                    <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Radiotherapy 3
+                <label>
+                    <input value="true"   class="chk-provisional" type="checkbox"/>Radiotherapy 3
                 </label>
-                <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                    <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Procedure/Surgery
+                <label>
+                    <input value="true"   class="chk-provisional" type="checkbox" />Procedure/Surgery
                 </label>
             </div>
         </div>
