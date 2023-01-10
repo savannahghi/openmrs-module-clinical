@@ -24,7 +24,6 @@ import java.util.List;
 public class Outcome {
 
     static final int FOLLOW_UP_OPTION = 1;
-    static final int ADMIT_OPTION = 2;
     static final int DIED_OPTION = 3;
     static final int REVIEWED_OPTION = 4;
     static final int CURED_OPTION = 5;
@@ -35,7 +34,6 @@ public class Outcome {
     private Option admitTo;
 
     final String FOLLOW_UP_OPTION_UUID = "160523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    final String ADMIT_OPTION_UUID = "1654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     final String DIED_OPTION_UUID = "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     final String REVIEWED_OPTION_UUID = "159615AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     final String CURED_OPTION_UUID = "159791AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -71,7 +69,6 @@ public class Outcome {
         options.add(new Option(REVIEWED_OPTION, null, "Reviewed"));
         options.add(new Option(CURED_OPTION, null, "Discharged"));
         options.add(new Option(FOLLOW_UP_OPTION, null, "Next Appointment Date"));
-        options.add(new Option(ADMIT_OPTION, null, "Admit"));
         options.add(new Option(DIED_OPTION, null, "Died"));
         options.add(new Option(REFERRAL_OPTION, null, "Referral"));
         return options;
@@ -115,18 +112,6 @@ public class Outcome {
             nextAppointmentDateObs.setDateCreated(encounter.getDateCreated());
             encounter.addObs(nextAppointmentDateObs);
         }
-        if (this.option.getId() == ADMIT_OPTION && this.admitTo != null) {
-            Concept valueCoded = Context.getConceptService().getConcept(this.admitTo.getId());
-            if (valueCoded != null) {
-                Obs admitObs = new Obs();
-                admitObs.setObsGroup(obsGroup);
-                admitObs.setConcept(outcomeConcept);
-                admitObs.setValueCoded(Context.getConceptService().getConcept(this.admitTo.getId()));
-                admitObs.setDateCreated(encounter.getDateCreated());
-                admitObs.setEncounter(encounter);
-                encounter.addObs(admitObs);
-            }
-        }
 
     }
 
@@ -146,27 +131,6 @@ public class Outcome {
 
         }
 
-        if (this.option.getId() == ADMIT_OPTION) {
-            IpdPatientAdmission patientAdmission = new IpdPatientAdmission();
-            patientAdmission.setAdmissionDate(encounter.getEncounterDatetime());
-            patientAdmission.setAdmissionWard(Context.getConceptService().getConcept(this.admitTo.getId()));
-            patientAdmission.setBirthDate(encounter.getPatient().getBirthdate());
-            patientAdmission.setGender(encounter.getPatient().getGender());
-            patientAdmission.setOpdAmittedUser(encounter.getCreator());
-            patientAdmission.setPatient(encounter.getPatient());
-            patientAdmission.setPatientIdentifier(encounter.getPatient()
-                    .getPatientIdentifier().getIdentifier());
-            if (encounter.getPatient().getMiddleName() != null) {
-                patientAdmission.setPatientName(encounter.getPatient().getGivenName()
-                        + " " + encounter.getPatient().getFamilyName() + " "
-                        + encounter.getPatient().getMiddleName().replace(",", " "));
-            } else {
-                patientAdmission.setPatientName(encounter.getPatient().getGivenName()
-                        + " " + encounter.getPatient().getFamilyName());
-            }
-            patientAdmission.setAcceptStatus(0);
-            Context.getService(IpdService.class).saveIpdPatientAdmission(patientAdmission);
-        }
     }
 
 
@@ -179,9 +143,7 @@ public class Outcome {
         if(option == FOLLOW_UP_OPTION) {
             concept = getRequiredConcept(FOLLOW_UP_OPTION_UUID);
         }
-        else if(option == ADMIT_OPTION) {
-            concept = getRequiredConcept(ADMIT_OPTION_UUID);
-        }else if(option == DIED_OPTION) {
+        else if(option == DIED_OPTION) {
             concept = getRequiredConcept(DIED_OPTION_UUID);
         }else if(option == REVIEWED_OPTION) {
             concept = getRequiredConcept(REVIEWED_OPTION_UUID);

@@ -265,7 +265,7 @@
                     <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Chemotherapy
                 </label>
                 <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                    <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Radiotherapy 3
+                    <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Radiotherapy
                 </label>
                 <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
                     <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Procedure/Surgery
