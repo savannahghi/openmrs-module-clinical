@@ -65,6 +65,24 @@
                     jq('#summ_02').text(jq(event.target).val() +' cm');
                 }
             }
+            else if (idd === 'weightz-field'){
+                if (txt === ''){
+                    jq('#li01').hide();
+                }
+                else {
+                    jq('#li01').show();
+                    jq('#summ_01').text(jq(event.target).val() +' kgs');
+                }
+            }
+            else if (idd === 'heightz-field'){
+                if (txt === ''){
+                    jq('#li02').hide();
+                }
+                else {
+                    jq('#li02').show();
+                    jq('#summ_02').text(jq(event.target).val() +' cm');
+                }
+            }
 
             else if (idd === 'muac-field'){
                 if (txt === ''){
@@ -219,6 +237,24 @@
             var fieldTypeVal = "Pulse Rate";
             var idVal = jq(this).attr("id")
             var localid = "fr8917";
+            checkError(minVal, maxVal, idVal, localid, fieldTypeVal);
+        });
+
+        jq('#weightz-field').on("focusout", function() {
+            var maxVal = 250;
+            var minVal = 0;
+            var fieldTypeVal = "Weight";
+            var idVal = jq(this).attr("id")
+            var localid = "fr1139";
+            checkError(minVal, maxVal, idVal, localid, fieldTypeVal);
+        });
+
+        jq('#heightz-field').on("focusout", function() {
+            var maxVal = 272;
+            var minVal = 10;
+            var fieldTypeVal = "Height";
+            var idVal = jq(this).attr("id")
+            var localid = "fr9875";
             checkError(minVal, maxVal, idVal, localid, fieldTypeVal);
         });
 
@@ -430,6 +466,24 @@
         emrMessages["numericRangeHigh"] = "value should be less than {0}";
         emrMessages["numericRangeLow"] = "value should be more than {0}";
 
+        jq("#heightz-field,#weightz-field").change(function () {
+            var height = getFloatValue(jq("#heightz-field").val())/100;
+            var weight = getFloatValue(jq("#weightz-field").val());
+            var bsa = weight/(height * height);
+            jq(".bsa").html(formatToAccounting(String(bsa)));
+
+            if (isNombre(bsa)){
+                jq('#li17').show();
+                jq('#summ_17').text(formatToAccounting(String(bsa)));
+            }
+
+        });
+    });
+
+    jq(function(){
+        emrMessages["numericRangeHigh"] = "value should be less than {0}";
+        emrMessages["numericRangeLow"] = "value should be more than {0}";
+
         jq("#height-field,#weight-field").change(function () {
             console.log("Value changed.")
             var height = getFloatValue(jq("#height-field").val())/100;
@@ -520,6 +574,20 @@ select, .bmi {
     width: 100% !important;
 }
 .bmi{
+    background: #fff none repeat scroll 0 0;
+    margin-top: 2px;
+}
+.bsa{
+    border: 1px solid #aaa;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    height: 38px !important;
+    line-height: 18px !important;
+    padding: 8px 10px !important;
+    width: 100% !important;
+}
+.bsa{
     background: #fff none repeat scroll 0 0;
     margin-top: 2px;
 }
@@ -842,6 +910,50 @@ h2 span{
                                     </p>
                                 </div>
                             </div>
+                            <div class="onerow">
+                                <h2>&nbsp;</h2>
+                                <h2 style="border-bottom: 1px solid #008394">Body Surface Area</h2>
+
+                                <div class="col4">
+                                    <label for="weightz-field"> Weight </label>
+                                </div>
+
+                                <div class="col4">
+                                    <label for="heightz-field"> Height </label>
+                                </div>
+
+                                <div class="col4 last">
+                                    <% if (patient.age >= 2) { %>
+                                    <label for="bsa">BSA:</label>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div class="onerow">
+                                <div class="col4">
+                                    <p class="left">
+                                        <input id="weightz-field" class="number numeric-range" type="text" max="999" min="0" maxlength="7" value="${vitals?.weightz?:''}" name="triagePatientData.weight">
+                                        <span class="append-to-value">kg</span>
+                                        <span id="fr1139" class="field-error" style="display: none"></span>
+                                    </p>
+                                </div>
+
+                                <div class="col4">
+                                    <p class="left">
+                                        <input id="heightz-field" class="number numeric-range" type="text" max="999" min="0" maxlength="7" value="${vitals?.heightz?:''}" name="triagePatientData.height">
+                                        <span class="append-to-value">cm</span>
+                                        <span id="fr9875" class="field-error" style="display: none"></span>
+                                    </p>
+                                </div>
+
+                                <div class="col4 last">
+                                    <% if (patient.age >= 2) { %>
+                                    <p>
+                                    <div class="bsa"></div>
+                                </p>
+                                    <% } %>
+                                </div>
+                            </div>
+
                             <div class="onerow">
                                 <h2>&nbsp;</h2>
                                 <h2 style="border-bottom: 1px solid #008394">Body Mass Index</h2>

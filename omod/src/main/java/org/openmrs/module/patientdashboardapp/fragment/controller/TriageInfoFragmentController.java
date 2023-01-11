@@ -53,6 +53,6 @@ public class TriageInfoFragmentController {
 	public SimpleObject getTriageSummary(
 			@RequestParam("Id")Integer Id ,UiUtils ui){
 		TriagePatientData triad = Context.getService(PatientQueueService.class).getPatientTriageData(Id);
-		return SimpleObject.fromObject(triad, ui, "temperature" ,"weight" ,"height" ,"BMI" ,"mua" ,"chest" ,"abdominal", "systolic" ,"daistolic", "respiratoryRate" ,"pulsRate" ,"bloodGroup","lastMenstrualDate", "rhesusFactor","pitct", "createdOn", "encounterOpd","oxygenSaturation");
+		return SimpleObject.fromObject(triad, ui, "temperature" ,"weightz","heightz","BSA","weight" ,"height" ,"BMI" ,"mua" ,"chest" ,"abdominal", "systolic" ,"daistolic", "respiratoryRate" ,"pulsRate" ,"bloodGroup","lastMenstrualDate", "rhesusFactor","pitct", "createdOn", "encounterOpd","oxygenSaturation");
 	}
 }
