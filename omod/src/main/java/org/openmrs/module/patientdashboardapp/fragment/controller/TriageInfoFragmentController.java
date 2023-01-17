@@ -24,8 +24,7 @@ public class TriageInfoFragmentController {
 			) {
 		config.require("patientId");
 		config.require("queueId");
-		config.require("opdId");
-		
+
 		Integer patientId = Integer.valueOf(config.get("patientId").toString());
 		Integer queueId = Integer.valueOf(config.get("queueId").toString());
 		

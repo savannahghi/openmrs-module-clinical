@@ -2,7 +2,7 @@
 	import java.text.DecimalFormat
     def formatter = new DecimalFormat("#0.00")
 	
-    def returnUrl = ui.pageLink("patientdashboardapp", "main", [patientId: patientId, opdId: opdId, queueId: queueId])
+    def returnUrl = ui.pageLink("patientdashboardapp", "main", [patientId: patientId, queueId: queueId])
 	ui.includeCss("ehrconfigs", "onepcssgrid.css")
 %>
 
@@ -136,7 +136,7 @@ jq(function(){
             <span class="menu-title">
                 <% if (index == 0) {%>
                     <i class="icon-edit" style="float: left; margin-top: 1px; margin-right: 3px; color: rgb(0, 127, 255); font-weight: bold;"></i>
-                    <a style="float: left;" href="${ ui.pageLink('patientdashboardapp', 'triage', [patientId: patientId, opdId: opdId, queueId: queueId, returnUrl: returnUrl]) }">Edit Triage Details</a>
+                    <a style="float: left;" href="${ ui.pageLink('patientdashboardapp', 'triage', [patientId: patientId, queueId: queueId, returnUrl: returnUrl]) }">Edit Triage Details</a>
                 <% } else {%>
                     <i class="icon-stethoscope"></i>
                     ${summary.outcome?summary.outcome:'No Outcome Yet' }    
