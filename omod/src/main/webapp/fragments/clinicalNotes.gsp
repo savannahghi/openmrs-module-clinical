@@ -29,6 +29,13 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 .dialog textarea{
 	resize: none;
 }
+.mdt-row {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
 
 .dialog li label span {
 	color: #f00;
@@ -509,11 +516,11 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 		</section>
 		<section>
-			<span class="title">Physical Examination</span>
+			<span class="title">General Examination</span>
 			<fieldset class="no-confirmation">
 				<legend>Performance Status</legend>
 				<div class="col11">
-					<label for="types-of-screening">General Examination:<span style="color: #f00 !important;
+					<label for="types-of-screening">Physical Examination:<span style="color: #f00 !important;
 					padding-left: 5px;"></span></label>
 					<input type="text" data-bind="value: \$root.generalExamination" id="generalExamination" name="generalExamination" />
 				</div>
@@ -894,15 +901,17 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 				</p>
 			</fieldset>
 		</section>
+        <section>
+            <span class="title"> Pain Assesment</span>
+        </section>
 		<section>
-			<span class="title">Pain Assessment</span>
+			<span class="title">Lab Tests</span>
 			<fieldset class="no-confirmation">
 				<legend>Full Blood Count</legend>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">HBC:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -915,11 +924,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">WBC:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -932,11 +940,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">ANC:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -949,11 +956,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">PLT:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -966,11 +972,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">MCV:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -983,11 +988,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Others:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1006,11 +1010,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 			<fieldset class="no-confirmation">
 				<legend>Liver Function Tests</legend>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Direct Bilirubin:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1023,11 +1026,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Indirect Bilirubin:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1040,11 +1042,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">AST:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1057,11 +1058,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">ALT:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1074,11 +1074,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Albumin:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1097,11 +1096,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 			<fieldset class="no-confirmation">
 				<legend>Renal Function Tests</legend>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Sodium:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1114,11 +1112,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Potassium:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1131,11 +1128,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Chloride:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1148,11 +1144,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Urea:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1165,11 +1160,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Creatinin:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1182,11 +1176,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Bicarbonate:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1205,11 +1198,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 			<fieldset class="no-confirmation">
 				<legend>Specialized Tests</legend>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">BMA:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1222,11 +1214,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Urinalysis:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1239,11 +1230,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">PBF:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1256,11 +1246,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Tumor Markers:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1273,11 +1262,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Immunohostpchemistry:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1300,11 +1288,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			</fieldset>
 			<fieldset class="no-confirmation">
 				<legend>Imaging</legend>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Mammogram:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1317,11 +1304,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">MRI:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1334,11 +1320,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">CT Scan:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1351,11 +1336,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Ultrasound:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1368,11 +1352,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">Echocardiography:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1385,11 +1368,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
-						<label for="degree-of-relation">Radopgraphy (Others):<span style="color: #f00 !important;
+						<label for="degree-of-relation">Radiography (Others):<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1402,11 +1384,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
+				<div class="col6" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col3">
 						<label for="degree-of-relation">PET Scan:<span style="color: #f00 !important;
 						padding-left: 5px;"></span></label>
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
 					</div>
 					<div class="col4 inner-date">
 						<label for="age-of-diagnosis">Date:<span style="color: #f00 !important;
@@ -1419,124 +1400,20 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
 					</div>
 				</div>
-				<div class="col12" class="col11" style="padding: 0 4px; padding-bottom:20px;">
-					<label for="degree-of-relation">Staging:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-					<div class="col2">
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
-					</div>
-					<div class="col3">
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
-					</div>
-					<div class="col3">
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
-					</div>
-					<div class="col3">
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
-					</div>
-				</div>
-				<p>
-					<input type="hidden" id="child-history-set" />
-				</p>
-			</fieldset>
-			<fieldset class="no-confirmation">
-				<legend>Treatment Intent</legend>
-				<div class="col11" style="padding: 0 4px; padding-bottom:20px;">
-					<label for="degree-of-relation">Treatment Intent:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-					<div class="col2">
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
-					</div>
-					<div class="col2">
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
-					</div>
-				</div>
-				<div class="col11" style="padding: 0 4px; padding-bottom:20px;">
-					<label for="degree-of-relation">Treatment Details:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-					<div class="col2">
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
-					</div>
-					<div class="col2">
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
-					</div>
-					<div class="col2">
-						<input type="text" id="degree-of-relation" name="degree-of-relation" />
-					</div>
-					<div class="col2">
-						<input type="text" id="age-of-diagnosis" name="age-of-diagnosis" />
-					</div>
-				</div>
-				<div class="col11" style="padding: 0 4px; padding-bottom:20px;">
-					<label for="place-of-residence" class="label">If Chemotherapy</label>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Neoadjuvant:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
-					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-prostratecancer">Adjuvant<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Maintenance:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
-					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-prostratecancer">Concurrent:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Palliative:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
-					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-prostratecancer">BSA:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Regimen:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
-					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-prostratecancer">Cycles<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Start Date:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
-					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-prostratecancer">Next Scheduled Date<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col11">
-						<label for="" class="label">If Surgery</label>
-					</div>
-					<div class="col6">
-						<label for="screened-prostrate-cancer">Procedure:<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="text" id="screened-prostrate-cancer" name="screened-prostrate-cancer" />
-					</div>
-					<div class="col5 inner-date">
-						<label for="date-screened-prostratecancer">Date<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" />
-					</div>
-					<div class="col6 inner-date">
-						<label for="date-screened-prostratecancer">Next Scheduled Date<span style="color: #f00 !important;
-						padding-left: 5px;"></span></label>
-						<input type="date" id="date-screened-prostratecancer" name="date-screened-prostratecancer" placeholder="Date of Test" />
-					</div>
+				<div class="col6"style="padding: 0 4px; padding-bottom:20px;">
+                    <label>Cancer Staging:</label>
+                    <label>
+                        <input value="grade-one"   name="chk-grade" type="radio" />Stage 1
+                    </label>
+                    <label>
+                        <input value="grade_two"   name="chk-grade" type="radio" />Stage 2
+                    </label>
+                    <label>
+                        <input value="grade-three"   name="chk-grade" type="radio" />Stage 3
+                    </label>
+                    <label>
+                        <input value="grade_four"   name="chk-grade" type="radio" />Stage 4
+                    </label>
 				</div>
 				<p>
 					<input type="hidden" id="child-history-set" />
