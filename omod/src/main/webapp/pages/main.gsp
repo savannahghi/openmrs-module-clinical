@@ -322,7 +322,7 @@
 		</div>
 
 		<div id="triage-info">
-			${ ui.includeFragment("patientdashboardapp", "triageInfo", [patientId: patientId, opdId: opdId, queueId: queueId]) }
+			${ ui.includeFragment("patientdashboardapp", "triageInfo", [patientId: patientId, queueId: queueId]) }
 		</div>
 
 		<div id="investigations">
