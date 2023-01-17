@@ -2382,13 +2382,16 @@ public class Note {
 
 	private Visit getLastVisitForPatient(Patient patient) {
 		VisitService visitService = Context.getVisitService();
-		if (visitService.getActiveVisitsByPatient(patient) == null){
+        List<Visit> activeVisitsByPatient = visitService.getActiveVisitsByPatient(patient);
+        if (activeVisitsByPatient == null){
 			try {
 				throw new Exception("patient not checked-in");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		return visitService.getActiveVisitsByPatient(patient).get(0);
+		}else if (activeVisitsByPatient.size()>0) {
+            return activeVisitsByPatient.get(0);
+        }
+        return null;
 	}
 }
