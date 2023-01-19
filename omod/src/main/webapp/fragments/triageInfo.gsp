@@ -186,6 +186,20 @@ jq(function(){
                 <span>${triage?.oxygenSaturation? triage.oxygenSaturation.toString() + "%": "Not Captured"}</span>
                 <br>
 
+                <label><span class="status active"></span>Height:</label>
+                <span>${triage?.height?:"Not Captured"}</span>
+                <br>
+
+                <label><span class="status active"></span>Weight:</label>
+                <span>${triage?.weight?:"Not Captured"}</span>
+                <br>
+
+                <% if (patient.age >= 2)  {%>
+                <label><span class="status active"></span>BSA:</label>
+                <span>${(triage && triage.weight && triage.height) ? formatter.format(triage?.weight/((triage?.height/100) * (triage?.height/100))) : "Not Captured"}</span>
+                <br>
+                <% } %>
+
 				<label><span class="status active"></span>Height:</label>
 				<span>${triage?.height?:"Not Captured"}</span>
 				<br>

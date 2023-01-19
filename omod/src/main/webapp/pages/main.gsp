@@ -220,6 +220,26 @@
 	#cancelButton{
 		margin-left: 5px;
 	}
+
+.mdt-section{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+.mdt-row {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.mdt-col {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
 </style>
 
 <openmrs:require privilege="Triage Queue" otherwise="/login.htm" redirect="/module/patientqueueapp/queue.page?app=patientdashboardapp.triage"/>
