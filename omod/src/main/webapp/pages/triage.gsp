@@ -915,50 +915,6 @@ h2 span{
                                 <h2 style="border-bottom: 1px solid #008394">Body Surface Area</h2>
 
                                 <div class="col4">
-                                    <label for="weightz-field"> Weight </label>
-                                </div>
-
-                                <div class="col4">
-                                    <label for="heightz-field"> Height </label>
-                                </div>
-
-                                <div class="col4 last">
-                                    <% if (patient.age >= 2) { %>
-                                    <label for="bsa">BSA:</label>
-                                    <% } %>
-                                </div>
-                            </div>
-                            <div class="onerow">
-                                <div class="col4">
-                                    <p class="left">
-                                        <input id="weightz-field" class="number numeric-range" type="text" max="999" min="0" maxlength="7" value="${vitals?.weightz?:''}" name="triagePatientData.weight">
-                                        <span class="append-to-value">kg</span>
-                                        <span id="fr1139" class="field-error" style="display: none"></span>
-                                    </p>
-                                </div>
-
-                                <div class="col4">
-                                    <p class="left">
-                                        <input id="heightz-field" class="number numeric-range" type="text" max="999" min="0" maxlength="7" value="${vitals?.heightz?:''}" name="triagePatientData.height">
-                                        <span class="append-to-value">cm</span>
-                                        <span id="fr9875" class="field-error" style="display: none"></span>
-                                    </p>
-                                </div>
-
-                                <div class="col4 last">
-                                    <% if (patient.age >= 2) { %>
-                                    <p>
-                                    <div class="bsa"></div>
-                                </p>
-                                    <% } %>
-                                </div>
-                            </div>
-
-                            <div class="onerow">
-                                <h2>&nbsp;</h2>
-                                <h2 style="border-bottom: 1px solid #008394">Body Mass Index</h2>
-
-                                <div class="col4">
                                     <label for="weight-field"> Weight </label>
                                 </div>
 
@@ -968,7 +924,7 @@ h2 span{
 
                                 <div class="col4 last">
                                     <% if (patient.age >= 2) { %>
-                                    <label for="bmi">BMI:</label>
+                                    <label for="bmi">BSA:</label>
                                     <% } %>
                                 </div>
                             </div>
