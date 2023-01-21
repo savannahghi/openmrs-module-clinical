@@ -10,6 +10,7 @@ import org.openmrs.api.impl.BaseOpenmrsService;
 import org.openmrs.module.patientdashboardapp.PatientDashboardAppConstants;
 import org.openmrs.module.patientdashboardapp.api.ChemoProgramService;
 import org.openmrs.module.patientdashboardapp.api.db.TriageDAO;
+import org.openmrs.module.patientdashboardapp.model.ChemoProgram;
 import org.openmrs.ui.framework.SimpleObject;
 
 import java.text.DateFormat;
@@ -29,16 +30,16 @@ public class ChemoProgramServiceImpl extends BaseOpenmrsService implements Chemo
 
     private static final int MAX_CWC_DURATION = 9;
     @Override
-    public boolean enrolledInProgram(Patient patient, String program) {
+    public boolean enrolledInProgram(Patient patient, ChemoProgram program) {
         Program patientProgram = null;
 
-        if(program.equals("Chemotherapy")){
+        if(program.getLabel().equals("Chemotherapy")){
             patientProgram = Context.getProgramWorkflowService().getProgramByUuid(PatientDashboardAppConstants.ANC_PROGRAM);
         }
-        if(program.equals("Radiotherapy")){
+        if(program.getLabel().equals("Radiotherapy")){
             patientProgram = Context.getProgramWorkflowService().getProgramByUuid(PatientDashboardAppConstants.PNC_PROGRAM);
         }
-        if(program.equals("Procedure/Surgery")){
+        if(program.getLabel().equals("Procedure/Surgery")){
             patientProgram = Context.getProgramWorkflowService().getProgramByUuid(PatientDashboardAppConstants.CWC_PROGRAM);
         }
         return patientEnrolledInProgram(patient,patientProgram);
@@ -67,16 +68,16 @@ public class ChemoProgramServiceImpl extends BaseOpenmrsService implements Chemo
     }
 
     @Override
-    public SimpleObject enrollInProgram(Patient patient, Date dateEnrolled, String program) {
+    public SimpleObject enrollInProgram(Patient patient, Date dateEnrolled, ChemoProgram program) {
         Program patientProgram = null;
 
-        if(program.equals("Chemotherapy")){
+        if(program.getLabel().equals("Chemotherapy")){
             patientProgram = Context.getProgramWorkflowService().getProgramByUuid(PatientDashboardAppConstants.ANC_PROGRAM);
         }
-        if(program.equals("Radiotherapy")){
+        if(program.getLabel().equals("Radiotherapy")){
             patientProgram = Context.getProgramWorkflowService().getProgramByUuid(PatientDashboardAppConstants.PNC_PROGRAM);
         }
-        if(program.equals("Procedure/Surgery")){
+        if(program.getLabel().equals("Procedure/Surgery")){
             patientProgram = Context.getProgramWorkflowService().getProgramByUuid(PatientDashboardAppConstants.CWC_PROGRAM);
         }
         if (!enrolledInProgram(patient,program)) {

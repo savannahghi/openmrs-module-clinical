@@ -111,7 +111,7 @@ public class Note {
 	private List<Diagnosis> diagnoses = new ArrayList<Diagnosis>();
 	private List<Investigation> investigations = new ArrayList<Investigation>();
 
-	private List<String> chemoPrograms = new ArrayList<String>();
+	private List<ChemoProgram> chemoPrograms = new ArrayList<ChemoProgram>();
 	private List<Procedure> procedures = new ArrayList<Procedure>();
 	private List<Drug> drugs = new ArrayList<Drug>();
 	private Option referredTo;
@@ -816,11 +816,11 @@ public class Note {
 		this.investigations = investigations;
 	}
 
-	public List<String> getChemoPrograms() {
+	public List<ChemoProgram> getChemoPrograms() {
 		return chemoPrograms;
 	}
 
-	public void setChemoPrograms(List<String> chemoPrograms) {
+	public void setChemoPrograms(List<ChemoProgram> chemoPrograms) {
 		this.chemoPrograms = chemoPrograms;
 	}
 
@@ -2144,11 +2144,12 @@ public class Note {
 				logger.error("Error saving investigation {}({}): {}", new Object[] { investigation.getId(), investigation.getLabel(), e.getMessage() });
 			}
 		}
-		for (String program : this.chemoPrograms) {
+		for (ChemoProgram program : this.chemoPrograms) {
 			try {
 				saveChemoProgram(program,patient);
 			} catch (Exception e) {
-				logger.error("Error saving enrollment details {}({}): {}", new Object[] { patientId, program, e.getMessage() });
+				logger.error("Error saving enrollment details for patient with Id: {}, ({}): {}", new Object[] { patientId, program.getLabel(), e.getMessage() });
+				e.printStackTrace();
 			}
 		}
 		for(Procedure procedure : this.procedures) {
@@ -2168,7 +2169,7 @@ public class Note {
 		}
 	}
 
-	private void saveChemoProgram(String program, Patient patient) {
+	private void saveChemoProgram(ChemoProgram program, Patient patient) {
 		ChemoProgramService mchService = Context.getService(ChemoProgramService.class);
 //		TODO - Create encounter for the program enrollment process - See ProgramSelectionFragmentController#enrollInAnc for an example implimentation
 		mchService.enrollInProgram(patient,new Date(),program);
