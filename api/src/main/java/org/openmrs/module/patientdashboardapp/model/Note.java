@@ -39,6 +39,7 @@ import org.openmrs.module.hospitalcore.model.RadiologyDepartment;
 import org.openmrs.module.hospitalcore.model.Referral;
 import org.openmrs.module.hospitalcore.model.ReferralReasons;
 import org.openmrs.module.kenyaemr.api.KenyaEmrService;
+import org.openmrs.module.patientdashboardapp.api.ChemoProgramService;
 import org.openmrs.module.patientdashboardapp.utils.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -109,6 +110,8 @@ public class Note {
 	private List<Sign> signs = new ArrayList<Sign>() ;
 	private List<Diagnosis> diagnoses = new ArrayList<Diagnosis>();
 	private List<Investigation> investigations = new ArrayList<Investigation>();
+
+	private List<String> chemoPrograms = new ArrayList<String>();
 	private List<Procedure> procedures = new ArrayList<Procedure>();
 	private List<Drug> drugs = new ArrayList<Drug>();
 	private Option referredTo;
@@ -813,6 +816,14 @@ public class Note {
 		this.investigations = investigations;
 	}
 
+	public List<String> getChemoPrograms() {
+		return chemoPrograms;
+	}
+
+	public void setChemoPrograms(List<String> chemoPrograms) {
+		this.chemoPrograms = chemoPrograms;
+	}
+
 	public List<Procedure> getProcedures() {
 		return procedures;
 	}
@@ -1176,6 +1187,10 @@ public class Note {
 		for(Investigation investigation : this.investigations) {
 			investigation.addObs(encounter,obsGroup);
 		}
+//		TODO add the chemoPrograms obs to the encounter
+//		for(String program : this.chemoPrograms) {
+//			addChemoProgramObs(encounter,obsGroup);
+//		}
 		
 		for (Diagnosis diagnosis : this.diagnoses) {
 			diagnosis.addObs(encounter, obsGroup);
@@ -2115,6 +2130,7 @@ public class Note {
 	}
 
 	private void saveNoteDetails(Encounter encounter) {
+		Patient patient = Context.getPatientService().getPatient(this.patientId);
 		for (Drug drug : this.drugs) {
 			String referralWardName = Context.getService(PatientQueueService.class).getOpdPatientQueueById(this.queueId)
 					.getOpdConceptName();
@@ -2126,6 +2142,13 @@ public class Note {
 				saveInvestigations(encounter, departmentName, investigation);
 			} catch (Exception e) {
 				logger.error("Error saving investigation {}({}): {}", new Object[] { investigation.getId(), investigation.getLabel(), e.getMessage() });
+			}
+		}
+		for (String program : this.chemoPrograms) {
+			try {
+				saveChemoProgram(program,patient);
+			} catch (Exception e) {
+				logger.error("Error saving enrollment details {}({}): {}", new Object[] { patientId, program, e.getMessage() });
 			}
 		}
 		for(Procedure procedure : this.procedures) {
@@ -2144,7 +2167,13 @@ public class Note {
 			this.outcome.save(encounter);
 		}
 	}
-	
+
+	private void saveChemoProgram(String program, Patient patient) {
+		ChemoProgramService mchService = Context.getService(ChemoProgramService.class);
+//		TODO - Create encounter for the program enrollment process - See ProgramSelectionFragmentController#enrollInAnc for an example implimentation
+		mchService.enrollInProgram(patient,new Date(),program);
+	}
+
 	private void endEncounter(Encounter encounter) {
 		PatientQueueService queueService = Context.getService(PatientQueueService.class);
 		if (this.queueId != null) {

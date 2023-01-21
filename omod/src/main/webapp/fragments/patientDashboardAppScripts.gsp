@@ -432,6 +432,28 @@
 			}
 		});
 
+
+        jq(function () {
+            jq(".chk-program").on("click",  function(){
+              var markedCheckboxes = document.getElementsByName('chk-program');
+              for (var checkbox of markedCheckboxes) {
+                if (checkbox.checked){
+                    note.addChemoProgram(new ChemoProgram({
+                        id: checkbox.id,
+                        label: checkbox.value
+                    }));
+                }else{
+                    note.removeChemoProgram(new ChemoProgram({
+                        id: checkbox.id,
+                        label: checkbox.value
+                    }));
+                }
+
+              }
+            });
+
+        });
+
 		jq("#investigation").autocomplete({
 			source: function(request, response) {
 				jq.getJSON('${ ui.actionLink("patientdashboardapp", "ClinicalNotes", "getInvestigations") }', {
@@ -527,7 +549,7 @@
 							"otherLymphNodeExaminationAnswer", "otherLymphNodeExaminationComment", "eyeExam", "neckExam", "mouthExam", "earExam", "noseExam", "throatExam",
 							"rsInspection", "rsPalpation", "rsPercussion", "rsAuscultation","asInspection", "asPalpation", "asPercussion", "asAuscultation","guInspection", "guPalpation", 
 							"breastExaminationComment", "csInspection", "csPalpation", "csPercussion", "csAuscultation", "skinInspection","nHigherFunctions", "nCranialNerves", "nHead", 
-							"nNeck", "nSensoryLevel", "nMusculoskeletal", "cancerType", "patientId", "procedures", "queueId", "signs", "referredTo","facility",
+							"nNeck", "nSensoryLevel", "nMusculoskeletal", "cancerType", "patientId", "procedures", "chemoPrograms", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option", "drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
 							"drugName", "numberOfDays", "qualifiers","answer","freeText"
 						])
