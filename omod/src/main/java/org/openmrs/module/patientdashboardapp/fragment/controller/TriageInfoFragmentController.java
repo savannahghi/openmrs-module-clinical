@@ -1,20 +1,19 @@
 package org.openmrs.module.patientdashboardapp.fragment.controller;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 import org.openmrs.Patient;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.hospitalcore.PatientQueueService;
 import org.openmrs.module.hospitalcore.model.OpdPatientQueue;
 import org.openmrs.module.hospitalcore.model.TriagePatientData;
-import org.openmrs.module.patientdashboardapp.api.TriageService;
 import org.openmrs.ui.framework.SimpleObject;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.fragment.FragmentConfiguration;
 import org.openmrs.ui.framework.fragment.FragmentModel;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class TriageInfoFragmentController {
 	public void controller(

@@ -9,6 +9,7 @@ import org.openmrs.api.context.Context;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.openmrs.module.patientdashboardapp.PatientDashboardAppConstants;
 import org.openmrs.module.patientdashboardapp.api.ChemoProgramService;
+import org.openmrs.module.patientdashboardapp.api.db.TriageDAO;
 import org.openmrs.ui.framework.SimpleObject;
 
 import java.text.DateFormat;
@@ -20,6 +21,7 @@ import java.util.List;
 public class ChemoProgramServiceImpl extends BaseOpenmrsService implements ChemoProgramService {
     protected final Log log = LogFactory.getLog(getClass());
     DateFormat ymdDf = new SimpleDateFormat("yyyy-MM-dd");
+    private TriageDAO triageDAO;
 
     private static final int MAX_ANC_DURATION = 9;
 
@@ -88,5 +90,13 @@ public class ChemoProgramServiceImpl extends BaseOpenmrsService implements Chemo
         } else {
             return SimpleObject.create("status", "error", "message", "Patient already enrolled in  program");
         }
+    }
+
+    public TriageDAO getTriageDAO() {
+        return triageDAO;
+    }
+
+    public void setTriageDAO(TriageDAO triageDAO) {
+        this.triageDAO = triageDAO;
     }
 }
