@@ -14,6 +14,7 @@ function Note(noteObj) {
 	self.procedures = ko.observableArray([]);
 	self.investigations = ko.observableArray([]);
 	self.drugs = ko.observableArray([]);
+	self.chemoPrograms = ko.observableArray([]);
 	self.frequencyOpts = ko.observableArray([]);
     self.drugUnitsOptions= ko.observableArray([]);
 	self.referralReasonsOptions = ko.observableArray([]);
@@ -188,7 +189,20 @@ function Note(noteObj) {
 			self.investigations.push(investigation);
 		}
 	};
+	this.addChemoProgram = function(chemoProgram) {
+		//check if the item has already been added
+		var match = ko.utils.arrayFirst(self.chemoPrograms(), function(item) {
+			return chemoProgram.id === item.id;
+		});
 
+		if (!match) {
+			self.chemoPrograms.push(chemoProgram);
+		}
+	};
+
+	this.removeChemoProgram = function(chemoProgram) {
+		self.chemoPrograms.remove(chemoProgram);
+	};
 	this.removeInvestigation = function(investigation) {
 		self.investigations.remove(investigation);
 		if (self.investigations().length === 0) {
@@ -255,6 +269,10 @@ function Diagnosis(diagnosisObj) {
 function Investigation(investigationObj) {
 	this.id = investigationObj.id;
 	this.label = investigationObj.label;
+}
+function ChemoProgram(chemoProgramObj) {
+	this.id = chemoProgramObj.id;
+	this.label = chemoProgramObj.label;
 }
 
 function Procedure(procedureObj) {

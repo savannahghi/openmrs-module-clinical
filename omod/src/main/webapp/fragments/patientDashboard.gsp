@@ -262,13 +262,13 @@
             <label>Treatment Plan(select all that apply):</label>
             <div class = "mdt-col">
                 <label>
-                    <input value="true"   class="chk-provisional" type="checkbox" />Chemotherapy
-                </label>
-                <label style="display: inline-block; font-size: 11px; padding: 0px; cursor: pointer; margin: 0px 0px 0px -5px;">
-                    <input value="true"   class="chk-provisional" type="checkbox" style="margin-top: 3px"/>Radiotherapy
+                    <input id = "1" value="Chemotherapy"   class="chk-program" name="chk-program" type="checkbox" />Chemotherapy
                 </label>
                 <label>
-                    <input value="true"   class="chk-provisional" type="checkbox" />Procedure/Surgery
+                    <input id = "2" value="Radiotherapy"   class="chk-program" name="chk-program" type="checkbox" />Radiotherapy
+                </label>
+                <label>
+                    <input id = "3" value="Procedure/Surgery"   class="chk-program" name="chk-program" type="checkbox" />Procedure/Surgery
                 </label>
             </div>
         </div>

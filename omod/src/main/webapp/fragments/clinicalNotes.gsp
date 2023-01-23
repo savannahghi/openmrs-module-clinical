@@ -1500,6 +1500,16 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 									<span data-bind="if: (investigations().length === 0)">N/A</span>
 								</td>
 							</tr>
+							<tr>
+								<td><span class="status active"></span>Programs</td>
+								<td>
+									<span data-bind="foreach: chemoPrograms">
+										<span data-bind="text: label"></span>
+										<span data-bind="if: (\$index() !== (\$parent.chemoPrograms().length - 1))"><br/></span>
+									</span>
+									<span data-bind="if: (chemoPrograms().length === 0)">N/A</span>
+								</td>
+							</tr>
 
 							<tr>
 								<td><span class="status active"></span>Prescriptions</td>
