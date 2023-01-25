@@ -96,7 +96,7 @@ jobs:
       - name: Check out labcore repository
         uses: actions/checkout@v3
         with:
-          repository: uonafya/ehrlaboratorycore
+          repository: ngarivictor/ehrlaboratorycore
           ref: 2.x
 
       - name: Compile and build labcore repository
