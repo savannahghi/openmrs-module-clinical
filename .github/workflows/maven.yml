@@ -93,6 +93,15 @@ jobs:
       - name: Compile and build inventory core repository
         run: mvn clean install -DskipTests
 
+      - name: Check out lab repository
+        uses: actions/checkout@v3
+        with:
+          repository: savannahghi/openmrs-module-laboratory
+          ref: master
+
+      - name: Compile and build lab repository
+        run: mvn clean install -DskipTests
+
       - uses: actions/checkout@v3
 
       - name: Install dependencies
