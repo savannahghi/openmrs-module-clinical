@@ -22,6 +22,7 @@ function Note(noteObj) {
 	self.illnessHistory = noteObj.illnessHistory;
 	self.physicalExamination = noteObj.physicalExamination;
 	self.otherInstructions = noteObj.otherInstructions;
+	self.mdtInstructions = noteObj.mdtInstructions;
 	self.familyHistoryAnswer = noteObj.familyHistoryAnswer;
 	self.lastLmp = noteObj.lastLmp;
 	self.cancerType= noteObj.cancerType;
