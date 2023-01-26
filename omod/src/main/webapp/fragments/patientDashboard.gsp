@@ -242,7 +242,7 @@
             </label>
         </div>
         <div class = "mdt-row">
-            <label>Cancer Grading:</label>
+            <label>Cancer Staging:</label>
             <label>
                 <input value="stage-one"   name="chk-stage" type="radio" />Stage 1
             </label>
