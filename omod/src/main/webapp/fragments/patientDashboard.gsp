@@ -222,8 +222,8 @@
             <input type="text" id="specify" placeholder="Please Specify" name="specify" />
         </div>
         <p class="input-position-class">
-            <label>Other Instructions</label>
-            <textarea data-bind="value: \$root.otherInstructions" id="instructions" name="instructions" rows="6" cols="72"></textarea>
+            <label>MDT Instructions</label>
+            <textarea data-bind="value: \$root.mdtInstructions" id="mdtInstructions" name="mdtInstructions" rows="6" cols="72"></textarea>
         </p>
 
         <div class = "mdt-row">

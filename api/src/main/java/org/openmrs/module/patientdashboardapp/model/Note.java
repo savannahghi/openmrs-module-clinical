@@ -122,6 +122,8 @@ public class Note {
 	private String referralComments;
     private String specify;
 	private String otherInstructions;
+
+	private String mdtInstructions;
 	private String familyHistoryAnswer;
 	private String currentlyBreastFeedingAnswer;
 	private String currentContraceptiveUseAnswer;
@@ -904,6 +906,14 @@ public class Note {
 		this.otherInstructions = otherInstructions;
 	}
 
+	public String getMdtInstructions() {
+		return mdtInstructions;
+	}
+
+	public void setMdtInstructions(String mdtInstructions) {
+		this.mdtInstructions = mdtInstructions;
+	}
+
 	public String getFamilyHistoryAnswer() {
 		return familyHistoryAnswer;
 	}
@@ -1142,6 +1152,10 @@ public class Note {
 			addOtherInstructions(encounter, obsGroup);
 		}
 
+		if (StringUtils.isNotBlank(this.mdtInstructions)) {
+			addMdtInstructions(encounter, obsGroup);
+		}
+
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {
 			addFamilyHistory(encounter, obsGroup);
 		}
@@ -1267,7 +1281,7 @@ public class Note {
 
 
 	private void addOtherInstructions(Encounter encounter, Obs obsGroup) {
-		Concept conceptOtherInstructions = Context.getConceptService().getConceptByUuid("163106AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		Concept conceptOtherInstructions = Context.getConceptService().getConceptByUuid("e92916d8-8d4c-4006-bc96-e3d2f27a67d3");
 		if (conceptOtherInstructions == null) {
 			throw new NullPointerException("Other instructions concept is not defined");
 		}
@@ -1279,6 +1293,20 @@ public class Note {
 		obsOtherInstructions.setDateCreated(encounter.getDateCreated());
 		obsOtherInstructions.setEncounter(encounter);
 		encounter.addObs(obsOtherInstructions);
+	}
+	private void addMdtInstructions(Encounter encounter, Obs obsGroup) {
+		Concept conceptMdtInstructions = Context.getConceptService().getConceptByUuid("163106AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		if (conceptMdtInstructions == null) {
+			throw new NullPointerException("MDT instructions concept is not defined");
+		}
+		Obs obsMdtInstructions = new Obs();
+		obsMdtInstructions.setObsGroup(obsGroup);
+		obsMdtInstructions.setConcept(conceptMdtInstructions);
+		obsMdtInstructions.setValueText(this.mdtInstructions);
+		obsMdtInstructions.setCreator(encounter.getCreator());
+		obsMdtInstructions.setDateCreated(encounter.getDateCreated());
+		obsMdtInstructions.setEncounter(encounter);
+		encounter.addObs(obsMdtInstructions);
 	}
 
 	private void addFamilyHistory(Encounter encounter, Obs obsGroup) {

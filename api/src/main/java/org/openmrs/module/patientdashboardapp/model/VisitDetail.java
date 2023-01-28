@@ -25,6 +25,7 @@ public class VisitDetail {
     private String internalReferral = "No internal Referral";
     private String externalReferral = "No external Referral";
     private String otherInstructions = "No Other instructions given";
+    private String mdtInstructions = "No MDT instructions given";
 
 	public String getDiseaseOnSetDate() {
 		return diseaseOnSetDate;
@@ -78,6 +79,14 @@ public class VisitDetail {
 	public String getOtherInstructions() { return otherInstructions; }
 
 	public void setOtherInstructions(String otherInstructions) { this.otherInstructions = otherInstructions; }
+
+	public String getMdtInstructions() {
+		return mdtInstructions;
+	}
+
+	public void setMdtInstructions(String mdtInstructions) {
+		this.mdtInstructions = mdtInstructions;
+	}
 
 	public void setHistory(String history) {
 		this.history = history;
