@@ -452,6 +452,18 @@
               }
             });
 
+            jq(".chk-grade").on("change",  function(){
+              var selectedGrade = document.querySelector('input[name = "chk-grade"]:checked');
+              note.cancerGrading = selectedGrade.value;
+            });
+            jq(".chk-mdt").on("change",  function(){
+              var selected = document.querySelector('input[name = "chk-mdt"]:checked');
+              note.mdtDiscussed = selected.value;
+            });
+            jq(".chk-stage").on("change",  function(){
+              var selectedStage = document.querySelector('input[name = "chk-stage"]:checked');
+              note.cancerStaging = selectedStage.value;
+            });
         });
 
 		jq("#investigation").autocomplete({
@@ -488,6 +500,18 @@
 			close: function() {
 				jq(this).removeClass("ui-corner-top").addClass("ui-corner-all");
 			}
+		});
+
+
+		jq(".mdtMembers").on("keypress", function(e) {
+			if (e.key === 'Enter') {
+			    let member = jq(".mdtMembers").val();
+                console.log(member);
+                note.addMdtMember(new MdtMember({
+                    label: member
+                }));
+               jq('.mdtMembers').val('');
+            }
 		});
 
 		jq(".symptoms-qualifiers").on("click", "span.show-qualifiers", function() {
@@ -534,8 +558,8 @@
 					data: {
 						note: ko.toJSON(note, ["label", "id", "admitted","provisional","onSetDate",
 							"diagnoses", "illnessHistory", "referralReasons", "externalReferralComments", "physicalExamination",
-							"inpatientWarads", "investigations", "opdId",
-							"opdLogId", "otherInstructions", "familyHistoryAnswer", "lastLmp", "parity", "currentlyBreastFeedingAnswer", 
+							"inpatientWarads", "investigations","mdtMembers", "opdId",
+							"opdLogId", "otherInstructions","mdtInstructions", "familyHistoryAnswer", "lastLmp", "parity", "currentlyBreastFeedingAnswer",
 							"currentContraceptiveUseAnswer", "cervicalCancerScreeningAnswer", "cervicalCancerScreeningType","cervicalCancerScreeningDate", 
 							"breastCancerScreeningAnswer", "breastCancerScreeningType", "breastCancerScreeningDate", "colorectalCancerScreeningAnswer", 
 							"colorectalCancerScreeningType", "colorectalCancerScreeningDate","prostrateCancerScreeningAnswer", "prostrateCancerScreeningType", 
@@ -551,7 +575,7 @@
 							"breastExaminationComment", "csInspection", "csPalpation", "csPercussion", "csAuscultation", "skinInspection","nHigherFunctions", "nCranialNerves", "nHead", 
 							"nNeck", "nSensoryLevel", "nMusculoskeletal", "cancerType", "patientId", "procedures", "chemoPrograms", "queueId", "signs", "referredTo","facility",
 							"outcome", "admitTo", "followUpDate", "option", "drugs", "comment", "externalReferral", "formulation", "specify", "dosage", "drugUnit", "frequency",
-							"drugName", "numberOfDays", "qualifiers","answer","freeText"
+							"drugName", "numberOfDays", "qualifiers","answer","freeText","cancerGrading","cancerStaging","mdtDiscussed"
 						])
 					},
 					dataType: 'json'

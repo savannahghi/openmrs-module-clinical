@@ -110,7 +110,7 @@ public class Note {
 	private List<Sign> signs = new ArrayList<Sign>() ;
 	private List<Diagnosis> diagnoses = new ArrayList<Diagnosis>();
 	private List<Investigation> investigations = new ArrayList<Investigation>();
-
+	private List<MdtMember> mdtMembers = new ArrayList<MdtMember>();
 	private List<ChemoProgram> chemoPrograms = new ArrayList<ChemoProgram>();
 	private List<Procedure> procedures = new ArrayList<Procedure>();
 	private List<Drug> drugs = new ArrayList<Drug>();
@@ -122,8 +122,10 @@ public class Note {
 	private String referralComments;
     private String specify;
 	private String otherInstructions;
-
 	private String mdtInstructions;
+	private String mdtDiscussed;
+	private String cancerGrading;
+	private String cancerStaging;
 	private String familyHistoryAnswer;
 	private String currentlyBreastFeedingAnswer;
 	private String currentContraceptiveUseAnswer;
@@ -818,6 +820,15 @@ public class Note {
 		this.investigations = investigations;
 	}
 
+
+	public List<MdtMember> getMdtMembers() {
+		return mdtMembers;
+	}
+
+	public void setMdtMembers(List<MdtMember> mdtMembers) {
+		this.mdtMembers = mdtMembers;
+	}
+
 	public List<ChemoProgram> getChemoPrograms() {
 		return chemoPrograms;
 	}
@@ -906,12 +917,37 @@ public class Note {
 		this.otherInstructions = otherInstructions;
 	}
 
+
 	public String getMdtInstructions() {
 		return mdtInstructions;
 	}
 
 	public void setMdtInstructions(String mdtInstructions) {
 		this.mdtInstructions = mdtInstructions;
+	}
+
+	public String getMdtDiscussed() {
+		return mdtDiscussed;
+	}
+
+	public void setMdtDiscussed(String mdtDiscussed) {
+		this.mdtDiscussed = mdtDiscussed;
+	}
+
+	public String getCancerGrading() {
+		return cancerGrading;
+	}
+
+	public void setCancerGrading(String cancerGrading) {
+		this.cancerGrading = cancerGrading;
+	}
+
+	public String getCancerStaging() {
+		return cancerStaging;
+	}
+
+	public void setCancerStaging(String cancerStaging) {
+		this.cancerStaging = cancerStaging;
 	}
 
 	public String getFamilyHistoryAnswer() {
@@ -1154,6 +1190,27 @@ public class Note {
 
 		if (StringUtils.isNotBlank(this.mdtInstructions)) {
 			addMdtInstructions(encounter, obsGroup);
+		}
+		if (StringUtils.isNotBlank(this.mdtDiscussed)) {
+			Concept mdtDiscussedConcept = Context.getConceptService().getConceptByUuid("0ce7c847-b510-4dc6-a955-45e5976007da");
+			addValueCoded(encounter, obsGroup, mdtDiscussedConcept, this.mdtDiscussed);
+		}
+		if (StringUtils.isNotBlank(this.cancerGrading)) {
+			Concept cancerGradingConcept = Context.getConceptService().getConceptByUuid("98d8a559-fdc2-42f7-a78d-7d99619f6536");
+			addValueCoded(encounter, obsGroup, cancerGradingConcept, this.cancerGrading);
+		}
+		if (StringUtils.isNotBlank(this.cancerStaging)) {
+			Concept cancerStagingConcept = Context.getConceptService().getConceptByUuid("160786AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+			addValueCoded(encounter, obsGroup, cancerStagingConcept, this.cancerStaging);
+		}
+		if (this.mdtMembers.size() > 0) {
+			Concept mdtMembersPresentConcept = Context.getConceptService().getConceptByUuid("1a2fa41f-e46a-4bed-a52a-715534b10714");
+			StringBuilder builder =  new StringBuilder();
+			for(MdtMember member: mdtMembers){
+				if (builder.length() > 0) builder.append(',');
+				builder.append(member.getLabel());
+			}
+			addValueText(encounter, obsGroup, mdtMembersPresentConcept, builder.toString());
 		}
 
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {

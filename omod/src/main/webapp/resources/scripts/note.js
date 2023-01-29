@@ -13,6 +13,7 @@ function Note(noteObj) {
 	self.diagnoses = ko.observableArray([]);
 	self.procedures = ko.observableArray([]);
 	self.investigations = ko.observableArray([]);
+	self.mdtMembers = ko.observableArray([]);
 	self.drugs = ko.observableArray([]);
 	self.chemoPrograms = ko.observableArray([]);
 	self.frequencyOpts = ko.observableArray([]);
@@ -23,6 +24,9 @@ function Note(noteObj) {
 	self.physicalExamination = noteObj.physicalExamination;
 	self.otherInstructions = noteObj.otherInstructions;
 	self.mdtInstructions = noteObj.mdtInstructions;
+	self.mdtDiscussed = noteObj.mdtDiscussed;
+	self.cancerGrading = noteObj.cancerGrading;
+	self.cancerStaging = noteObj.cancerStaging;
 	self.familyHistoryAnswer = noteObj.familyHistoryAnswer;
 	self.lastLmp = noteObj.lastLmp;
 	self.cancerType= noteObj.cancerType;
@@ -190,6 +194,16 @@ function Note(noteObj) {
 			self.investigations.push(investigation);
 		}
 	};
+	this.addMdtMember = function(mdtMember) {
+		//check if the item has already been added
+		var match = ko.utils.arrayFirst(self.mdtMembers(), function(item) {
+			return mdtMember.label === item.label;
+		});
+
+		if (!match) {
+			self.mdtMembers.push(mdtMember);
+		}
+	};
 	this.addChemoProgram = function(chemoProgram) {
 		//check if the item has already been added
 		var match = ko.utils.arrayFirst(self.chemoPrograms(), function(item) {
@@ -270,6 +284,9 @@ function Diagnosis(diagnosisObj) {
 function Investigation(investigationObj) {
 	this.id = investigationObj.id;
 	this.label = investigationObj.label;
+}
+function MdtMember(mdtMemberObj) {
+	this.label = mdtMemberObj.label;
 }
 function ChemoProgram(chemoProgramObj) {
 	this.id = chemoProgramObj.id;
