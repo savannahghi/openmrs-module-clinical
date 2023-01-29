@@ -110,7 +110,7 @@ public class Note {
 	private List<Sign> signs = new ArrayList<Sign>() ;
 	private List<Diagnosis> diagnoses = new ArrayList<Diagnosis>();
 	private List<Investigation> investigations = new ArrayList<Investigation>();
-
+	private List<MdtMember> mdtMembers = new ArrayList<MdtMember>();
 	private List<ChemoProgram> chemoPrograms = new ArrayList<ChemoProgram>();
 	private List<Procedure> procedures = new ArrayList<Procedure>();
 	private List<Drug> drugs = new ArrayList<Drug>();
@@ -818,6 +818,15 @@ public class Note {
 
 	public void setInvestigations(List<Investigation> investigations) {
 		this.investigations = investigations;
+	}
+
+
+	public List<MdtMember> getMdtMembers() {
+		return mdtMembers;
+	}
+
+	public void setMdtMembers(List<MdtMember> mdtMembers) {
+		this.mdtMembers = mdtMembers;
 	}
 
 	public List<ChemoProgram> getChemoPrograms() {

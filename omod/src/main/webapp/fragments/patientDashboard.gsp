@@ -218,8 +218,14 @@
             </label>
         </div>
         <div class = "mdt-row">
-            <span>If yes, members present:</span>
-            <input type="text" placeholder="Please Specify members present" name="specify" />
+            <span style = "width: 20% !important">If yes, members present:</span>
+            <input id= "mdtMembers" class = "mdtMembers" type="text" placeholder="Please Specify members present" name="specify" />
+            <div style = "width: 30% !important">
+                <span data-bind="foreach: mdtMembers">
+                    <span data-bind="text: label"></span>
+                    <span data-bind="if: (\$index() !== (\$parent.mdtMembers().length - 1))">, </span>
+                </span>
+            </div>
         </div>
         <p class="input-position-class">
             <label>MDT Instructions</label>

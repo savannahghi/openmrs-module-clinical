@@ -502,6 +502,18 @@
 			}
 		});
 
+
+		jq(".mdtMembers").on("keypress", function(e) {
+			if (e.key === 'Enter') {
+			    let member = jq(".mdtMembers").val();
+                console.log(member);
+                note.addMdtMember(new MdtMember({
+                    label: member
+                }));
+               jq('.mdtMembers').val('');
+            }
+		});
+
 		jq(".symptoms-qualifiers").on("click", "span.show-qualifiers", function() {
 			var qualifierContainer = jq(this).parents(".symptom-container").find(".qualifier-container");
 			var icon = jq(this).find("i");
@@ -546,7 +558,7 @@
 					data: {
 						note: ko.toJSON(note, ["label", "id", "admitted","provisional","onSetDate",
 							"diagnoses", "illnessHistory", "referralReasons", "externalReferralComments", "physicalExamination",
-							"inpatientWarads", "investigations", "opdId",
+							"inpatientWarads", "investigations","mdtMembers", "opdId",
 							"opdLogId", "otherInstructions","mdtInstructions", "familyHistoryAnswer", "lastLmp", "parity", "currentlyBreastFeedingAnswer",
 							"currentContraceptiveUseAnswer", "cervicalCancerScreeningAnswer", "cervicalCancerScreeningType","cervicalCancerScreeningDate", 
 							"breastCancerScreeningAnswer", "breastCancerScreeningType", "breastCancerScreeningDate", "colorectalCancerScreeningAnswer", 
