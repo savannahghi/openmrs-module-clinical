@@ -1203,6 +1203,15 @@ public class Note {
 			Concept cancerStagingConcept = Context.getConceptService().getConceptByUuid("160786AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 			addValueCoded(encounter, obsGroup, cancerStagingConcept, this.cancerStaging);
 		}
+		if (this.mdtMembers.size() > 0) {
+			Concept mdtMembersPresentConcept = Context.getConceptService().getConceptByUuid("11bb2f78-db3b-4231-9b00-222122700a63");
+			StringBuilder builder =  new StringBuilder();
+			for(MdtMember member: mdtMembers){
+				if (builder.length() > 0) builder.append(',');
+				builder.append(member.getLabel());
+			}
+			addValueText(encounter, obsGroup, mdtMembersPresentConcept, builder.toString());
+		}
 
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {
 			addFamilyHistory(encounter, obsGroup);
