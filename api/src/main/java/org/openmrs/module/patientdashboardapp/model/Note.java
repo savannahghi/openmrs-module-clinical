@@ -1192,11 +1192,11 @@ public class Note {
 			addMdtInstructions(encounter, obsGroup);
 		}
 		if (StringUtils.isNotBlank(this.mdtDiscussed)) {
-			Concept mdtDiscussedConcept = Context.getConceptService().getConceptByUuid("1bc00361-0018-478e-9fc5-707e8425ed07");
+			Concept mdtDiscussedConcept = Context.getConceptService().getConceptByUuid("0ce7c847-b510-4dc6-a955-45e5976007da");
 			addValueCoded(encounter, obsGroup, mdtDiscussedConcept, this.mdtDiscussed);
 		}
 		if (StringUtils.isNotBlank(this.cancerGrading)) {
-			Concept cancerGradingConcept = Context.getConceptService().getConceptByUuid("ffebd42d-3eb3-4229-84e9-b2a71f74286f");
+			Concept cancerGradingConcept = Context.getConceptService().getConceptByUuid("98d8a559-fdc2-42f7-a78d-7d99619f6536");
 			addValueCoded(encounter, obsGroup, cancerGradingConcept, this.cancerGrading);
 		}
 		if (StringUtils.isNotBlank(this.cancerStaging)) {
@@ -1204,7 +1204,7 @@ public class Note {
 			addValueCoded(encounter, obsGroup, cancerStagingConcept, this.cancerStaging);
 		}
 		if (this.mdtMembers.size() > 0) {
-			Concept mdtMembersPresentConcept = Context.getConceptService().getConceptByUuid("11bb2f78-db3b-4231-9b00-222122700a63");
+			Concept mdtMembersPresentConcept = Context.getConceptService().getConceptByUuid("1a2fa41f-e46a-4bed-a52a-715534b10714");
 			StringBuilder builder =  new StringBuilder();
 			for(MdtMember member: mdtMembers){
 				if (builder.length() > 0) builder.append(',');
