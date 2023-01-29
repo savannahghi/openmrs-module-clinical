@@ -23,6 +23,9 @@ function Note(noteObj) {
 	self.physicalExamination = noteObj.physicalExamination;
 	self.otherInstructions = noteObj.otherInstructions;
 	self.mdtInstructions = noteObj.mdtInstructions;
+	self.mdtDiscussed = noteObj.mdtDiscussed;
+	self.cancerGrading = noteObj.cancerGrading;
+	self.cancerStaging = noteObj.cancerStaging;
 	self.familyHistoryAnswer = noteObj.familyHistoryAnswer;
 	self.lastLmp = noteObj.lastLmp;
 	self.cancerType= noteObj.cancerType;

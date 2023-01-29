@@ -122,8 +122,10 @@ public class Note {
 	private String referralComments;
     private String specify;
 	private String otherInstructions;
-
 	private String mdtInstructions;
+	private String mdtDiscussed;
+	private String cancerGrading;
+	private String cancerStaging;
 	private String familyHistoryAnswer;
 	private String currentlyBreastFeedingAnswer;
 	private String currentContraceptiveUseAnswer;
@@ -906,12 +908,37 @@ public class Note {
 		this.otherInstructions = otherInstructions;
 	}
 
+
 	public String getMdtInstructions() {
 		return mdtInstructions;
 	}
 
 	public void setMdtInstructions(String mdtInstructions) {
 		this.mdtInstructions = mdtInstructions;
+	}
+
+	public String getMdtDiscussed() {
+		return mdtDiscussed;
+	}
+
+	public void setMdtDiscussed(String mdtDiscussed) {
+		this.mdtDiscussed = mdtDiscussed;
+	}
+
+	public String getCancerGrading() {
+		return cancerGrading;
+	}
+
+	public void setCancerGrading(String cancerGrading) {
+		this.cancerGrading = cancerGrading;
+	}
+
+	public String getCancerStaging() {
+		return cancerStaging;
+	}
+
+	public void setCancerStaging(String cancerStaging) {
+		this.cancerStaging = cancerStaging;
 	}
 
 	public String getFamilyHistoryAnswer() {
@@ -1154,6 +1181,18 @@ public class Note {
 
 		if (StringUtils.isNotBlank(this.mdtInstructions)) {
 			addMdtInstructions(encounter, obsGroup);
+		}
+		if (StringUtils.isNotBlank(this.mdtDiscussed)) {
+			Concept mdtDiscussedConcept = Context.getConceptService().getConceptByUuid("1bc00361-0018-478e-9fc5-707e8425ed07");
+			addValueCoded(encounter, obsGroup, mdtDiscussedConcept, this.mdtDiscussed);
+		}
+		if (StringUtils.isNotBlank(this.cancerGrading)) {
+			Concept cancerGradingConcept = Context.getConceptService().getConceptByUuid("ffebd42d-3eb3-4229-84e9-b2a71f74286f");
+			addValueCoded(encounter, obsGroup, cancerGradingConcept, this.cancerGrading);
+		}
+		if (StringUtils.isNotBlank(this.cancerStaging)) {
+			Concept cancerStagingConcept = Context.getConceptService().getConceptByUuid("160786AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+			addValueCoded(encounter, obsGroup, cancerStagingConcept, this.cancerStaging);
 		}
 
 		if (StringUtils.isNotBlank(this.familyHistoryAnswer)) {

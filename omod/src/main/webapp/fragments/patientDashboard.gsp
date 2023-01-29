@@ -211,15 +211,15 @@
         <div class = "mdt-row">
             <span>Was patient discussed by MDT:</span>
             <label>
-                <input value="Yes"   name="chk-mdt" type="radio" />Yes
+                <input value="1065"   class="chk-mdt" name="chk-mdt" type="radio" />Yes
             </label>
             <label>
-                <input value="No"   name="chk-mdt" type="radio" />No
+                <input value="1066"  class="chk-mdt" name="chk-mdt" type="radio" />No
             </label>
         </div>
         <div class = "mdt-row">
             <span>If yes, members present:</span>
-            <input type="text" id="specify" placeholder="Please Specify" name="specify" />
+            <input type="text" placeholder="Please Specify members present" name="specify" />
         </div>
         <p class="input-position-class">
             <label>MDT Instructions</label>
@@ -229,31 +229,31 @@
         <div class = "mdt-row">
             <label>Cancer Grading:</label>
             <label>
-                <input value="grade-one"   name="chk-grade" type="radio" />Grade 1
+                <input value="166987"   class="chk-grade"  name="chk-grade" type="radio" />Grade I
             </label>
             <label>
-                <input value="grade_two"   name="chk-grade" type="radio" />Grade 2
+                <input value="166988"  class="chk-grade" name="chk-grade" type="radio" />Grade II
             </label>
             <label>
-                <input value="grade-three"   name="chk-grade" type="radio" />Grade 3
+                <input value="166989"  class="chk-grade" name="chk-grade" type="radio" />Grade III
             </label>
             <label>
-                <input value="grade_four"   name="chk-grade" type="radio" />Grade 4
+                <input value="1000607" class="chk-grade"  name="chk-grade" type="radio" />Grade IV
             </label>
         </div>
         <div class = "mdt-row">
             <label>Cancer Staging:</label>
             <label>
-                <input value="stage-one"   name="chk-stage" type="radio" />Stage 1
+                <input value="160771"   class="chk-stage"  name="chk-stage" type="radio" />Stage 1
             </label>
             <label>
-                <input value="stage_two"   name="chk-stage" type="radio" />Stage 2
+                <input value="160774"  class="chk-stage"   name="chk-stage" type="radio" />Stage 2
             </label>
             <label>
-                <input value="stage_three"   name="chk-stage" type="radio" />Stage 3
+                <input value="160778"   class="chk-stage"  name="chk-stage" type="radio" />Stage 3
             </label>
             <label>
-                <input value="stage_four"   name="chk-stage" type="radio" />Stage 4
+                <input value="160782"  class="chk-stage"   name="chk-stage" type="radio" />Stage 4
             </label>
         </div>
 
