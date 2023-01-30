@@ -244,7 +244,7 @@
                 <input value="166989"  class="chk-grade" name="chk-grade" type="radio" />Grade III
             </label>
             <label>
-                <input value="1000607" class="chk-grade"  name="chk-grade" type="radio" />Grade IV
+                <input value="1000608" class="chk-grade"  name="chk-grade" type="radio" />Grade IV
             </label>
         </div>
         <div class = "mdt-row">
