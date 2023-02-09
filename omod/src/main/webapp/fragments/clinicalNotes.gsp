@@ -473,14 +473,6 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 			<fieldset class="no-confirmation">
 				<legend>Clinicals</legend>
 				<p class="input-position-class">
-					<label>Presenting Complains</label>
-					<textarea data-bind="value: \$root.presentingComplains" id="presentingComplains" name="presentingComplains" rows="2" cols="74"></textarea>
-				</p>
-				<p class="input-position-class">
-					<label>History of Present Illness</label>
-					<textarea data-bind="value: \$root.historyOfPresentIllness" id="historyOfPresentIllness" name="historyOfPresentIllness" rows="2" cols="74"></textarea>
-				</p>
-				<p class="input-position-class">
 					<label>Past Medical and Surgical History</label>
 					<textarea data-bind="value: \$root.pastMedicalSurgicalHistory" id="pastMedicalSurgicalHistory" name="pastMedicalSurgicalHistory" rows="2" cols="74"></textarea>
 				</p>
@@ -1500,37 +1492,17 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 									<span data-bind="if: (investigations().length === 0)">N/A</span>
 								</td>
 							</tr>
-							<tr>
-								<td><span class="status active"></span>MDT Members</td>
-								<td>
-									<span data-bind="foreach: mdtMembers">
-										<span data-bind="text: label"></span>
-										<span data-bind="if: (\$index() !== (\$parent.mdtMembers().length - 1))"><br/></span>
-									</span>
-									<span data-bind="if: (mdtMembers().length === 0)">N/A</span>
-								</td>
-							</tr>
-							<tr>
-								<td><span class="status active"></span>Programs</td>
-								<td>
-									<span data-bind="foreach: chemoPrograms">
-										<span data-bind="text: label"></span>
-										<span data-bind="if: (\$index() !== (\$parent.chemoPrograms().length - 1))"><br/></span>
-									</span>
-									<span data-bind="if: (chemoPrograms().length === 0)">N/A</span>
-								</td>
-							</tr>
 
-							<tr>
-								<td><span class="status active"></span>Prescriptions</td>
-								<td>
-									<span data-bind="foreach: drugs">
-										<span data-bind="text: drugName()+' '+formulation().label"></span>
-										<span data-bind="if: (\$index() !== (\$parent.drugs().length - 1))"><br/></span>
-									</span>
-									<span data-bind="if: (drugs().length === 0)">N/A</span>
-								</td>
-							</tr>
+                            <tr>
+                                <td><span class="status active"></span>Prescriptions</td>
+                                <td>
+                                    <span data-bind="foreach: drugs">
+                                        <span data-bind="text: drugName()+' '+formulation().label"></span>
+                                        <span data-bind="if: (\$index() !== (\$parent.drugs().length - 1))"><br/></span>
+                                    </span>
+                                    <span data-bind="if: (drugs().length === 0)">N/A</span>
+                                </td>
+                            </tr>
 
 							<tr>
 								<td><span class="status active"></span>Instructions</td>
@@ -1541,6 +1513,27 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 								<td><span class="status active"></span>Outcome</td>
 								<td>N/A</td>
 							</tr>
+
+                            <tr>
+                                <td><span class="status active"></span>MDT Members</td>
+                                <td>
+                                    <span data-bind="foreach: mdtMembers">
+                                        <span data-bind="text: label"></span>
+                                        <span data-bind="if: (\$index() !== (\$parent.mdtMembers().length - 1))"><br/></span>
+                                    </span>
+                                    <span data-bind="if: (mdtMembers().length === 0)">N/A</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="status active"></span>Programs</td>
+                                <td>
+                                    <span data-bind="foreach: chemoPrograms">
+                                        <span data-bind="text: label"></span>
+                                        <span data-bind="if: (\$index() !== (\$parent.chemoPrograms().length - 1))"><br/></span>
+                                    </span>
+                                    <span data-bind="if: (chemoPrograms().length === 0)">N/A</span>
+                                </td>
+                            </tr>
 						</table>
 					</div>
 				</div>

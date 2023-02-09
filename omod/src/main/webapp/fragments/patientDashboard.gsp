@@ -258,7 +258,7 @@
             <label>
                 <input value="160778"   class="chk-stage"  name="chk-stage" type="radio" />Stage 3
             </label>
-            <label>
+            <label>`
                 <input value="160782"  class="chk-stage"   name="chk-stage" type="radio" />Stage 4
             </label>
         </div>
@@ -280,70 +280,10 @@
         </div>
     <div>
 </fieldset>
+
 <fieldset class="no-confirmation">
     <legend>Outcome</legend>
     <div>
-        <h2> Patient Referral</h2>
-
-        <div class="onerow">
-            <div class="col4"><label for="internalReferral"						>Referral Available</label></div>
-            <div class="col4"><label for="internalReferral" id="refTitle"		>Internal Referral</label></div>
-            <div class="col4 last"><label for="internalReferral" id="facTitle"	>Facility</label></div>
-        </div>
-
-        <div class="onerow">
-            <div class="col4">
-                <div class="input-position-class">
-                    <select id="availableReferral" name="availableReferral">
-                        <option value="0">Select Option</option>
-                        <option value="1">Internal Referral</option>
-                        <option value="2">External Referral</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col4">
-                <div class="input-position-class">
-                    <select id="internalReferral" name="internalReferral" data-bind="options: \$root.internalReferralOptions, optionsText: 'label', value: \$root.referredTo, optionsCaption: 'Please select...'">
-                    </select>
-
-                    <select id="externalReferral" name="externalReferral" onchange="loadExternalReferralCases();" data-bind="options: \$root.externalReferralOptions, optionsText: 'label', value: \$root.referredTo, optionsCaption: 'Please select...'">
-                    </select>
-                </div>
-            </div>
-
-            <div class="col4 last">
-                <div class="input-position-class">
-                    <input type="text" id="facility" placeholder="Facility Name" name="facility" data-bind="value: \$root.facility">
-                    </input>
-                </div>
-            </div>
-        </div>
-
-        <div class="onerow" style="padding-top:2px;" id="refReason1">
-            <div class="col4">
-                <label for="referralReasons" style="margin-top:20px;">Referral Reasons</label>
-            </div>
-
-            <label id="specify-lbl" for="specify" style="margin-top:20px;">If Other, Please Specify</label>
-        </div>
-
-        <div class="onerow" style="padding-top:2px;" id="refReason2">
-            <div class="col4">
-                <select id="referralReasons" name="referralReasons" data-bind="options: \$root.referralReasonsOptions, optionsText: 'label', value: \$root.referralReasons, optionsCaption: 'Please select...'" style="margin-top: 5px;">
-                </select>
-            </div>
-
-            <div class="col4 last" style="width: 65%;">
-                <input type="text" id="specify" placeholder="Please Specify" name="specify" data-bind="value: \$root.specify"/>
-            </div>
-        </div>
-
-        <div class="onerow" style="padding-top:2px;" id="refReason3">
-            <label for="referralComments" style="margin-top:20px;">Comments</label>
-            <textarea type="text" id="referralComments"   name="referralComments" data-bind="value: \$root.referralComments" placeholder="COMMENTS"  style="height: 80px; width: 650px;"></textarea>
-        </div>
-
         <div class="onerow" style="padding-top:2px;">
             <h2>What is the outcome of this visit? <span class="important">*</span></h2>
             <div data-bind="foreach: availableOutcomes" class="outcomes-container">
@@ -353,21 +293,81 @@
                             <input type="radio" name="outcome" data-bind="click: updateOutcome"/>
                             <span data-bind="text: option.label" style="color:#000; font-size: 1em; cursor: pointer"></span>
                         </label>
-
-
                         <span data-bind="if: \$data.option.id === 1 && \$root.outcome() && \$root.outcome().option.id === 1">
                             <span id="follow-up-date" class="date" style="float: right;">
                                 <input data-bind="value : followUpDate" style="width: 378px;" class="required">
                                 <span class="add-on"><i class="icon-calendar small"></i></span>
                             </span>
                         </span>
-
-                        <span data-bind="if: \$data.option.id === 2 && \$root.outcome() && \$root.outcome().option.id === 2">
-                            <select data-bind="options: \$root.inpatientWards, optionsText: 'label', value: admitTo" style="width: 400px !important; float: right;"></select>
-                        </span>
                     </p>
                 </div>
             </div>
+            <span data-bind="if: \$root.outcome() && \$root.outcome().option.id ===6">
+                <h2>Referral information</h2>
+
+                <div class="onerow">
+                    <div class="col4"><label for="internalReferral">Referral Available</label></div>
+                    <div class="col4"><label for="internalReferral" id="refTitle">Internal Referral</label></div>
+                    <div class="col4 last"><label for="internalReferral" id="facTitle">Facility</label></div>
+                </div>
+
+                <div class="onerow">
+                    <div class="col4">
+                        <div class="input-position-class">
+                            <select id="availableReferral" name="availableReferral">
+                                <option value="0">Select Option</option>
+                                <option value="1">Internal Referral</option>
+                                <option value="2">External Referral</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col4">
+                        <div class="input-position-class">
+                            <select id="internalReferral" name="internalReferral" data-bind="options: \$root.internalReferralOptions, optionsText: 'label', value: \$root.referredTo, optionsCaption: 'Please select...'">
+                            </select>
+
+                            <select id="externalReferral" name="externalReferral" onchange="loadExternalReferralCases();" data-bind="options: \$root.externalReferralOptions, optionsText: 'label', value: \$root.referredTo, optionsCaption: 'Please select...'">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col4 last">
+                        <div class="input-position-class">
+                            <field>
+                                <% fields.each { %>
+                                ${ ui.includeFragment("kenyaui", "widget/labeledField", it) }
+                                <% } %>
+                            </field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="onerow" style="padding-top:2px;" id="refReason1">
+                    <div class="col4">
+                        <label for="referralReasons" style="margin-top:20px;">Referral Reasons</label>
+                    </div>
+
+                    <label id="specify-lbl" for="specify" style="margin-top:20px;">If Other, Please Specify</label>
+                </div>
+
+                <div class="onerow" style="padding-top:2px;" id="refReason2">
+                    <div class="col4">
+                        <select id="referralReasons" name="referralReasons" data-bind="options: \$root.referralReasonsOptions, optionsText: 'label', value: \$root.referralReasons, optionsCaption: 'Please select...'" style="margin-top: 5px;">
+                        </select>
+                    </div>
+
+                    <div class="col4 last" style="width: 65%;">
+                        <input type="text" id="specify" placeholder="Please Specify" name="specify" data-bind="value: \$root.specify"/>
+                    </div>
+                </div>
+
+                <div class="onerow" style="padding-top:2px;" id="refReason3">
+                    <label for="referralComments" style="margin-top:20px;">Comments</label>
+                    <textarea type="text" id="referralComments"   name="referralComments" data-bind="value: \$root.referralComments" placeholder="COMMENTS"  style="height: 80px; width: 650px;"></textarea>
+                </div>
+            </span>
+
         </div>
 
         <field>
