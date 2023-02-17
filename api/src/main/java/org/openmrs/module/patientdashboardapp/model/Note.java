@@ -1411,7 +1411,7 @@ public class Note {
 		}
 
 		//currently on contraceptives
-		Concept conceptCurrentlyContraceptiveUse = Context.getConceptService().getConceptByUuid("1386AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		Concept conceptCurrentlyContraceptiveUse = Context.getConceptService().getConceptByUuid("374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		if (conceptCurrentlyContraceptiveUse == null) {
 			throw new NullPointerException("Current contraceptive use status concept is not defined");
 		}

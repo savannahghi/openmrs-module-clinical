@@ -57,7 +57,7 @@ public class ClinicalNotesFragmentController {
         Collection<ConceptAnswer> familyMemberAnswers = conceptFamilyMember.getAnswers();
         Concept conceptCurrentlyBreastFeeding = Context.getConceptService().getConceptByUuid("5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> currentlyBreastFeedingAnswers = conceptCurrentlyBreastFeeding.getAnswers();
-        Concept conceptCurrentlyContraceptiveUse = Context.getConceptService().getConceptByUuid("1386AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Concept conceptCurrentlyContraceptiveUse = Context.getConceptService().getConceptByUuid("374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         Collection<ConceptAnswer> currentContraceptiveUseAnswers = conceptCurrentlyContraceptiveUse.getAnswers();
         Concept conceptCervicalCancerScreening = Context.getConceptService().getConceptByUuid("06398e78-0d3e-43d5-8017-f2fc3865e2e0");
         Collection<ConceptAnswer> cervicalCancerScreeningAnswers = conceptCervicalCancerScreening.getAnswers();
