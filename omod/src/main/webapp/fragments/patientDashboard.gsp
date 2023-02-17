@@ -258,7 +258,7 @@
             <label>
                 <input value="160778"   class="chk-stage"  name="chk-stage" type="radio" />Stage 3
             </label>
-            <label>`
+            <label>
                 <input value="160782"  class="chk-stage"   name="chk-stage" type="radio" />Stage 4
             </label>
         </div>
