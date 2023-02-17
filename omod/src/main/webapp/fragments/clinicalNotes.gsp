@@ -146,7 +146,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="family-history-set" />
 				</p>
 			</fieldset>
-			<% if (patient.gender == "F" && patient.age > 12){ %>
+			<% if (patient.gender == "F" && patient.age > 5){ %>
 				<fieldset class="no-confirmation">
 					<legend>Female History</legend>
 					<div style="padding: 0 4px; margin-bottom:60px">
@@ -282,7 +282,9 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					</p>
 				</fieldset>
 			<% } %>
-			<fieldset class="no-confirmation">
+
+            <% if (patient.gender == "M" && patient.age > 5){ %>
+            <fieldset class="no-confirmation">
 				<legend>Male History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<label for="place-of-residence" class="label">Have you ever been screened before for:(select all that apply) <span class="important">*</span></label>
@@ -355,7 +357,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<% currentContraceptiveUseAnswers.each { answer -> %>
 						<div class="radios col3">
 							<label>
-								<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="radio">
+								<input data-bind="checked: cervicalCancerScreeningAnswer" value="${answer.answerConcept.id}" name="currentContraceptiveUseAnswer" type="checkbox">
 								<label>${answer.answerConcept.getName()}</label>
 							</label>
 						</div>
@@ -365,7 +367,10 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="male-history-set" />
 				</p>
 			</fieldset>
-			<fieldset class="no-confirmation">
+            <%}%>
+
+            <% if (patient.age < 5){ %>
+            <fieldset class="no-confirmation">
 				<legend>Child History</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
 					<div class="col6">
@@ -387,6 +392,7 @@ ${ ui.includeFragment("patientdashboardapp", "patientDashboardAppScripts", [note
 					<input type="hidden" id="child-history-set" />
 				</p>
 			</fieldset>
+            <%}%>
 			<fieldset class="no-confirmation">
 				<legend>Risk Factor</legend>
 				<div class="col12" style="padding: 0 4px; padding-bottom:20px;">
